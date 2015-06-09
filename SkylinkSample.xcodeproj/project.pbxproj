@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2158E92B1B26AFC3003CA6E7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 2158E9231B26AFC3003CA6E7 /* close.png */; };
+		2158E92C1B26AFC3003CA6E7 /* disable_audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 2158E9241B26AFC3003CA6E7 /* disable_audio.png */; };
+		2158E92D1B26AFC3003CA6E7 /* disable_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 2158E9251B26AFC3003CA6E7 /* disable_camera.png */; };
+		2158E92E1B26AFC3003CA6E7 /* enable_audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 2158E9261B26AFC3003CA6E7 /* enable_audio.png */; };
+		2158E92F1B26AFC3003CA6E7 /* enable_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 2158E9271B26AFC3003CA6E7 /* enable_camera.png */; };
+		2158E9301B26AFC3003CA6E7 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2158E9281B26AFC3003CA6E7 /* lock.png */; };
+		2158E9311B26AFC3003CA6E7 /* switch_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 2158E9291B26AFC3003CA6E7 /* switch_camera.png */; };
+		2158E9321B26AFC3003CA6E7 /* unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2158E92A1B26AFC3003CA6E7 /* unlock.png */; };
+		2158E9371B26C873003CA6E7 /* skylink_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2158E9361B26C873003CA6E7 /* skylink_background.jpg */; };
+		215FB38C1B26A0DE006EA9C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 215FB38B1B26A0DE006EA9C7 /* main.m */; };
+		215FB3921B26A0DE006EA9C7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215FB3911B26A0DE006EA9C7 /* ViewController.m */; };
+		215FB3971B26A0DE006EA9C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 215FB3961B26A0DE006EA9C7 /* Images.xcassets */; };
+		215FB39A1B26A0DE006EA9C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215FB3981B26A0DE006EA9C7 /* LaunchScreen.xib */; };
+		215FB3A61B26A0DE006EA9C7 /* SkylinkSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 215FB3A51B26A0DE006EA9C7 /* SkylinkSampleTests.m */; };
+		216552721B26A517000C79E1 /* TEMJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216552701B26A517000C79E1 /* TEMJoinViewController.m */; };
+		216552731B26A517000C79E1 /* TEMJoinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216552711B26A517000C79E1 /* TEMJoinViewController.xib */; };
+		216552791B26A6DE000C79E1 /* TEMRichVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 216552751B26A6DE000C79E1 /* TEMRichVideoView.m */; };
+		2165527A1B26A6DE000C79E1 /* TEMRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216552771B26A6DE000C79E1 /* TEMRoomViewController.m */; };
+		2165527B1B26A6DE000C79E1 /* TEMRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216552781B26A6DE000C79E1 /* TEMRoomViewController.xib */; };
+		2165527E1B26A70B000C79E1 /* TEMVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2165527D1B26A70B000C79E1 /* TEMVideoView.m */; };
+		216552811B26A728000C79E1 /* TEMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 216552801B26A728000C79E1 /* TEMProgressView.m */; };
+		216552881B26A80D000C79E1 /* TEMPresenceNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216552841B26A80D000C79E1 /* TEMPresenceNavigationController.m */; };
+		216552891B26A80D000C79E1 /* TEMPresenceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216552861B26A80D000C79E1 /* TEMPresenceTableViewController.m */; };
+		2165528A1B26A80D000C79E1 /* TEMPresenceTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216552871B26A80D000C79E1 /* TEMPresenceTableViewController.xib */; };
+		2165528E1B26A848000C79E1 /* TEMFilePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2165528C1B26A848000C79E1 /* TEMFilePickerController.m */; };
+		2165528F1B26A848000C79E1 /* TEMFilePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2165528D1B26A848000C79E1 /* TEMFilePickerController.xib */; };
+		216552921B26A963000C79E1 /* JSQDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216552911B26A963000C79E1 /* JSQDemoViewController.m */; };
+		216552951B26AA32000C79E1 /* TEMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 216552941B26AA32000C79E1 /* TEMAppDelegate.m */; };
+		D12E2C38E355B34A96D91DB7 /* libPods-SkylinkSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA661AECE71C45948760939C /* libPods-SkylinkSample.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		215FB3A01B26A0DE006EA9C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215FB37E1B26A0DE006EA9C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 215FB3851B26A0DE006EA9C7;
+			remoteInfo = SkylinkSample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0394120DE458F30599D5CF1A /* Pods-SkylinkSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.release.xcconfig"; sourceTree = "<group>"; };
+		2158E9231B26AFC3003CA6E7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		2158E9241B26AFC3003CA6E7 /* disable_audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disable_audio.png; sourceTree = "<group>"; };
+		2158E9251B26AFC3003CA6E7 /* disable_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disable_camera.png; sourceTree = "<group>"; };
+		2158E9261B26AFC3003CA6E7 /* enable_audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enable_audio.png; sourceTree = "<group>"; };
+		2158E9271B26AFC3003CA6E7 /* enable_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enable_camera.png; sourceTree = "<group>"; };
+		2158E9281B26AFC3003CA6E7 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
+		2158E9291B26AFC3003CA6E7 /* switch_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switch_camera.png; sourceTree = "<group>"; };
+		2158E92A1B26AFC3003CA6E7 /* unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlock.png; sourceTree = "<group>"; };
+		2158E9361B26C873003CA6E7 /* skylink_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = skylink_background.jpg; sourceTree = "<group>"; };
+		215FB3861B26A0DE006EA9C7 /* SkylinkSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkylinkSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		215FB38A1B26A0DE006EA9C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		215FB38B1B26A0DE006EA9C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		215FB3901B26A0DE006EA9C7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		215FB3911B26A0DE006EA9C7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		215FB3961B26A0DE006EA9C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		215FB3991B26A0DE006EA9C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		215FB39F1B26A0DE006EA9C7 /* SkylinkSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkylinkSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		215FB3A41B26A0DE006EA9C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		215FB3A51B26A0DE006EA9C7 /* SkylinkSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkylinkSampleTests.m; sourceTree = "<group>"; };
+		2165526F1B26A517000C79E1 /* TEMJoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMJoinViewController.h; sourceTree = "<group>"; };
+		216552701B26A517000C79E1 /* TEMJoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMJoinViewController.m; sourceTree = "<group>"; };
+		216552711B26A517000C79E1 /* TEMJoinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEMJoinViewController.xib; sourceTree = "<group>"; };
+		216552741B26A6DE000C79E1 /* TEMRichVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMRichVideoView.h; sourceTree = "<group>"; };
+		216552751B26A6DE000C79E1 /* TEMRichVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMRichVideoView.m; sourceTree = "<group>"; };
+		216552761B26A6DE000C79E1 /* TEMRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMRoomViewController.h; sourceTree = "<group>"; };
+		216552771B26A6DE000C79E1 /* TEMRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMRoomViewController.m; sourceTree = "<group>"; };
+		216552781B26A6DE000C79E1 /* TEMRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEMRoomViewController.xib; sourceTree = "<group>"; };
+		2165527C1B26A70B000C79E1 /* TEMVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMVideoView.h; sourceTree = "<group>"; };
+		2165527D1B26A70B000C79E1 /* TEMVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMVideoView.m; sourceTree = "<group>"; };
+		2165527F1B26A728000C79E1 /* TEMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMProgressView.h; sourceTree = "<group>"; };
+		216552801B26A728000C79E1 /* TEMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMProgressView.m; sourceTree = "<group>"; };
+		216552821B26A78C000C79E1 /* TEMCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMCommon.h; sourceTree = "<group>"; };
+		216552831B26A80D000C79E1 /* TEMPresenceNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMPresenceNavigationController.h; sourceTree = "<group>"; };
+		216552841B26A80D000C79E1 /* TEMPresenceNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMPresenceNavigationController.m; sourceTree = "<group>"; };
+		216552851B26A80D000C79E1 /* TEMPresenceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMPresenceTableViewController.h; sourceTree = "<group>"; };
+		216552861B26A80D000C79E1 /* TEMPresenceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMPresenceTableViewController.m; sourceTree = "<group>"; };
+		216552871B26A80D000C79E1 /* TEMPresenceTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEMPresenceTableViewController.xib; sourceTree = "<group>"; };
+		2165528B1B26A848000C79E1 /* TEMFilePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMFilePickerController.h; sourceTree = "<group>"; };
+		2165528C1B26A848000C79E1 /* TEMFilePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMFilePickerController.m; sourceTree = "<group>"; };
+		2165528D1B26A848000C79E1 /* TEMFilePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEMFilePickerController.xib; sourceTree = "<group>"; };
+		216552901B26A963000C79E1 /* JSQDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQDemoViewController.h; sourceTree = "<group>"; };
+		216552911B26A963000C79E1 /* JSQDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQDemoViewController.m; sourceTree = "<group>"; };
+		216552931B26AA32000C79E1 /* TEMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMAppDelegate.h; sourceTree = "<group>"; };
+		216552941B26AA32000C79E1 /* TEMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMAppDelegate.m; sourceTree = "<group>"; };
+		652B14261D133793B9163F89 /* Pods-SkylinkSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.debug.xcconfig"; sourceTree = "<group>"; };
+		DA661AECE71C45948760939C /* libPods-SkylinkSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkylinkSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		215FB3831B26A0DE006EA9C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D12E2C38E355B34A96D91DB7 /* libPods-SkylinkSample.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		215FB39C1B26A0DE006EA9C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2158E9221B26AFC3003CA6E7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2158E9361B26C873003CA6E7 /* skylink_background.jpg */,
+				2158E9231B26AFC3003CA6E7 /* close.png */,
+				2158E9241B26AFC3003CA6E7 /* disable_audio.png */,
+				2158E9251B26AFC3003CA6E7 /* disable_camera.png */,
+				2158E9261B26AFC3003CA6E7 /* enable_audio.png */,
+				2158E9271B26AFC3003CA6E7 /* enable_camera.png */,
+				2158E9281B26AFC3003CA6E7 /* lock.png */,
+				2158E9291B26AFC3003CA6E7 /* switch_camera.png */,
+				2158E92A1B26AFC3003CA6E7 /* unlock.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		215FB37D1B26A0DE006EA9C7 = {
+			isa = PBXGroup;
+			children = (
+				215FB3881B26A0DE006EA9C7 /* SkylinkSample */,
+				215FB3A21B26A0DE006EA9C7 /* SkylinkSampleTests */,
+				215FB3871B26A0DE006EA9C7 /* Products */,
+				308B80B950EB93E3D58E833C /* Pods */,
+				3D729BB6554F5349856576A1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		215FB3871B26A0DE006EA9C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				215FB3861B26A0DE006EA9C7 /* SkylinkSample.app */,
+				215FB39F1B26A0DE006EA9C7 /* SkylinkSampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		215FB3881B26A0DE006EA9C7 /* SkylinkSample */ = {
+			isa = PBXGroup;
+			children = (
+				2158E9221B26AFC3003CA6E7 /* Images */,
+				216552901B26A963000C79E1 /* JSQDemoViewController.h */,
+				216552911B26A963000C79E1 /* JSQDemoViewController.m */,
+				216552931B26AA32000C79E1 /* TEMAppDelegate.h */,
+				216552941B26AA32000C79E1 /* TEMAppDelegate.m */,
+				216552821B26A78C000C79E1 /* TEMCommon.h */,
+				2165527F1B26A728000C79E1 /* TEMProgressView.h */,
+				216552801B26A728000C79E1 /* TEMProgressView.m */,
+				2165527C1B26A70B000C79E1 /* TEMVideoView.h */,
+				2165527D1B26A70B000C79E1 /* TEMVideoView.m */,
+				216552741B26A6DE000C79E1 /* TEMRichVideoView.h */,
+				216552751B26A6DE000C79E1 /* TEMRichVideoView.m */,
+				2165528B1B26A848000C79E1 /* TEMFilePickerController.h */,
+				2165528C1B26A848000C79E1 /* TEMFilePickerController.m */,
+				2165528D1B26A848000C79E1 /* TEMFilePickerController.xib */,
+				216552831B26A80D000C79E1 /* TEMPresenceNavigationController.h */,
+				216552841B26A80D000C79E1 /* TEMPresenceNavigationController.m */,
+				216552851B26A80D000C79E1 /* TEMPresenceTableViewController.h */,
+				216552861B26A80D000C79E1 /* TEMPresenceTableViewController.m */,
+				216552871B26A80D000C79E1 /* TEMPresenceTableViewController.xib */,
+				216552761B26A6DE000C79E1 /* TEMRoomViewController.h */,
+				216552771B26A6DE000C79E1 /* TEMRoomViewController.m */,
+				216552781B26A6DE000C79E1 /* TEMRoomViewController.xib */,
+				215FB3901B26A0DE006EA9C7 /* ViewController.h */,
+				215FB3911B26A0DE006EA9C7 /* ViewController.m */,
+				2165526F1B26A517000C79E1 /* TEMJoinViewController.h */,
+				216552701B26A517000C79E1 /* TEMJoinViewController.m */,
+				216552711B26A517000C79E1 /* TEMJoinViewController.xib */,
+				215FB3961B26A0DE006EA9C7 /* Images.xcassets */,
+				215FB3981B26A0DE006EA9C7 /* LaunchScreen.xib */,
+				215FB3891B26A0DE006EA9C7 /* Supporting Files */,
+			);
+			path = SkylinkSample;
+			sourceTree = "<group>";
+		};
+		215FB3891B26A0DE006EA9C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				215FB38A1B26A0DE006EA9C7 /* Info.plist */,
+				215FB38B1B26A0DE006EA9C7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		215FB3A21B26A0DE006EA9C7 /* SkylinkSampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				215FB3A51B26A0DE006EA9C7 /* SkylinkSampleTests.m */,
+				215FB3A31B26A0DE006EA9C7 /* Supporting Files */,
+			);
+			path = SkylinkSampleTests;
+			sourceTree = "<group>";
+		};
+		215FB3A31B26A0DE006EA9C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				215FB3A41B26A0DE006EA9C7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		308B80B950EB93E3D58E833C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				652B14261D133793B9163F89 /* Pods-SkylinkSample.debug.xcconfig */,
+				0394120DE458F30599D5CF1A /* Pods-SkylinkSample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3D729BB6554F5349856576A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA661AECE71C45948760939C /* libPods-SkylinkSample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		215FB3851B26A0DE006EA9C7 /* SkylinkSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 215FB3A91B26A0DE006EA9C7 /* Build configuration list for PBXNativeTarget "SkylinkSample" */;
+			buildPhases = (
+				4C15C2B7CE21A0678E09A6BB /* Check Pods Manifest.lock */,
+				215FB3821B26A0DE006EA9C7 /* Sources */,
+				215FB3831B26A0DE006EA9C7 /* Frameworks */,
+				215FB3841B26A0DE006EA9C7 /* Resources */,
+				DFCE63630BED56C40ECB0B2C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkylinkSample;
+			productName = SkylinkSample;
+			productReference = 215FB3861B26A0DE006EA9C7 /* SkylinkSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		215FB39E1B26A0DE006EA9C7 /* SkylinkSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 215FB3AC1B26A0DE006EA9C7 /* Build configuration list for PBXNativeTarget "SkylinkSampleTests" */;
+			buildPhases = (
+				215FB39B1B26A0DE006EA9C7 /* Sources */,
+				215FB39C1B26A0DE006EA9C7 /* Frameworks */,
+				215FB39D1B26A0DE006EA9C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				215FB3A11B26A0DE006EA9C7 /* PBXTargetDependency */,
+			);
+			name = SkylinkSampleTests;
+			productName = SkylinkSampleTests;
+			productReference = 215FB39F1B26A0DE006EA9C7 /* SkylinkSampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		215FB37E1B26A0DE006EA9C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Temasys Communications Pte Ltd";
+				TargetAttributes = {
+					215FB3851B26A0DE006EA9C7 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = VVYWH469LG;
+					};
+					215FB39E1B26A0DE006EA9C7 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 215FB3851B26A0DE006EA9C7;
+					};
+				};
+			};
+			buildConfigurationList = 215FB3811B26A0DE006EA9C7 /* Build configuration list for PBXProject "SkylinkSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 215FB37D1B26A0DE006EA9C7;
+			productRefGroup = 215FB3871B26A0DE006EA9C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				215FB3851B26A0DE006EA9C7 /* SkylinkSample */,
+				215FB39E1B26A0DE006EA9C7 /* SkylinkSampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		215FB3841B26A0DE006EA9C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2165527B1B26A6DE000C79E1 /* TEMRoomViewController.xib in Resources */,
+				2158E9371B26C873003CA6E7 /* skylink_background.jpg in Resources */,
+				2158E92C1B26AFC3003CA6E7 /* disable_audio.png in Resources */,
+				215FB39A1B26A0DE006EA9C7 /* LaunchScreen.xib in Resources */,
+				2158E92F1B26AFC3003CA6E7 /* enable_camera.png in Resources */,
+				2165528F1B26A848000C79E1 /* TEMFilePickerController.xib in Resources */,
+				2158E9321B26AFC3003CA6E7 /* unlock.png in Resources */,
+				2158E92D1B26AFC3003CA6E7 /* disable_camera.png in Resources */,
+				2158E92E1B26AFC3003CA6E7 /* enable_audio.png in Resources */,
+				2165528A1B26A80D000C79E1 /* TEMPresenceTableViewController.xib in Resources */,
+				2158E9301B26AFC3003CA6E7 /* lock.png in Resources */,
+				2158E92B1B26AFC3003CA6E7 /* close.png in Resources */,
+				2158E9311B26AFC3003CA6E7 /* switch_camera.png in Resources */,
+				216552731B26A517000C79E1 /* TEMJoinViewController.xib in Resources */,
+				215FB3971B26A0DE006EA9C7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		215FB39D1B26A0DE006EA9C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C15C2B7CE21A0678E09A6BB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DFCE63630BED56C40ECB0B2C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		215FB3821B26A0DE006EA9C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				216552881B26A80D000C79E1 /* TEMPresenceNavigationController.m in Sources */,
+				2165527E1B26A70B000C79E1 /* TEMVideoView.m in Sources */,
+				2165527A1B26A6DE000C79E1 /* TEMRoomViewController.m in Sources */,
+				216552811B26A728000C79E1 /* TEMProgressView.m in Sources */,
+				216552921B26A963000C79E1 /* JSQDemoViewController.m in Sources */,
+				216552791B26A6DE000C79E1 /* TEMRichVideoView.m in Sources */,
+				2165528E1B26A848000C79E1 /* TEMFilePickerController.m in Sources */,
+				216552951B26AA32000C79E1 /* TEMAppDelegate.m in Sources */,
+				215FB3921B26A0DE006EA9C7 /* ViewController.m in Sources */,
+				215FB38C1B26A0DE006EA9C7 /* main.m in Sources */,
+				216552891B26A80D000C79E1 /* TEMPresenceTableViewController.m in Sources */,
+				216552721B26A517000C79E1 /* TEMJoinViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		215FB39B1B26A0DE006EA9C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				215FB3A61B26A0DE006EA9C7 /* SkylinkSampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		215FB3A11B26A0DE006EA9C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 215FB3851B26A0DE006EA9C7 /* SkylinkSample */;
+			targetProxy = 215FB3A01B26A0DE006EA9C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		215FB3981B26A0DE006EA9C7 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				215FB3991B26A0DE006EA9C7 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		215FB3A71B26A0DE006EA9C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		215FB3A81B26A0DE006EA9C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		215FB3AA1B26A0DE006EA9C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 652B14261D133793B9163F89 /* Pods-SkylinkSample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = SkylinkSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		215FB3AB1B26A0DE006EA9C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0394120DE458F30599D5CF1A /* Pods-SkylinkSample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = SkylinkSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		215FB3AD1B26A0DE006EA9C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SkylinkSampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkylinkSample.app/SkylinkSample";
+			};
+			name = Debug;
+		};
+		215FB3AE1B26A0DE006EA9C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SkylinkSampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkylinkSample.app/SkylinkSample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		215FB3811B26A0DE006EA9C7 /* Build configuration list for PBXProject "SkylinkSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				215FB3A71B26A0DE006EA9C7 /* Debug */,
+				215FB3A81B26A0DE006EA9C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		215FB3A91B26A0DE006EA9C7 /* Build configuration list for PBXNativeTarget "SkylinkSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				215FB3AA1B26A0DE006EA9C7 /* Debug */,
+				215FB3AB1B26A0DE006EA9C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		215FB3AC1B26A0DE006EA9C7 /* Build configuration list for PBXNativeTarget "SkylinkSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				215FB3AD1B26A0DE006EA9C7 /* Debug */,
+				215FB3AE1B26A0DE006EA9C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 215FB37E1B26A0DE006EA9C7 /* Project object */;
+}

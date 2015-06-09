@@ -1,0 +1,8 @@
+FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/SKYLINK"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/JSQMessagesViewController" "${PODS_ROOT}/Headers/Public/JSQSystemSoundPlayer" "${PODS_ROOT}/Headers/Public/SKYLINK" "${PODS_ROOT}/Headers/Public/SocketRocket" "${PODS_ROOT}/Headers/Public/tema-ios-ntp"
+LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/SKYLINK"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/JSQMessagesViewController" -isystem "${PODS_ROOT}/Headers/Public/JSQSystemSoundPlayer" -isystem "${PODS_ROOT}/Headers/Public/SKYLINK" -isystem "${PODS_ROOT}/Headers/Public/SocketRocket" -isystem "${PODS_ROOT}/Headers/Public/tema-ios-ntp"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"ObjC" -l"Pods-SkylinkSample-JSQMessagesViewController" -l"Pods-SkylinkSample-JSQSystemSoundPlayer" -l"Pods-SkylinkSample-SocketRocket" -l"Pods-SkylinkSample-tema-ios-ntp" -l"c" -l"icucore" -l"sqlite3" -l"stdc++" -l"temasys" -framework "AVFoundation" -framework "AudioToolbox" -framework "CFNetwork" -framework "CoreAudio" -framework "CoreGraphics" -framework "CoreMedia" -framework "Foundation" -framework "GLKit" -framework "QuartzCore" -framework "SKYLINK" -framework "Security" -framework "UIKit"
+OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+PODS_ROOT = ${SRCROOT}/Pods
