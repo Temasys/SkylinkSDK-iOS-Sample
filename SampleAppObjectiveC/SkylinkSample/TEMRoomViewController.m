@@ -123,7 +123,7 @@ typedef enum : NSUInteger {
     
     // Instante SKYLINKConnection
     [SKYLINKConnection setVerbose:TRUE];
-    mySkylink = [[SKYLINKConnection alloc] initWithConfig:config appKey:];
+    mySkylink = [[SKYLINKConnection alloc] initWithConfig:config appKey:@""];
     mySkylink.lifeCycleDelegate = self;
     mySkylink.remotePeerDelegate = self;
     mySkylink.mediaDelegate = self;
@@ -139,7 +139,7 @@ typedef enum : NSUInteger {
 {
     [super viewDidAppear:animated];
     // Connect to the room
-    if ([mySkylink connectToRoomWithSecret: roomName:self.roomName userInfo:self.myDisplayName])
+    if ([mySkylink connectToRoomWithSecret:@"" roomName:self.roomName userInfo:self.myDisplayName])
         NSLog(@"%s::Already connected to a room", __FUNCTION__);
 }
 
