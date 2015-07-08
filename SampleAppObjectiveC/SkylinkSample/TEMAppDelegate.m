@@ -21,7 +21,27 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[TEMJoinViewController alloc] initWithNibName:nil bundle:nil];
     [self.window makeKeyAndVisible];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSessionRouteChange:) name:AVAudioSessionRouteChangeNotification object:nil];
+    
     return YES;
+}
+
+- (void)didSessionRouteChange:(NSNotification *)notification
+{
+    NSDictionary *interuptionDict = notification.userInfo;
+    NSInteger routeChangeReason = [[interuptionDict valueForKey:AVAudioSessionRouteChangeReasonKey] integerValue];
+    
+    switch (routeChangeReason) {
+        case AVAudioSessionRouteChangeReasonCategoryChange: {
+            // Set speaker as default route
+            NSError* error;
+            [[AVAudioSession sharedInstance] overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&error];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
