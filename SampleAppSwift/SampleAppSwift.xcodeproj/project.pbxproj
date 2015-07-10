@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		199224CA786347262554CBE1 /* libPods-SampleAppSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B74D8F706B74A7A24F43F7 /* libPods-SampleAppSwift.a */; };
+		21CCE8B11B4FA6BE000A23E4 /* switch_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 21CCE8B01B4FA6BE000A23E4 /* switch_camera.png */; };
 		5233AB651AA82CB200B70E19 /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 5233AB0C1AA82CB200B70E19 /* bubble.png */; };
 		5233AB661AA82CB200B70E19 /* bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5233AB0D1AA82CB200B70E19 /* bubble@2x.png */; };
 		5233AB671AA82CB200B70E19 /* bubble_min.png in Resources */ = {isa = PBXBuildFile; fileRef = 5233AB0E1AA82CB200B70E19 /* bubble_min.png */; };
@@ -71,7 +72,6 @@
 		52387A751AA6B93E0085FA5C /* enable_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 52387A711AA6B93E0085FA5C /* enable_camera.png */; };
 		5240CC451AF7634F00A9941B /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 5240CC431AF7634F00A9941B /* lock.png */; };
 		5240CC461AF7634F00A9941B /* unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 5240CC441AF7634F00A9941B /* unlock.png */; };
-		524F51651B0DE20A00DC3BA5 /* switch_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 524F51641B0DE20A00DC3BA5 /* switch_camera.png */; };
 		5252C1AF1AFC612D0022C313 /* TEMVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252C1AE1AFC612D0022C313 /* TEMVideoView.swift */; };
 		5252C1B11AFC9A1C0022C313 /* TEMRichVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252C1B01AFC9A1C0022C313 /* TEMRichVideoView.swift */; };
 		52A6761E1AA410F600C41DEA /* TEMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A6761D1AA410F600C41DEA /* TEMProgressView.m */; };
@@ -85,6 +85,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21CCE8B01B4FA6BE000A23E4 /* switch_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switch_camera.png; sourceTree = "<group>"; };
 		5230F1581AA01B65003CC581 /* SKYLINK-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKYLINK-Bridging-Header.h"; sourceTree = "<group>"; };
 		5233AB0C1AA82CB200B70E19 /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
 		5233AB0D1AA82CB200B70E19 /* bubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble@2x.png"; sourceTree = "<group>"; };
@@ -184,7 +185,6 @@
 		52387A711AA6B93E0085FA5C /* enable_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enable_camera.png; sourceTree = "<group>"; };
 		5240CC431AF7634F00A9941B /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
 		5240CC441AF7634F00A9941B /* unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlock.png; sourceTree = "<group>"; };
-		524F51641B0DE20A00DC3BA5 /* switch_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = switch_camera.png; path = ../../SampleApp/SampleApp/Images/switch_camera.png; sourceTree = "<group>"; };
 		5252C1AE1AFC612D0022C313 /* TEMVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TEMVideoView.swift; sourceTree = "<group>"; };
 		5252C1B01AFC9A1C0022C313 /* TEMRichVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TEMRichVideoView.swift; sourceTree = "<group>"; };
 		52A6761C1AA410F600C41DEA /* TEMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMProgressView.h; sourceTree = "<group>"; };
@@ -394,12 +394,12 @@
 		52387A6B1AA6B9290085FA5C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				21CCE8B01B4FA6BE000A23E4 /* switch_camera.png */,
 				52387A6E1AA6B93E0085FA5C /* disable_audio.png */,
 				52387A6F1AA6B93E0085FA5C /* disable_camera.png */,
 				52387A701AA6B93E0085FA5C /* enable_audio.png */,
 				52387A711AA6B93E0085FA5C /* enable_camera.png */,
 				5240CC431AF7634F00A9941B /* lock.png */,
-				524F51641B0DE20A00DC3BA5 /* switch_camera.png */,
 				5240CC441AF7634F00A9941B /* unlock.png */,
 			);
 			name = Images;
@@ -534,6 +534,11 @@
 				TargetAttributes = {
 					52F0D8C61A9F0753000A5427 = {
 						CreatedOnToolsVersion = 6.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -579,7 +584,7 @@
 				5233AB6C1AA82CB200B70E19 /* bubble_stroked@2x.png in Resources */,
 				5233AB6F1AA82CB200B70E19 /* bubble_tailless.png in Resources */,
 				52387A721AA6B93E0085FA5C /* disable_audio.png in Resources */,
-				524F51651B0DE20A00DC3BA5 /* switch_camera.png in Resources */,
+				21CCE8B11B4FA6BE000A23E4 /* switch_camera.png in Resources */,
 				5233AB8A1AA82CB200B70E19 /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
 				5233AB751AA82CB200B70E19 /* message_received.aiff in Resources */,
 				5233AB6B1AA82CB200B70E19 /* bubble_stroked.png in Resources */,

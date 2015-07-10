@@ -286,6 +286,11 @@
 					215FB3851B26A0DE006EA9C7 = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = VVYWH469LG;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					215FB39E1B26A0DE006EA9C7 = {
 						CreatedOnToolsVersion = 6.3.2;
