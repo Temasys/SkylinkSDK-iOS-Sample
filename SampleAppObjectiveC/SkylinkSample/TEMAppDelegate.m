@@ -7,6 +7,8 @@
 //
 
 #import "TEMAppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 #import "TEMJoinViewController.h"
 #import "TEMRoomViewController.h"
@@ -23,7 +25,8 @@
     [self.window makeKeyAndVisible];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSessionRouteChange:) name:AVAudioSessionRouteChangeNotification object:nil];
-    
+    [Fabric with:@[[Crashlytics class]]];
+
     return YES;
 }
 

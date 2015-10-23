@@ -35,6 +35,8 @@
 		2165528F1B26A848000C79E1 /* TEMFilePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2165528D1B26A848000C79E1 /* TEMFilePickerController.xib */; };
 		216552921B26A963000C79E1 /* JSQDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216552911B26A963000C79E1 /* JSQDemoViewController.m */; };
 		216552951B26AA32000C79E1 /* TEMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 216552941B26AA32000C79E1 /* TEMAppDelegate.m */; };
+		3F93BBA21BD920F2003E7535 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F93BBA01BD920F2003E7535 /* Fabric.framework */; };
+		3F93BBA31BD920F2003E7535 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F93BBA11BD920F2003E7535 /* Crashlytics.framework */; };
 		D12E2C38E355B34A96D91DB7 /* libPods-SkylinkSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA661AECE71C45948760939C /* libPods-SkylinkSample.a */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,8 @@
 		216552911B26A963000C79E1 /* JSQDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQDemoViewController.m; sourceTree = "<group>"; };
 		216552931B26AA32000C79E1 /* TEMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMAppDelegate.h; sourceTree = "<group>"; };
 		216552941B26AA32000C79E1 /* TEMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMAppDelegate.m; sourceTree = "<group>"; };
+		3F93BBA01BD920F2003E7535 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		3F93BBA11BD920F2003E7535 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		652B14261D133793B9163F89 /* Pods-SkylinkSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.debug.xcconfig"; sourceTree = "<group>"; };
 		DA661AECE71C45948760939C /* libPods-SkylinkSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkylinkSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +108,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D12E2C38E355B34A96D91DB7 /* libPods-SkylinkSample.a in Frameworks */,
+				3F93BBA31BD920F2003E7535 /* Crashlytics.framework in Frameworks */,
+				3F93BBA21BD920F2003E7535 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +142,8 @@
 		215FB37D1B26A0DE006EA9C7 = {
 			isa = PBXGroup;
 			children = (
+				3F93BBA01BD920F2003E7535 /* Fabric.framework */,
+				3F93BBA11BD920F2003E7535 /* Crashlytics.framework */,
 				215FB3881B26A0DE006EA9C7 /* SkylinkSample */,
 				215FB3A21B26A0DE006EA9C7 /* SkylinkSampleTests */,
 				215FB3871B26A0DE006EA9C7 /* Products */,
@@ -246,6 +254,7 @@
 				215FB3831B26A0DE006EA9C7 /* Frameworks */,
 				215FB3841B26A0DE006EA9C7 /* Resources */,
 				DFCE63630BED56C40ECB0B2C /* Copy Pods Resources */,
+				3F93BB9B1BD92037003E7535 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -350,6 +359,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3F93BB9B1BD92037003E7535 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 9cdb3a887158fbb18369ab0c5108ccf4a3183f00 6e2f8c22c952d841e88afa852852b28dc16406cde6f156f424b4151ae5c69e49";
+		};
 		4C15C2B7CE21A0678E09A6BB /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -449,7 +471,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
@@ -493,7 +515,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
@@ -523,6 +545,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SkylinkSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -541,6 +567,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SkylinkSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

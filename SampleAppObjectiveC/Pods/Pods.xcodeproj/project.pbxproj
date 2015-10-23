@@ -33,6 +33,8 @@
 		3B472C721FA256ABE6E33898 /* JSQMessagesToolbarContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24CFD45F1BB8D1CDD078DB1C /* JSQMessagesToolbarContentView.h */; };
 		3B89C2A09E184E7637089A06 /* JSQMessagesCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B09D1F9EA44C47A156508C96 /* JSQMessagesCollectionViewFlowLayout.m */; };
 		3F8186390FEA410BD7396C58 /* JSQMessagesLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB054F8D2DAA922D9E15F94C /* JSQMessagesLabel.m */; };
+		3F93BB9E1BD9209C003E7535 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F93BB9C1BD9209C003E7535 /* Fabric.framework */; };
+		3F93BB9F1BD9209C003E7535 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F93BB9D1BD9209C003E7535 /* Crashlytics.framework */; };
 		3FB9FD057EC6FDB35F0E0275 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 5089867D441B552B435F1CE3 /* GCDAsyncUdpSocket.m */; };
 		431CD85B4C4BF437E22E9D66 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C30D1CCE1D8ABA1B43DDF /* SRWebSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		45A9889E91B4B67A9113808F /* JSQMessagesInputToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = E59D296FB280B3B2A069457A /* JSQMessagesInputToolbar.h */; };
@@ -173,6 +175,8 @@
 		3857F3EDECEC96E018224A07 /* JSQMessagesCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesCollectionViewCell.h; path = JSQMessagesViewController/Views/JSQMessagesCollectionViewCell.h; sourceTree = "<group>"; };
 		3A9AE69A3ED1EE44203278C7 /* libPods-SkylinkSample-JSQSystemSoundPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkylinkSample-JSQSystemSoundPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ED72493437BEAC9F7C5BDB4 /* JSQMessagesAvatarFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesAvatarFactory.m; path = JSQMessagesViewController/Factories/JSQMessagesAvatarFactory.m; sourceTree = "<group>"; };
+		3F93BB9C1BD9209C003E7535 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = ../Fabric.framework; sourceTree = "<group>"; };
+		3F93BB9D1BD9209C003E7535 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = ../Crashlytics.framework; sourceTree = "<group>"; };
 		45733B7EE354EC8CBB7A5DEC /* ios-ntp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ios-ntp.h"; path = "ios-ntp-lib/ios-ntp.h"; sourceTree = "<group>"; };
 		46094E7968E1B5591DEFF721 /* Pods-SkylinkSample-JSQMessagesViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SkylinkSample-JSQMessagesViewController-prefix.pch"; sourceTree = "<group>"; };
 		46FB569344EA267DD3568934 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -279,6 +283,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				145820EFAC3236531927B26B /* Foundation.framework in Frameworks */,
+				3F93BB9F1BD9209C003E7535 /* Crashlytics.framework in Frameworks */,
+				3F93BB9E1BD9209C003E7535 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +354,8 @@
 		26CAADA62E9473C557C053AF /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F93BB9C1BD9209C003E7535 /* Fabric.framework */,
+				3F93BB9D1BD9209C003E7535 /* Crashlytics.framework */,
 				5D27670ADC233F47EEB39780 /* Pods-SkylinkSample */,
 			);
 			name = "Targets Support Files";

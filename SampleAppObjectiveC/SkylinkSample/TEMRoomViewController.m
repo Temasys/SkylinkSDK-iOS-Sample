@@ -81,6 +81,10 @@ typedef enum : NSUInteger {
 
 @implementation TEMRoomViewController
 
+// For quick tests, insert the App key and secret here.
+// Not recommended for Production!
+NSString *appKey = @""; NSString *secret = @"";
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -121,9 +125,9 @@ typedef enum : NSUInteger {
     config.timeout = 30;
     ((TEMAppDelegate*)[UIApplication sharedApplication].delegate).appConfig = config;
     
-    // Instante SKYLINKConnection
+    // Instantiate SKYLINKConnection
     [SKYLINKConnection setVerbose:TRUE];
-    mySkylink = [[SKYLINKConnection alloc] initWithConfig:config appKey:@""];
+    mySkylink = [[SKYLINKConnection alloc] initWithConfig:config appKey:appKey];
     mySkylink.lifeCycleDelegate = self;
     mySkylink.remotePeerDelegate = self;
     mySkylink.mediaDelegate = self;
@@ -139,7 +143,7 @@ typedef enum : NSUInteger {
 {
     [super viewDidAppear:animated];
     // Connect to the room
-    if ([mySkylink connectToRoomWithSecret:@"" roomName:self.roomName userInfo:self.myDisplayName])
+    if ([mySkylink connectToRoomWithSecret:secret roomName:self.roomName userInfo:self.myDisplayName])
         NSLog(@"%s::Already connected to a room", __FUNCTION__);
 }
 
