@@ -2,7 +2,6 @@
 #import <UIKit/UIKit.h>
 #endif
 
-#import "Pods-SkylinkSample-environment.h"
 //
 // Prefix header for all source files of the 'ntpA' target in the 'ntpA' project
 //

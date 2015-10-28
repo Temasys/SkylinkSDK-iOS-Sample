@@ -35,9 +35,11 @@
 		2165528F1B26A848000C79E1 /* TEMFilePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2165528D1B26A848000C79E1 /* TEMFilePickerController.xib */; };
 		216552921B26A963000C79E1 /* JSQDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216552911B26A963000C79E1 /* JSQDemoViewController.m */; };
 		216552951B26AA32000C79E1 /* TEMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 216552941B26AA32000C79E1 /* TEMAppDelegate.m */; };
+		3F58A3A31BDF8BD100BFF1A2 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F803DCD1BDA18F7001E8BB5 /* VideoToolbox.framework */; };
+		3F58A3A41BDF8C0400BFF1A2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F803DCF1BDA1ABC001E8BB5 /* GLKit.framework */; };
 		3F93BBA21BD920F2003E7535 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F93BBA01BD920F2003E7535 /* Fabric.framework */; };
 		3F93BBA31BD920F2003E7535 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F93BBA11BD920F2003E7535 /* Crashlytics.framework */; };
-		D12E2C38E355B34A96D91DB7 /* libPods-SkylinkSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA661AECE71C45948760939C /* libPods-SkylinkSample.a */; };
+		B06F65A501CFF667121707D3 /* libPods-SkylinkSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3834424D18A775B422855537 /* libPods-SkylinkSample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0394120DE458F30599D5CF1A /* Pods-SkylinkSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.release.xcconfig"; sourceTree = "<group>"; };
+		1834EFC869B87C138D2A4798 /* Pods-SkylinkSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.release.xcconfig"; sourceTree = "<group>"; };
 		2158E9231B26AFC3003CA6E7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		2158E9241B26AFC3003CA6E7 /* disable_audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disable_audio.png; sourceTree = "<group>"; };
 		2158E9251B26AFC3003CA6E7 /* disable_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disable_camera.png; sourceTree = "<group>"; };
@@ -96,10 +98,18 @@
 		216552911B26A963000C79E1 /* JSQDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQDemoViewController.m; sourceTree = "<group>"; };
 		216552931B26AA32000C79E1 /* TEMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMAppDelegate.h; sourceTree = "<group>"; };
 		216552941B26AA32000C79E1 /* TEMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMAppDelegate.m; sourceTree = "<group>"; };
+		3834424D18A775B422855537 /* libPods-SkylinkSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkylinkSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F58A39D1BDE4B5100BFF1A2 /* SKYLINK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKYLINK.framework; path = "../../../Library/Developer/Xcode/DerivedData/WebRTC-bgqpudrkdwurifcvqamsimmmwbyx/Build/Products/Debug-iphoneos/SKYLINK.framework"; sourceTree = "<group>"; };
+		3F58A3A01BDF667900BFF1A2 /* SKYLINK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKYLINK.framework; path = "../../engineering-sdk-ios/sdk/ios/release_build_output/SKYLINK.framework"; sourceTree = "<group>"; };
+		3F71B6C91BD7C1A80041E324 /* SKYLINK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKYLINK.framework; path = "../../../Library/Developer/Xcode/DerivedData/WebRTC-guejuqhniponihcyvqzoktvgqhcu/Build/Products/Debug-iphoneos/SKYLINK.framework"; sourceTree = "<group>"; };
+		3F803DCD1BDA18F7001E8BB5 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		3F803DCF1BDA1ABC001E8BB5 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		3F803DD11BDA1BEA001E8BB5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3F803DD41BDA238A001E8BB5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3F803DD61BDA2392001E8BB5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3F93BBA01BD920F2003E7535 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		3F93BBA11BD920F2003E7535 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		652B14261D133793B9163F89 /* Pods-SkylinkSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.debug.xcconfig"; sourceTree = "<group>"; };
-		DA661AECE71C45948760939C /* libPods-SkylinkSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkylinkSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63FA095E6E2C9991D2107315 /* Pods-SkylinkSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +117,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D12E2C38E355B34A96D91DB7 /* libPods-SkylinkSample.a in Frameworks */,
 				3F93BBA31BD920F2003E7535 /* Crashlytics.framework in Frameworks */,
 				3F93BBA21BD920F2003E7535 /* Fabric.framework in Frameworks */,
+				3F58A3A41BDF8C0400BFF1A2 /* GLKit.framework in Frameworks */,
+				3F58A3A31BDF8BD100BFF1A2 /* VideoToolbox.framework in Frameworks */,
+				B06F65A501CFF667121707D3 /* libPods-SkylinkSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,8 +240,8 @@
 		308B80B950EB93E3D58E833C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				652B14261D133793B9163F89 /* Pods-SkylinkSample.debug.xcconfig */,
-				0394120DE458F30599D5CF1A /* Pods-SkylinkSample.release.xcconfig */,
+				63FA095E6E2C9991D2107315 /* Pods-SkylinkSample.debug.xcconfig */,
+				1834EFC869B87C138D2A4798 /* Pods-SkylinkSample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -237,7 +249,15 @@
 		3D729BB6554F5349856576A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DA661AECE71C45948760939C /* libPods-SkylinkSample.a */,
+				3F58A3A01BDF667900BFF1A2 /* SKYLINK.framework */,
+				3F58A39D1BDE4B5100BFF1A2 /* SKYLINK.framework */,
+				3F803DD61BDA2392001E8BB5 /* Foundation.framework */,
+				3F803DD41BDA238A001E8BB5 /* Security.framework */,
+				3F803DD11BDA1BEA001E8BB5 /* CFNetwork.framework */,
+				3F803DCF1BDA1ABC001E8BB5 /* GLKit.framework */,
+				3F803DCD1BDA18F7001E8BB5 /* VideoToolbox.framework */,
+				3F71B6C91BD7C1A80041E324 /* SKYLINK.framework */,
+				3834424D18A775B422855537 /* libPods-SkylinkSample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -255,6 +275,7 @@
 				215FB3841B26A0DE006EA9C7 /* Resources */,
 				DFCE63630BED56C40ECB0B2C /* Copy Pods Resources */,
 				3F93BB9B1BD92037003E7535 /* ShellScript */,
+				11821CCAC05562C52B59CDAE /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -359,6 +380,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		11821CCAC05562C52B59CDAE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3F93BB9B1BD92037003E7535 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -491,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -529,7 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -538,7 +574,7 @@
 		};
 		215FB3AA1B26A0DE006EA9C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 652B14261D133793B9163F89 /* Pods-SkylinkSample.debug.xcconfig */;
+			baseConfigurationReference = 63FA095E6E2C9991D2107315 /* Pods-SkylinkSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -546,12 +582,29 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"\"$(PODS_ROOT)/SKYLINK\"",
+					"$(PROJECT_DIR)/../../engineering-sdk-ios/sdk/ios/release_build_output",
 				);
 				INFOPLIST_FILE = SkylinkSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SkylinkSample",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"JSQMessagesViewController\"",
+					"-l\"JSQSystemSoundPlayer\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"QuartzCore\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -560,7 +613,7 @@
 		};
 		215FB3AB1B26A0DE006EA9C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0394120DE458F30599D5CF1A /* Pods-SkylinkSample.release.xcconfig */;
+			baseConfigurationReference = 1834EFC869B87C138D2A4798 /* Pods-SkylinkSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -568,12 +621,29 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"\"$(PODS_ROOT)/SKYLINK\"",
+					"$(PROJECT_DIR)/../../engineering-sdk-ios/sdk/ios/release_build_output",
 				);
 				INFOPLIST_FILE = SkylinkSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SkylinkSample",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"JSQMessagesViewController\"",
+					"-l\"JSQSystemSoundPlayer\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"QuartzCore\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

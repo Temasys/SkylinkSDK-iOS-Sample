@@ -1,1 +1,0 @@
-PODS_SKYLINKSAMPLE_TEMA_IOS_NTP_OTHER_LDFLAGS = -framework "CFNetwork" -framework "CoreGraphics" -framework "Foundation" -framework "UIKit"
