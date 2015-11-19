@@ -287,6 +287,11 @@
 
 - (void)addChatMessage:(NSString*)message nick:(NSString*)nick peerId:(NSString*)peerId isPublic:(BOOL)isPublic
 {
+    // If nick is provided, use peerId as nick.
+    if(nick == nil) {
+        nick = peerId;
+    }
+    
     if (self.demoViewController) {
         if (isPublic) {
             if (!self.demoViewController.peerId) {
