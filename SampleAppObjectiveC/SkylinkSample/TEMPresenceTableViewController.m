@@ -287,7 +287,7 @@
 
 - (void)addChatMessage:(NSString*)message nick:(NSString*)nick peerId:(NSString*)peerId isPublic:(BOOL)isPublic
 {
-    // If nick is provided, use peerId as nick.
+    // If no nick is provided, use PeerId as nick.
     if(nick == nil) {
         nick = peerId;
     }
