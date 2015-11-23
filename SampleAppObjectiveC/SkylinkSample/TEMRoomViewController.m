@@ -402,6 +402,11 @@ NSString *appKey = @""; NSString *secret = @"";
 - (void)connection:(SKYLINKConnection*)connection didLeavePeerWithMessage:(NSString*)errorMessage peerId:(NSString*)peerId
 {
     [self showToastLabel:[NSString stringWithFormat:@"'%@' has left the room!", [self getDisplayName:[connection getUserInfo:peerId]]]];
+    [self removePeerWithId:peerId];
+}
+
+- (void)removePeerWithId:(NSString*)peerId
+{
     for (NSString *remotePeerId in remotePeerArray)
         if ([peerId caseInsensitiveCompare:remotePeerId] == NSOrderedSame) {
             [remotePeerArray removeObject:peerId];
@@ -421,12 +426,14 @@ NSString *appKey = @""; NSString *secret = @"";
             }
             break;
         }
+    TEMRichVideoView *videoViewDelete;
     for (TEMRichVideoView *videoView in remoteVideoViewArray) {
         if ([videoView.ID caseInsensitiveCompare:peerId] == NSOrderedSame) {
-            [self deleteRemoteVideoView:videoView];
+            videoViewDelete = videoView;
             break;
         }
     }
+    [self deleteRemoteVideoView:videoViewDelete];
 }
 
 #pragma mark - SKYLINKConnectionMediaDelegate
@@ -694,6 +701,14 @@ NSString *appKey = @""; NSString *secret = @"";
 #pragma mark - IBAction
 
 - (IBAction)closeButtonTapped:(id)sender {
+    // Remove all remote Peers from UI
+    NSMutableArray *peerIds = [NSMutableArray new];
+    for (NSString *remotePeerId in remotePeerArray) {
+        [peerIds addObject:remotePeerId];
+    }
+    for (NSString *remotePeerId in peerIds) {
+        [self removePeerWithId:remotePeerId];
+    }
     [remotePeerArray removeAllObjects];
     remotePeerArray = nil;
     
@@ -714,11 +729,14 @@ NSString *appKey = @""; NSString *secret = @"";
     [self.localVideoView removeFromSuperview];
     self.localVideoView = nil;
         
-    [self dismissViewControllerAnimated:YES completion:^{
-        // Disconnect from the room.
-        [mySkylink disconnect];
+    // Disconnect from room and deallocate SKYLINKConnection after that.
+    [mySkylink disconnect:^{
+        // After disconnect from room is done, the block here will be executed on the main thread.
         mySkylink = nil;
+        // update UI on the main thread
+        [self dismissViewControllerAnimated:YES completion:^{
         ((TEMAppDelegate*)[UIApplication sharedApplication].delegate).roomViewController = nil;
+    }];
     }];
 }
 
