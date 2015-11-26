@@ -416,12 +416,10 @@ NSString *appKey = @""; NSString *secret = @"";
                 presenceNavigationController.minimize = YES;
                 // Unmute the audio if everybody has left the room.
                 [mySkylink muteAudio:FALSE];
-                [self.audioButton setImage:[UIImage imageNamed:@"disable_audio"] forState:UIControlStateNormal];
-                self.audioButton.myState = 0;
+                [self setAudioButtonImage];
                 // Unmute the video if everybody has left the room.
                 [mySkylink muteVideo:FALSE];
-                [self.videoButton setImage:[UIImage imageNamed:@"disable_camera"] forState:UIControlStateNormal];
-                self.videoButton.myState = 0;
+                [self setVideoButtonImage];
                 [self stopTimer];
             }
             break;
@@ -633,6 +631,26 @@ NSString *appKey = @""; NSString *secret = @"";
     }
 }
 
+// UI helper methods
+
+// Set the image for audio button based on the actual state of audio.
+- (void)setAudioButtonImage {
+    if ([mySkylink isAudioMuted]) {
+        [_audioButton setImage:[UIImage imageNamed:@"enable_audio"] forState:UIControlStateNormal];
+    } else {
+        [_audioButton setImage:[UIImage imageNamed:@"disable_audio"] forState:UIControlStateNormal];
+    }
+}
+
+// Set the image for audio button based on the actual state of audio.
+- (void)setVideoButtonImage {
+    if ([mySkylink isVideoMuted]) {
+        [_videoButton setImage:[UIImage imageNamed:@"enable_camera"] forState:UIControlStateNormal];
+    } else {
+        [_videoButton setImage:[UIImage imageNamed:@"disable_camera"] forState:UIControlStateNormal];
+    }
+}
+
 #pragma mark - UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -747,30 +765,26 @@ NSString *appKey = @""; NSString *secret = @"";
             [mySkylink switchCamera];
             break;
         case 1:
-            if (controlButton.myState == 0) {
-                [controlButton setImage:[UIImage imageNamed:@"enable_camera"] forState:UIControlStateNormal];
-                controlButton.myState = 1;
+            if (![mySkylink isVideoMuted]) {
                 // Mute video
                 [mySkylink muteVideo:TRUE];
             } else {
-                [controlButton setImage:[UIImage imageNamed:@"disable_camera"] forState:UIControlStateNormal];
-                controlButton.myState = 0;
                 // Unmute video
                 [mySkylink muteVideo:FALSE];
             }
+            // Set button image
+            [self setVideoButtonImage];
             break;
         case 2:
-            if (controlButton.myState == 0) {
-                [controlButton setImage:[UIImage imageNamed:@"enable_audio"] forState:UIControlStateNormal];
-                controlButton.myState = 1;
+            if (![mySkylink isAudioMuted]) {
                 // Mute audio
                 [mySkylink muteAudio:TRUE];
             } else {
-                [controlButton setImage:[UIImage imageNamed:@"disable_audio"] forState:UIControlStateNormal];
-                controlButton.myState = 0;
                 // Unmute audio
                 [mySkylink muteAudio:FALSE];
             }
+            // Set button image
+            [self setAudioButtonImage];
             break;
         case 3:
             if (controlButton.myState == 0) {
@@ -849,8 +863,13 @@ NSString *appKey = @""; NSString *secret = @"";
     } else {
         if (videoView == self.remoteVideoView) {
             TEMRichVideoView *lastVideoView = [remoteVideoViewArray lastObject];
-            if (lastVideoView == self.remoteVideoView)
-                lastVideoView = [remoteVideoViewArray objectAtIndex:remoteVideoViewArray.count-2];
+            if (lastVideoView == self.remoteVideoView) {
+                // Note XR: Should investigate the logic of this if block.
+                NSInteger index = remoteVideoViewArray.count-2;
+                if (index >= 0) {
+                    lastVideoView = [remoteVideoViewArray objectAtIndex:index];
+                }
+            }
             [self swapVideosAnimated:lastVideoView animated:NO];
             [videoView removeFromSuperview];
             [remoteVideoViewArray removeObject:videoView];
@@ -996,6 +1015,9 @@ NSString *appKey = @""; NSString *secret = @"";
 
 - (void)showControlView
 {
+    // Set the right Audio and Video mute images
+    [self setAudioButtonImage];
+    [self setVideoButtonImage];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlView) object:nil];
     self.volumeView.alpha = self.controlView.alpha = 1.0;
     [self performSelector:@selector(hideControlView) withObject:nil afterDelay:3.0];
