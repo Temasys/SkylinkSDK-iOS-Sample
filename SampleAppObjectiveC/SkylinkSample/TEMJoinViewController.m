@@ -43,6 +43,12 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidChangeFrameNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    // Set the default room name (optional)
+    // Populate this field for quicker testing.
+    self.roomNameField.text = @"";
+    
+    NSLog(@"Using Skylink SDK for iOS, version: %@.", [SKYLINKConnection getSkylinkVersion]);
 }
 
 - (void)didReceiveMemoryWarning
