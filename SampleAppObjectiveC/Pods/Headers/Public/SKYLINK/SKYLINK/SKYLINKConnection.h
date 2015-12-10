@@ -1,1 +1,1 @@
-../../../../SKYLINK/SKYLINK.framework/Headers/SKYLINKConnection.h
+../../../../SKYLINK/SKYLINK.framework/Versions/A/Headers/SKYLINKConnection.h

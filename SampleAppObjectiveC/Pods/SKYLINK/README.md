@@ -19,7 +19,7 @@ it, simply add the following line to your Podfile:
 
 ## Author
 
-Temasys Communications, shussain@temasys.com
+Temasys Communications, xiangrong@temasys.com.sg
 
 ## License
 

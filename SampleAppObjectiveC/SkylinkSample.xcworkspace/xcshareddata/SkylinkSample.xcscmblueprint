@@ -5,11 +5,13 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "62B89266D84A74196C7835E8640ACC460C54CACE" : 0,
+    "C1AD24F6BA16ADCE5EFDCD08DAA865F533E987B8" : 0,
     "08FF4A7BEF927BFFBD924DF0064843392BEEACFC" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6EAE6E09-071C-49E9-A416-9CC887DC8ADB",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "62B89266D84A74196C7835E8640ACC460C54CACE" : "engineering-sdk-ios\/",
+    "C1AD24F6BA16ADCE5EFDCD08DAA865F533E987B8" : "SKYLINK-iOS\/",
     "08FF4A7BEF927BFFBD924DF0064843392BEEACFC" : "SkylinkSDK-iOS-Sample"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "SkylinkSample",
@@ -25,6 +27,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/TemasysCommunications\/engineering-sdk-ios.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "62B89266D84A74196C7835E8640ACC460C54CACE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Temasys\/SKYLINK-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C1AD24F6BA16ADCE5EFDCD08DAA865F533E987B8"
     }
   ]
 }

@@ -281,7 +281,7 @@ typedef enum SKYLINKAssetType {
 @property (nonatomic, unsafe_unretained) NSInteger timeout;
 /**
  @brief configuration for advanced users.
- @discussion for now the system accepts turning on/off STUN and TURN servers via STUN=true/false and TURN=true/false. Transport can be set as transport=TCP/UDP. Preferred audio codec can be set as audio=Opus/iLBC.
+ @discussion To disable STUN and/or TURN servers, use STUN=true and/or TURN=true. Transport can be set as transport=TCP/UDP. Preferred audio codec can be set as audio=Opus/iLBC.
  */
 @property (nonatomic, weak) NSDictionary *userInfo;
 
@@ -356,8 +356,10 @@ typedef enum SKYLINKAssetType {
 - (NSString*)connectToRoomWithCredentials:(NSDictionary*)credInfo roomName:(NSString*)roomName userInfo:(id)userInfo;
 
 /** Leave the room.
+ @discussion Leave the room and remove any video renderers and PeerConnections.
+ @param completion The completion block called on the UI thread after leaving the room. This block is a good place to deallocate SKYLINKConnection if desired. Leave as empty block if not required.
  */
-- (void)disconnect;
+- (void)disconnect:(void (^) ())completion;
 
 /** 
  @name Room Control.
@@ -381,15 +383,25 @@ typedef enum SKYLINKAssetType {
  @name Media
  */
 
-/** Mute own audio and trigger mute audio call back for all other peers.
- @param isMuted Flag to impare muted audio condition.
+/** Mute/unmute own audio and trigger mute/unmute audio call back for all other peers.
+ @param isMuted Flag to set if audio should be muted. Set to true to mute and false to unmute.
  */
 - (void)muteAudio:(BOOL)isMuted;
 
-/** Mute own video and trigger mute video call back for all other peers.
- @param isMuted Flag to impare muted video condition.
+/** Mute/unmute own video and trigger mute/unmute video call back for all other peers.
+ @param isMuted Flag to set if video should be muted. Set to true to mute and false to unmute.
  */
 - (void)muteVideo:(BOOL)isMuted;
+
+/** Checks if own audio is currently muted.
+ @return true if audio is muted and false otherwise.
+ */
+- (BOOL)isAudioMuted;
+
+/** Checks if own video is currently muted.
+ @return true if video is muted and false otherwise.
+ */
+- (BOOL)isVideoMuted;
 
 /** Switches between front and back camera. By default the front camera input is captured.
  */
@@ -471,7 +483,12 @@ typedef enum SKYLINKAssetType {
  @name Utility
  */
 
-/** Enable/diable verbose logs for all the connections.
+/** Get the version string of this Skylink SDK for iOS.
+ @return Version string of this Skylink SDK for iOS.
+ */
++ (NSString*)getSkylinkVersion;
+
+/** Enable/disable verbose logs for all the connections.
  @param verbose enable/disable verbose logs. It is FALSE by default.
  */
 + (void)setVerbose:(BOOL)verbose;
