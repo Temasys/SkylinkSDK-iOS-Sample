@@ -9,8 +9,7 @@ PODS:
   - tema-ios-ntp (1.0.0)
 
 DEPENDENCIES:
-  - JSQMessagesViewController (from `https://github.com/jessesquires/JSQMessagesViewController`,
-    branch `version_5.3.2_patch`)
+  - JSQMessagesViewController (from `https://github.com/jessesquires/JSQMessagesViewController`, branch `version_5.3.2_patch`)
   - SKYLINK
 
 EXTERNAL SOURCES:
@@ -30,4 +29,6 @@ SPEC CHECKSUMS:
   SocketRocket: 7284ab9370a06c99aba92b2fe3a32aedd0f9a6fa
   tema-ios-ntp: a6f001396b5944bff739f409dc422966e5b08408
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 8b201d5432832d3f1be39fb79855da1c5fa89c90
+
+COCOAPODS: 1.0.0.beta.1
