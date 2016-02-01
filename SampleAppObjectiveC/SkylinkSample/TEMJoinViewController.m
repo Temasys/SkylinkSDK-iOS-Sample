@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Temasys Communications. All rights reserved.
 //
 
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 #import "TEMJoinViewController.h"
 
 #import "TEMAppDelegate.h"
@@ -112,6 +115,8 @@
     NSString *roomName = [self.roomNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     if (displayName.length <= 0) {
+        // Test Crashlytics by uncommenting following.
+        // [[Crashlytics sharedInstance] crash];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Missing Value!" message:@"Please enter display name" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         [self.displayNameField becomeFirstResponder];

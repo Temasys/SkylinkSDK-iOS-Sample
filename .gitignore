@@ -25,3 +25,9 @@ DerivedData
 #
 #Pods/
 SkylinkSample.xcscmblueprint
+
+# Fabric
+#
+# User will add their own fabric.sh if desired.
+# Refer to README.md for details on adding this file.
+SampleAppObjectiveC/fabric.sh

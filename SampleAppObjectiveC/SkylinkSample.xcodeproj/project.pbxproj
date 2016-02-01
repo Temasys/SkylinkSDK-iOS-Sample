@@ -428,7 +428,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 9cdb3a887158fbb18369ab0c5108ccf4a3183f00 6e2f8c22c952d841e88afa852852b28dc16406cde6f156f424b4151ae5c69e49";
+			shellScript = ./fabric_checker.sh;
 		};
 		5A54B37017710E121415483A /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -636,7 +636,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"\"$(PODS_ROOT)/SKYLINK\"",
-					"$(PROJECT_DIR)/../../engineering-sdk-ios/sdk/ios/release_build_output",
 				);
 				INFOPLIST_FILE = SkylinkSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -675,7 +674,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"\"$(PODS_ROOT)/SKYLINK\"",
-					"$(PROJECT_DIR)/../../engineering-sdk-ios/sdk/ios/release_build_output",
 				);
 				INFOPLIST_FILE = SkylinkSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
