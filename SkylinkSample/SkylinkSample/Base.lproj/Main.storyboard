@@ -1123,7 +1123,7 @@ Filename:</string>
                                 </variation>
                             </visualEffectView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="AhW-ap-kP1">
-                                <rect key="frame" x="274.5" y="275" width="50" height="50"/>
+                                <rect key="frame" x="275" y="275" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.50406788790000001" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9hK-oz-dfq"/>
@@ -1135,8 +1135,8 @@ Filename:</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </activityIndicatorView>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" alpha="0.80000001192092896" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Chat nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aAY-lu-Anp">
-                                <rect key="frame" x="19" y="77" width="379" height="30"/>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" alpha="0.80000001192092896" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Chat nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aAY-lu-Anp">
+                                <rect key="frame" x="20" y="77" width="379" height="30"/>
                                 <color key="backgroundColor" red="0.83070659940000002" green="0.83662965020000002" blue="0.85439880280000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="118" id="evK-Um-8UQ"/>
@@ -1185,8 +1185,8 @@ Filename:</string>
                                     <action selector="sendTap:" destination="Zcp-Wk-Mip" eventType="touchUpInside" id="B8N-ry-Mfb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-zB-7Oe" customClass="UIAspectFitButton">
-                                <rect key="frame" x="504" y="72" width="75" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-zB-7Oe" customClass="UIAspectFitButton">
+                                <rect key="frame" x="505" y="72" width="75" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="hvl-3g-eBW"/>
                                     <constraint firstAttribute="width" constant="75" id="z6I-cw-85X"/>
@@ -1198,8 +1198,8 @@ Filename:</string>
                                     <action selector="dismissKeyboardTap:" destination="Zcp-Wk-Mip" eventType="touchUpInside" id="h7K-A6-Gnf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4A-43-H85">
-                                <rect key="frame" x="406" y="72" width="90" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4A-43-H85">
+                                <rect key="frame" x="407" y="72" width="90" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="P7F-ik-LxO"/>
                                     <constraint firstAttribute="height" constant="40" id="w1B-Qs-AWI"/>

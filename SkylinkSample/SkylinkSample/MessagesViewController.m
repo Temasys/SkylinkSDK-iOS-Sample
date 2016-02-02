@@ -110,7 +110,7 @@
 #pragma mark - SKYLINKConnectionMessagesDelegate
 
 - (void)connection:(SKYLINKConnection*)connection didReceiveCustomMessage:(id)message public:(BOOL)isPublic peerId:(NSString*)peerId {
-    [self.messages insertObject:@{@"message" : message[@"message"],
+    [self.messages insertObject:@{@"message" : message, // could also be custom structure like message[@"message"]
                                   @"isPublic" : [NSNumber numberWithBool:isPublic],
                                   @"peerId" : peerId,
                                   @"type" : @"signaling server"
@@ -130,9 +130,9 @@
 }
 
 - (void)connection:(SKYLINKConnection*)connection didReceiveBinaryData:(NSData*)data peerId:(NSString*)peerId {
-    NSLog(@"Received binary data of length %lu from %@", (unsigned long)data.length, peerId);
-    [self.messages insertObject:@{@"message" :[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding],
-                                  @"isPublic" :[NSNumber numberWithBool:NO],
+    id maybeString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    [self.messages insertObject:@{@"message" : (maybeString && [maybeString isKindOfClass:[NSString class]]) ? ((NSString *)maybeString) : [NSString stringWithFormat:@"Binary data of length %lu", (unsigned long)data.length], // if received by the Android sample app, the length will be printed as message
+                                  @"isPublic" :[NSNumber numberWithBool:NO], // always private if received by iOS sample app
                                   @"peerId" : peerId,
                                   @"type" : @"binary data"
                                   }
@@ -297,7 +297,7 @@
             break;
             
         case 1:
-            [self.skylinkConnection sendCustomMessage:@{@"message" : message} peerId:peerId];
+            [self.skylinkConnection sendCustomMessage:message peerId:peerId]; // message could also be custom structure like: ...sendCustomMessage:@{@"message" : message}...
             break;
             
         case 2:
