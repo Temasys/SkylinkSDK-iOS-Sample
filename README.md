@@ -201,6 +201,11 @@ After setting the `SKYLINKConnection` delegates, you need to implement the corre
 
 **Ressources**
 ==========================
+
+Support
+-------
+ If you encounter any issues or have any enquiries regarding Skylink, drop us a note on our [support portal](http://support.temasys.com.sg/support/login) and we would be happy to help! 
+
 Tutorials
 -------
 
