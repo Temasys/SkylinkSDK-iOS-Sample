@@ -48,7 +48,11 @@
     self.skylinkConnection.remotePeerDelegate = self;
     // Connecting to a room
     [SKYLINKConnection setVerbose:TRUE];
-    [self.skylinkConnection connectToRoomWithSecret:self.skylinkApiSecret roomName:ROOM_NAME userInfo:nil];
+    
+    // connectToRoomWithCredentials example
+    NSDictionary *credInfos = @{@"startTime" : [NSDate date], @"duration" : [NSNumber numberWithFloat:2.0f]};
+    NSString *credential = [SKYLINKConnection calculateCredentials:ROOM_NAME duration:[credInfos[@"duration"] floatValue] startTime:credInfos[@"startTime"] secret:self.skylinkApiSecret];
+    [self.skylinkConnection connectToRoomWithCredentials:@{@"credential" : credential, @"startTime" : credInfos[@"startTime"], @"duration" : credInfos[@"duration"]} roomName:ROOM_NAME userInfo:nil];
 }
 
 -(void)disconnect {

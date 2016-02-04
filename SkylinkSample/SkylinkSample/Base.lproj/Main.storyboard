@@ -456,7 +456,7 @@ Get it at developer.temasys.com.sg/register</string>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Skylink Examples" id="5b1-ep-DiU">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="CA6-pA-fp5">
+                        <barButtonItem key="rightBarButtonItem" id="CA6-pA-fp5">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="0T5-ab-ufS">
                                 <rect key="frame" x="558" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -850,7 +850,7 @@ Get it at developer.temasys.com.sg/register</string>
                                     <outlet property="delegate" destination="Z2Q-yh-bF6" id="RHp-b5-id8"/>
                                 </connections>
                             </tableView>
-                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="Mro-4F-ZEP">
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mro-4F-ZEP">
                                 <rect key="frame" x="0.0" y="64" width="600" height="4"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="hmM-7U-hxE"/>

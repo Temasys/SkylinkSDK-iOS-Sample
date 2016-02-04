@@ -111,8 +111,8 @@ The following describes the **SKYLINKConnection** class usage. This is the most 
 | 	  myPeerId	| 	`(✓)`			| 	`(✓)`			| 	`(✓)`			| 	`✓`	| 	`(✓)`			| 
 | 	**Lifecycle**	| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
 | 	- initWithConfig:appKey:	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
-| 	- connectToRoomWithSecret:roomName:userInfo:	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
-| 	- connectToRoomWithCredentials:roomName:userInfo:	| 		| 		| 		| 		| 		| 
+| 	- connectToRoomWithSecret:roomName:userInfo:	| 	`✓`	| 	`✓`	| 		| 	`✓`	| 	`✓`	| 
+| 	- connectToRoomWithCredentials:roomName:userInfo:	| 		| 		| 	`✓`	| 		| 		| 
 | 	- disconnect:	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
 | 	**Room Control.**	| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
 | 	- refreshConnection:	| 	`✓`	| 		| 		| 		| 		| 
@@ -139,7 +139,7 @@ The following describes the **SKYLINKConnection** class usage. This is the most 
 | 	**Utility**| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
 | 	+ getSkylinkVersion	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
 | 	+ setVerbose:	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
-| 	+ calculateCredentials:duration:startTime\:secret \:	| 		| 		| 		| 		| 		| 
+| 	+ calculateCredentials:duration:startTime\:secret \:	| 		| 		| 	`✓`	| 		| 		| 
 
 
 The **SKYLINKConnectionConfig** is the class used to configure a newly created `SKYLINKConnection` instance.

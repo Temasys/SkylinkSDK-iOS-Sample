@@ -294,7 +294,7 @@
             transferInProgressPeerId = @"";
         }
         else {
-            [[[UIAlertView alloc] initWithTitle:@"No file URL" message:@"\nError: there is no file URL. Try another merdia." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            [[[UIAlertView alloc] initWithTitle:@"No file URL" message:@"\nError: there is no file URL. Try another media." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     }
 }
