@@ -31,7 +31,7 @@
 @property (strong, nonatomic) SKYLINKConnection *skylinkConnection;
 @property (strong, nonatomic) NSMutableArray *peerIds;
 
-@property (strong, nonatomic) NSMutableDictionary *peersInfos; //16h44 / 16h55
+@property (strong, nonatomic) NSMutableDictionary *peersInfos;
 
 @end
 
@@ -132,7 +132,7 @@
     
     if (![self.peerIds containsObject:peerId]) [self.peerIds addObject:peerId];
     if (self.peerIds.count >= 4) [self lockRoom:YES];
-    if (![self.peersInfos.allKeys containsObject:peerId]  && self.peersInfos.count < 4) [self.peersInfos addEntriesFromDictionary:@{peerId : @{@"videoView" : [NSNull null], @"videoSize" : [NSNull null], @"isAudioMuted" : [NSNull null], @"isVideoMuted" : [NSNull null]} }];
+    if (![self.peersInfos.allKeys containsObject:peerId]) [self.peersInfos addEntriesFromDictionary:@{peerId : @{@"videoView" : [NSNull null], @"videoSize" : [NSNull null], @"isAudioMuted" : [NSNull null], @"isVideoMuted" : [NSNull null]} }];
     
     [self.peersInfos setObject:@{@"videoView" : self.peersInfos[peerId][@"videoView"],
                                  @"videoSize" : [NSValue valueWithCGSize:CGSizeMake(pmProperties.videoWidth, pmProperties.videoHeight)],
@@ -154,7 +154,7 @@
 
 - (void)connection:(SKYLINKConnection*)connection didRenderPeerVideo:(UIView*)peerVideoView peerId:(NSString*)peerId {
     if (![self.peerIds containsObject:peerId]) [self.peerIds addObject:peerId];
-    if (![self.peersInfos.allKeys containsObject:peerId] && self.peersInfos.count < 4) [self.peersInfos addEntriesFromDictionary:@{peerId : @{@"videoView" : [NSNull null], @"videoSize" : [NSNull null], @"isAudioMuted" : [NSNull null], @"isVideoMuted" : [NSNull null] } }];
+    if (![self.peersInfos.allKeys containsObject:peerId]) [self.peersInfos addEntriesFromDictionary:@{peerId : @{@"videoView" : [NSNull null], @"videoSize" : [NSNull null], @"isAudioMuted" : [NSNull null], @"isVideoMuted" : [NSNull null] } }];
     self.peersInfos[peerId] = @{@"videoView" : peerVideoView, @"videoSize" : self.peersInfos[peerId][@"videoSize"], @"isAudioMuted" : self.peersInfos[peerId][@"isAudioMuted"], @"isVideoMuted" : self.peersInfos[peerId][@"isVideoMuted"] };
     
     [self refreshPeerViews];
