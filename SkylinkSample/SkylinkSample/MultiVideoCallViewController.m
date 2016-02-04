@@ -132,7 +132,7 @@
     
     if (![self.peerIds containsObject:peerId]) [self.peerIds addObject:peerId];
     if (self.peerIds.count >= 4) [self lockRoom:YES];
-    if (![self.peersInfos.allKeys containsObject:peerId]) [self.peersInfos addEntriesFromDictionary:@{peerId : @{@"videoView" : [NSNull null], @"videoSize" : [NSNull null], @"isAudioMuted" : [NSNull null], @"isVideoMuted" : [NSNull null]} }];
+    if (![self.peersInfos.allKeys containsObject:peerId]  && self.peersInfos.count < 4) [self.peersInfos addEntriesFromDictionary:@{peerId : @{@"videoView" : [NSNull null], @"videoSize" : [NSNull null], @"isAudioMuted" : [NSNull null], @"isVideoMuted" : [NSNull null]} }];
     
     [self.peersInfos setObject:@{@"videoView" : self.peersInfos[peerId][@"videoView"],
                                  @"videoSize" : [NSValue valueWithCGSize:CGSizeMake(pmProperties.videoWidth, pmProperties.videoHeight)],
@@ -153,10 +153,8 @@
 }
 
 - (void)connection:(SKYLINKConnection*)connection didRenderPeerVideo:(UIView*)peerVideoView peerId:(NSString*)peerId {
-    if (![self.peerIds containsObject:peerId]) {
-        [self.peerIds addObject:peerId];
-    }
-    if (![self.peersInfos.allKeys containsObject:peerId]) [self.peersInfos addEntriesFromDictionary:@{peerId : @{@"videoView" : [NSNull null], @"videoSize" : [NSNull null], @"isAudioMuted" : [NSNull null], @"isVideoMuted" : [NSNull null] } }];
+    if (![self.peerIds containsObject:peerId]) [self.peerIds addObject:peerId];
+    if (![self.peersInfos.allKeys containsObject:peerId] && self.peersInfos.count < 4) [self.peersInfos addEntriesFromDictionary:@{peerId : @{@"videoView" : [NSNull null], @"videoSize" : [NSNull null], @"isAudioMuted" : [NSNull null], @"isVideoMuted" : [NSNull null] } }];
     self.peersInfos[peerId] = @{@"videoView" : peerVideoView, @"videoSize" : self.peersInfos[peerId][@"videoSize"], @"isAudioMuted" : self.peersInfos[peerId][@"isAudioMuted"], @"isVideoMuted" : self.peersInfos[peerId][@"isVideoMuted"] };
     
     [self refreshPeerViews];
@@ -251,15 +249,15 @@
     for (NSString *aPeerId in self.peerIds) {
         // Add the rendered view
         NSInteger index = [self.peerIds indexOfObject:aPeerId];
-        [self addRenderedVideo:self.peersInfos[aPeerId][@"videoView"] insideContainer:peerContainerViews[index] mirror:NO];
+        if (index < peerContainerViews.count) [self addRenderedVideo:self.peersInfos[aPeerId][@"videoView"] insideContainer:peerContainerViews[index] mirror:NO];
         // refresh the label
         id audioMuted = self.peersInfos[aPeerId][@"isAudioMuted"];
         id videoMuted = self.peersInfos[aPeerId][@"isVideoMuted"];
         NSString *mutedInfos = @"";
         if ([audioMuted isKindOfClass:[NSNumber class]] && [audioMuted boolValue]) mutedInfos = @"Audio muted";
         if ([videoMuted isKindOfClass:[NSNumber class]] && [videoMuted boolValue]) mutedInfos = (mutedInfos.length) ? [@"Video & " stringByAppendingString:mutedInfos] : @"Video muted";
-        ((UILabel *)peerLabels[index]).text = mutedInfos;
-        ((UILabel *)peerLabels[index]).hidden = !(mutedInfos.length);
+        if (index < peerLabels.count) ((UILabel *)peerLabels[index]).text = mutedInfos;
+        if (index < peerLabels.count) ((UILabel *)peerLabels[index]).hidden = !(mutedInfos.length);
     }
     for (NSUInteger i = self.peerIds.count; i < peerLabels.count; i++) {
         ((UILabel *)peerLabels[i]).hidden = YES;
@@ -270,7 +268,7 @@
 
 -(void)updatePeersVideosFrames {
     
-    for (int i = 0; i < self.peerIds.count; i++) {
+    for (int i = 0; i < self.peerIds.count && i < 3; i++) {
         id pvView = self.peersInfos[self.peerIds[i]][@"videoView"];
         id pvSize = self.peersInfos[self.peerIds[i]][@"videoSize"];
         if (pvView && [pvView isKindOfClass:[UIView class]] && pvSize && [pvSize isKindOfClass:[NSValue class]])
