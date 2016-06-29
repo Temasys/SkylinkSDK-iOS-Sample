@@ -19,13 +19,14 @@ Skylink is a cross platform solution for building WebRTC rich messaging applicat
 *This sample application and its code is intended to demonstrate to developers usage samples of the Temasys's SkylinkSDK for iOS.*
 > To use this sample app, you need to **get you API key** at http://developer.temasys.com.sg/register
 
-This App has 5 distinct view controllers, each of them demonstrate how to build the following features:
+This App has 6 distinct view controllers, each of them demonstrate how to build the following features:
 
 - One to one video call
 - Multi party video call
 - Multi party audio call
 - Chatroom and custom messages
 - File transfers
+- Data transfer
 
 **SkylinkSDK for iOS documentation:** http://skylink.io/ios/
 
@@ -94,6 +95,8 @@ In this table we use nicks to refer to the sample app's view controllers, here i
 | **`Audio`** |  AudioCallViewController | 
 | **`Chat`** |  MessagesViewController | 
 | **`File`** |  FileTransferViewController | 
+
+(Note: additional examples are demonstrated in the DataTransferViewController)
 
 **Classes** sample usages
 -------
@@ -209,6 +212,7 @@ Support portal
 Tutorials
 -------
 
+Getting started with SkylinkSDK for iOS: http://temasys.com.sg/getting-started-skylinksdk-ios/
 Handle the video view stretching: http://temasys.com.sg/a-simple-solution-for-video-stretching/
 
 Skylink, by **Temasys**
@@ -227,7 +231,7 @@ Other library used (via cocoapods)
 
 ----------
 
-*This document was edited for SkylinkSDK for iOS version 1.0.8*
+*This document was edited for SkylinkSDK for iOS version 1.0.9*
 
 ----------
 

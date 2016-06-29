@@ -46,13 +46,14 @@
     self.skylinkConnection.lifeCycleDelegate = self;
     self.skylinkConnection.mediaDelegate = self;
     self.skylinkConnection.remotePeerDelegate = self;
-    // Connecting to a room
+#ifdef DEBUG
     [SKYLINKConnection setVerbose:TRUE];
-    
+#endif
+    // Connecting to a room
     // connectToRoomWithCredentials example
-    NSDictionary *credInfos = @{@"startTime" : [NSDate date], @"duration" : [NSNumber numberWithFloat:2.0f]};
-    NSString *credential = [SKYLINKConnection calculateCredentials:ROOM_NAME duration:[credInfos[@"duration"] floatValue] startTime:credInfos[@"startTime"] secret:self.skylinkApiSecret];
-    [self.skylinkConnection connectToRoomWithCredentials:@{@"credential" : credential, @"startTime" : credInfos[@"startTime"], @"duration" : credInfos[@"duration"]} roomName:ROOM_NAME userInfo:nil];
+    NSDictionary *credInfos = @{@"startTime" : [NSDate date], @"duration" : [NSNumber numberWithFloat:24.000f]};
+    NSString *credential = [SKYLINKConnection calculateCredentials:ROOM_NAME duration:credInfos[@"duration"] /*stringValue]*/ startTime:credInfos[@"startTime"] secret:self.skylinkApiSecret];
+    [self.skylinkConnection connectToRoomWithCredentials:@{@"credential" : credential, @"startTime" : credInfos[@"startTime"], @"duration" : credInfos[@"duration"]} roomName:ROOM_NAME userInfo:[NSString stringWithFormat:@"Audio call user #%d - iOS %@", arc4random()%1000, [[UIDevice currentDevice] systemVersion]]];
 }
 
 -(void)disconnect {
@@ -87,7 +88,8 @@
 #pragma mark - SKYLINKConnectionMediaDelegate
 
 - (void)connection:(SKYLINKConnection *)connection didToggleAudio:(BOOL)isMuted peerId:(NSString *)peerId {
-    for (NSDictionary *peerDic in self.remotePeerArray) {
+    NSArray *enumarateArray = [self.remotePeerArray copy];
+    for (NSDictionary *peerDic in enumarateArray) {
         if ([peerDic[@"id"] isEqualToString:peerId]) {
             [self.remotePeerArray removeObject:peerDic];
             [self.remotePeerArray addObject:@{@"id" : peerId, @"isAudioMuted" : [NSNumber numberWithBool:isMuted]}];
@@ -100,7 +102,9 @@
 
 - (void)connection:(SKYLINKConnection*)connection didJoinPeer:(id)userInfo mediaProperties:(SKYLINKPeerMediaProperties*)pmProperties peerId:(NSString*)peerId {
     NSLog(@"Peer with id %@ joigned the room.", peerId);
-    [self.remotePeerArray addObject:@{@"id" : peerId, @"isAudioMuted" : [NSNumber numberWithBool:pmProperties.isAudioMuted]}];
+    [self.remotePeerArray addObject:@{@"id" : peerId,
+                                      @"isAudioMuted" : [NSNumber numberWithBool:pmProperties.isAudioMuted],
+                                      @"nickname" : ([userInfo isKindOfClass:[NSString class]]) ? userInfo : @""}];
     [self.tableView reloadData];
 }
 
@@ -130,10 +134,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ACpeerCell"];
     
     NSDictionary *peerDic = [self.remotePeerArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = peerDic[@"id"];
-    cell.detailTextLabel.text = [peerDic[@"isAudioMuted"] boolValue] ? @"Audio muted" : @" ";
+    cell.textLabel.text = peerDic[@"nickname"] ? peerDic[@"nickname"] : [NSString stringWithFormat:@"Peer %ld", (long)indexPath.row];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"ID: %@ %@", peerDic[@"id"], [peerDic[@"isAudioMuted"] boolValue] ? @" - Audio muted" : @""];
     
-    cell.backgroundColor = [UIColor colorWithRed:0.67 green:0.67 blue:0.67 alpha:1];
+    cell.backgroundColor = [UIColor colorWithRed:0.35 green:0.35 blue:0.35 alpha:1.00]; // iPads does not use storyboard bg color value
     return cell;
 }
 

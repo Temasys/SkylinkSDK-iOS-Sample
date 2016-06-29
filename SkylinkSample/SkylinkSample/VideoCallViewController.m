@@ -34,7 +34,6 @@
     // Do any additional setup after loading the view.
     
     NSLog(@"SKYLINKConnection version = %@", [SKYLINKConnection getSkylinkVersion]);
-    
     self.title = @"1-1 Video Call";
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Cancel.png"] style:UIBarButtonItemStylePlain target:self action:@selector(disconnect)];
@@ -46,14 +45,19 @@
     SKYLINKConnectionConfig *config = [SKYLINKConnectionConfig new];
     config.video = YES;
     config.audio = YES;
+    
     // Creating SKYLINKConnection
     self.skylinkConnection = [[SKYLINKConnection alloc] initWithConfig:config appKey:self.skylinkApiKey];
     self.skylinkConnection.lifeCycleDelegate = self;
     self.skylinkConnection.mediaDelegate = self;
     self.skylinkConnection.remotePeerDelegate = self;
-    // Connecting to a room
+#ifdef DEBUG
     [SKYLINKConnection setVerbose:TRUE];
-    [self.skylinkConnection connectToRoomWithSecret:self.skylinkApiSecret roomName:ROOM_NAME userInfo:nil];
+#endif
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self.skylinkConnection connectToRoomWithSecret:self.skylinkApiSecret roomName:ROOM_NAME userInfo:nil];
+    });
 }
 
 -(void)disconnect {
@@ -66,7 +70,7 @@
 }
 
 -(void)showInfo {
-    [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@ infos", NSStringFromClass([self class])] message:[NSString stringWithFormat:@"\nRoom name:\n%@\n\nLocal ID:\n%@\n\nKey: •••••%@\n\nSkylink version %@", ROOM_NAME, self.skylinkConnection.myPeerId, [self.skylinkApiKey substringFromIndex: [self.skylinkApiKey length] - 7],  [SKYLINKConnection getSkylinkVersion]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@ infos", NSStringFromClass([self class])] message:[NSString stringWithFormat:@"\nRoom name:\n%@\n\nLocal ID:\n%@\n\nKey: •••••%@\n\nSkylink version %@", ROOM_NAME, self.skylinkConnection.myPeerId, [self.skylinkApiKey substringFromIndex: [self.skylinkApiKey length] - 7], [SKYLINKConnection getSkylinkVersion]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
 
 -(void)viewWillLayoutSubviews{
@@ -81,7 +85,7 @@
 
 - (void)connection:(SKYLINKConnection*)connection didConnectWithMessage:(NSString*)errorMessage success:(BOOL)isSuccess {
     if (isSuccess) {
-        NSLog(@"Inside %s", __FUNCTION__);
+        NSLog(@"Inside %s with success", __FUNCTION__);
     } else {
         [[[UIAlertView alloc] initWithTitle:@"Connection failed" message:errorMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         [self.navigationController popViewControllerAnimated:YES];
@@ -106,7 +110,7 @@
 - (void)connection:(SKYLINKConnection*)connection didJoinPeer:(id)userInfo mediaProperties:(SKYLINKPeerMediaProperties*)pmProperties peerId:(NSString*)peerId {
     [self.activityIndicator stopAnimating];
     self.remotePeerId = peerId;
-    [self.skylinkConnection lockTheRoom];
+    //[self.skylinkConnection lockTheRoom];
 }
 
 - (void)connection:(SKYLINKConnection*)connection didRenderPeerVideo:(UIView*)peerVideoView peerId:(NSString*)peerId {
@@ -141,7 +145,7 @@
 // for didRender.. Delegates
 -(void)addRenderedVideo:(UIView *)videoView insideContainer:(UIView *)containerView mirror:(BOOL)shouldMirror {
     videoView.frame = containerView.bounds;
-    if (shouldMirror) videoView.transform = CGAffineTransformMakeScale(-1.0, 1.0); // to see ourself like in a mirror
+    //if (shouldMirror) videoView.transform = CGAffineTransformMakeScale(-1.0, 1.0); // SDK now handles this, appliying the transfor would not change anything.
     for (UIView *subview in containerView.subviews) {
         [subview removeFromSuperview];
     }
@@ -185,7 +189,7 @@
         [self.skylinkConnection refreshConnection:self.remotePeerId];
     }
     else {
-        [[[UIAlertView alloc] initWithTitle:@"No peer connexion to refresh" message:@"Tap this button to refresh the peer connexion if needed." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        [[[UIAlertView alloc] initWithTitle:@"No peer connection to refresh" message:@"Tap this button to refresh the peer connection if needed." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }
 }
 

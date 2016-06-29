@@ -22,7 +22,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSessionRouteChange:) name:AVAudioSessionRouteChangeNotification object:nil]; // to set the speakers as default audio route
     
     signal(SIGPIPE, SIG_IGN); // Resolve SIGPIPE, as sugested by Apple doc.
-    
+    NSLog(@"- SKYLINK SampleApp launched -");
     return YES;
 }
 

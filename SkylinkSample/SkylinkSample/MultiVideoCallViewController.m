@@ -73,8 +73,9 @@
     self.skylinkConnection.lifeCycleDelegate = self;
     self.skylinkConnection.mediaDelegate = self;
     self.skylinkConnection.remotePeerDelegate = self;
-    // Connecting to a room
+#ifdef DEBUG
     [SKYLINKConnection setVerbose:TRUE];
+#endif
     [self.skylinkConnection connectToRoomWithSecret:self.skylinkApiSecret roomName:ROOM_NAME userInfo:nil];
 }
 
@@ -103,7 +104,6 @@
 
 - (void)connection:(SKYLINKConnection*)connection didConnectWithMessage:(NSString*)errorMessage success:(BOOL)isSuccess {
     if (isSuccess) {
-        NSLog(@"Inside %s", __FUNCTION__);
         dispatch_async(dispatch_get_main_queue(), ^{
             self.localVideoContainerView.alpha = 1;
         });
@@ -249,7 +249,7 @@
     for (NSString *aPeerId in self.peerIds) {
         // Add the rendered view
         NSInteger index = [self.peerIds indexOfObject:aPeerId];
-        if (index < peerContainerViews.count) [self addRenderedVideo:self.peersInfos[aPeerId][@"videoView"] insideContainer:peerContainerViews[index] mirror:NO];
+        if (index < peerContainerViews.count) [self addRenderedVideo:self.peersInfos[aPeerId][@"videoView"] insideContainer:peerContainerViews[index] mirror:NO]; // if the peer is on simulator then self.peersInfos[aPeerId][@"videoView"] would be null so this would crash.
         // refresh the label
         id audioMuted = self.peersInfos[aPeerId][@"isAudioMuted"];
         id videoMuted = self.peersInfos[aPeerId][@"isVideoMuted"];

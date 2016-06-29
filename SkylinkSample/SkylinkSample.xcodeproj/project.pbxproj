@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650C9CBD1C6CA67B0088BF15 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650C9CBC1C6CA67B0088BF15 /* GLKit.framework */; };
+		650C9CBF1C6CA6880088BF15 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650C9CBE1C6CA6880088BF15 /* VideoToolbox.framework */; };
+		650C9CC11C6CA6990088BF15 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 650C9CC01C6CA6990088BF15 /* libstdc++.tbd */; };
+		651675911D07E2900049778C /* DataTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 651675901D07E2900049778C /* DataTransferViewController.m */; };
+		653BE0B51D116257008DF816 /* DataTransferSamples in Resources */ = {isa = PBXBuildFile; fileRef = 653BE0B41D116257008DF816 /* DataTransferSamples */; };
 		654DF8A01C5F3EE400299EF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 654DF89F1C5F3EE400299EF3 /* main.m */; };
 		654DF8A31C5F3EE400299EF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 654DF8A21C5F3EE400299EF3 /* AppDelegate.m */; };
 		654DF8A91C5F3EE400299EF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654DF8A71C5F3EE400299EF3 /* Main.storyboard */; };
@@ -50,6 +55,15 @@
 		10E87090EB3C8A5C10314277 /* Pods-SkylinkSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.release.xcconfig"; sourceTree = "<group>"; };
 		14DA9F698158FD19FBE6CF41 /* Pods-SkylinkSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.debug.xcconfig"; sourceTree = "<group>"; };
 		484001F59F8F6EADD76F5678 /* libPods-SkylinkSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkylinkSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EB87F1A42B5B02B41BACFF0 /* Pods-SkylinkSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.debug.xcconfig"; path = "../../engineering-sdk-ios/Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.debug.xcconfig"; sourceTree = "<group>"; };
+		650C9CBA1C6CA2ED0088BF15 /* libSKYLINK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSKYLINK.a; path = "../../../../../Library/Developer/Xcode/DerivedData/SkylinkSDK-cjcqtsmmiufpwhgbvjafyysnaxjh/Build/Products/Debug-iphoneos/libSKYLINK.a"; sourceTree = "<group>"; };
+		650C9CBC1C6CA67B0088BF15 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		650C9CBE1C6CA6880088BF15 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		650C9CC01C6CA6990088BF15 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		650C9CC21C6D973D0088BF15 /* libtema-ios-ntp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libtema-ios-ntp.a"; path = "/Users/romainpellen/Desktop/Bitbucket/Temasys/engineering-sdk-ios/Pods/../build/Debug-iphoneos/libtema-ios-ntp.a"; sourceTree = "<absolute>"; };
+		6516758F1D07E2900049778C /* DataTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTransferViewController.h; sourceTree = "<group>"; };
+		651675901D07E2900049778C /* DataTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTransferViewController.m; sourceTree = "<group>"; };
+		653BE0B41D116257008DF816 /* DataTransferSamples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DataTransferSamples; sourceTree = "<group>"; };
 		654DF89B1C5F3EE400299EF3 /* SkylinkSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkylinkSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		654DF89F1C5F3EE400299EF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		654DF8A11C5F3EE400299EF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +110,7 @@
 		654DF9281C62176A00299EF3 /* logoSkylink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoSkylink.png; sourceTree = "<group>"; };
 		654DF9291C62176A00299EF3 /* logoSkylink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoSkylink@2x.png"; sourceTree = "<group>"; };
 		654DF92A1C62176A00299EF3 /* logoSkylink@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoSkylink@3x.png"; sourceTree = "<group>"; };
+		E802E56BA63F4840C33FAD27 /* Pods-SkylinkSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.release.xcconfig"; path = "../../engineering-sdk-ios/Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +118,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				650C9CC11C6CA6990088BF15 /* libstdc++.tbd in Frameworks */,
+				650C9CBF1C6CA6880088BF15 /* VideoToolbox.framework in Frameworks */,
+				650C9CBD1C6CA67B0088BF15 /* GLKit.framework in Frameworks */,
 				933E50490413A320F72BEA65 /* libPods-SkylinkSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +133,8 @@
 			children = (
 				14DA9F698158FD19FBE6CF41 /* Pods-SkylinkSample.debug.xcconfig */,
 				10E87090EB3C8A5C10314277 /* Pods-SkylinkSample.release.xcconfig */,
+				4EB87F1A42B5B02B41BACFF0 /* Pods-SkylinkSample.debug.xcconfig */,
+				E802E56BA63F4840C33FAD27 /* Pods-SkylinkSample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -151,6 +171,7 @@
 				654DF8C61C5F4BD700299EF3 /* ViewControllers examples */,
 				654DF8CC1C5F541B00299EF3 /* Utils */,
 				654DF89E1C5F3EE400299EF3 /* Supporting Files */,
+				653BE0B41D116257008DF816 /* DataTransferSamples */,
 				654DF90F1C6216DB00299EF3 /* TransferFileSamples */,
 				654DF9121C62176A00299EF3 /* images */,
 			);
@@ -172,6 +193,8 @@
 				654DF8B81C5F4BC400299EF3 /* AudioCallViewController.m */,
 				654DF8B91C5F4BC400299EF3 /* FileTransferViewController.h */,
 				654DF8BA1C5F4BC400299EF3 /* FileTransferViewController.m */,
+				6516758F1D07E2900049778C /* DataTransferViewController.h */,
+				651675901D07E2900049778C /* DataTransferViewController.m */,
 				654DF8BB1C5F4BC400299EF3 /* MessagesViewController.h */,
 				654DF8BC1C5F4BC400299EF3 /* MessagesViewController.m */,
 				654DF8BD1C5F4BC400299EF3 /* MultiVideoCallViewController.h */,
@@ -232,6 +255,11 @@
 		9AF99D477FDCFC748C037C3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				650C9CC21C6D973D0088BF15 /* libtema-ios-ntp.a */,
+				650C9CC01C6CA6990088BF15 /* libstdc++.tbd */,
+				650C9CBE1C6CA6880088BF15 /* VideoToolbox.framework */,
+				650C9CBC1C6CA67B0088BF15 /* GLKit.framework */,
+				650C9CBA1C6CA2ED0088BF15 /* libSKYLINK.a */,
 				484001F59F8F6EADD76F5678 /* libPods-SkylinkSample.a */,
 			);
 			name = Frameworks;
@@ -250,6 +278,7 @@
 				654DF8991C5F3EE400299EF3 /* Resources */,
 				186CD6ADBC30BF424128DEBD /* Embed Pods Frameworks */,
 				962B9F56140A875506A20B2F /* Copy Pods Resources */,
+				65D2F37C1CA3FC1500084EEC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -271,6 +300,7 @@
 				TargetAttributes = {
 					654DF89A1C5F3EE400299EF3 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = VVYWH469LG;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -327,6 +357,7 @@
 				654DF9381C62176B00299EF3 /* Refresh@2x.png in Resources */,
 				654DF9321C62176B00299EF3 /* Microphone@2x.png in Resources */,
 				654DF9351C62176B00299EF3 /* NoVideoFilled.png in Resources */,
+				653BE0B51D116257008DF816 /* DataTransferSamples in Resources */,
 				654DF9111C6216DB00299EF3 /* TransferFileSamples in Resources */,
 				654DF93D1C62176B00299EF3 /* VideoCall.png in Resources */,
 			);
@@ -365,6 +396,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		65D2F37C1CA3FC1500084EEC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
 		962B9F56140A875506A20B2F /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,6 +434,7 @@
 				654DF8C21C5F4BC400299EF3 /* FileTransferViewController.m in Sources */,
 				654DF8C31C5F4BC400299EF3 /* MessagesViewController.m in Sources */,
 				654DF8C11C5F4BC400299EF3 /* AudioCallViewController.m in Sources */,
+				651675911D07E2900049778C /* DataTransferViewController.m in Sources */,
 				654DF8CF1C5F542E00299EF3 /* UIAspectFitButton.m in Sources */,
 				654DF8A31C5F3EE400299EF3 /* AppDelegate.m in Sources */,
 				654DF8CB1C5F516A00299EF3 /* HomeViewController.m in Sources */,
@@ -438,6 +483,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -460,6 +506,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "99b34085-4ac1-406f-94c7-b9141aaabd63";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -482,7 +529,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -497,6 +545,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "99b34085-4ac1-406f-94c7-b9141aaabd63";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -509,12 +558,53 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
 				INFOPLIST_FILE = SkylinkSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sg.com.temasys.skylink.SkylinkSample;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"ObjC\"",
+					"-l\"SocketRocket\"",
+					"-l\"UIAlertView-Blocks\"",
+					"-l\"c\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"tema-ios-ntp\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreAudio\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"VideoToolbox\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sg.com.temasys.skylink.iOS.SkylinkSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "99b34085-4ac1-406f-94c7-b9141aaabd63";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -524,12 +614,49 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SkylinkSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sg.com.temasys.skylink.SkylinkSample;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"ObjC\"",
+					"-l\"SocketRocket\"",
+					"-l\"UIAlertView-Blocks\"",
+					"-l\"c\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"tema-ios-ntp\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreAudio\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"VideoToolbox\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sg.com.temasys.skylink.iOS.SkylinkSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "99b34085-4ac1-406f-94c7-b9141aaabd63";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

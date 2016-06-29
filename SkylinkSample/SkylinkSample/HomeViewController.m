@@ -9,11 +9,23 @@
 #import "HomeViewController.h"
 
 
-// SET YOUR KEY / SECRET HERE TO HAVE IT BY DEFAULT.
+
+
+
+// ====== SET YOUR KEY / SECRET HERE TO HAVE IT BY DEFAULT. ======
+// If you don't have any key/secret, enroll at developer.temasys.com.sg
 #define SKYLINK_APP_KEY @""
 #define SKYLINK_SECRET  @""
 
+// remove the folowing warning once you filled the above with your API key/secret
+#warning directive You need to set your Skylink API key & secret
 
+
+
+
+
+
+// Just the NSUserDefaults keys.
 #define USERDEFAULTS_KEY_SKYLINK_APP_KEY @"SKYLINK_APP_KEY"
 #define USERDEFAULTS_KEY_SKYLINK_SECRET  @"SKYLINK_SECRET"
 
@@ -69,16 +81,18 @@
     return YES;
 }
 
+
 #pragma mark - IBActions (info boxes)
+// Information alerts only
 
 - (IBAction)homeInfoTap:(UIButton *)sender {
     [[[UIAlertView alloc] initWithTitle:@"HomeViewController" message:@"\nSet you Skylink API Key and secret in the appropriate text field or modify HomeViewController's code to have it by default.\nIf you don't have your Key/Secret, enroll at developer.temasys.com.sg/register\n\nIn all view controllers, you can tap the info button in the upper right corner to get the current room name, your current local ID, the current API key and the current SDK version. Refer to the documentation for more infos on how to use it.\n" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
 - (IBAction)videoCallVCinfoTap:(UIButton *)sender {
-    [[[UIAlertView alloc] initWithTitle:@"VideoCallViewController" message:@"\nOne to one video call sample\n\nThe first 2 people to enter the room will be able to have a video call. The bottom bar contains buttons to refresh the peer connexion, mute/unmute the camera, mute/unmute the mic and switch the device camera if available.\n\nRefer to the view controller's code and to the documentation for more infos.\n" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    [[[UIAlertView alloc] initWithTitle:@"VideoCallViewController" message:@"\nOne to one video call sample\n\nThe first 2 people to enter the room will be able to have a video call. The bottom bar contains buttons to refresh the peer connection, mute/unmute the camera, mute/unmute the mic and switch the device camera if available.\n\nRefer to the view controller's code and to the documentation for more infos.\n" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
 - (IBAction)multiVideoCallVCinfoTap:(UIButton *)sender {
-    [[[UIAlertView alloc] initWithTitle:@"MultiPartyViewController" message:@"\nThe first 4 people to enter the room will be able to have a multi party video call (as long as the room isn't locked). The bottom bar contains buttons to change the aspect of the peer video views, lock/unlock the room, mute/unmute the camera, mute/unmute the mic and switch the device camera if available.\n\nRefer to the view controller's code and to the documentation for more infos.\n" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    [[[UIAlertView alloc] initWithTitle:@"MultiViewController" message:@"\nThe first 4 people to enter the room will be able to have a multi party video call (as long as the room isn't locked). The bottom bar contains buttons to change the aspect of the peer video views, lock/unlock the room, mute/unmute the camera, mute/unmute the mic and switch the device camera if available.\n\nRefer to the view controller's code and to the documentation for more infos.\n" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
 - (IBAction)audioCallVCinfoTap:(UIButton *)sender {
     [[[UIAlertView alloc] initWithTitle:@"AudioCallViewController" message:@"\nEnter the room to make an audio call with the other peers inside the same room. Tap the button on top to mute/unmute your microphone.\n\nRefer to the view controller's code and to the documentation for more infos.\n" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];

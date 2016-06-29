@@ -62,7 +62,9 @@
     self.skylinkConnection.messagesDelegate = self;
     self.skylinkConnection.remotePeerDelegate = self;
     // Connecting to a room
+#ifdef DEBUG
     [SKYLINKConnection setVerbose:TRUE];
+#endif
     [self.skylinkConnection connectToRoomWithSecret:self.skylinkApiSecret roomName:ROOM_NAME userInfo:nil]; // a nickname could be sent here via userInfo cf the implementation of - (void)connection:(SKYLINKConnection*)connection didJoinPeer:(id)userInfo mediaProperties:(SKYLINKPeerMediaProperties*)pmProperties peerId:(NSString*)peerId
 }
 
@@ -305,9 +307,8 @@
                 if (peerId) [self.skylinkConnection sendBinaryData:[message dataUsingEncoding:NSUTF8StringEncoding] peerId:peerId];
             }
             @catch (NSException *e) {
-                // If you enabled MCU in the SKYLINK developer portal for the current key, this will raise an exception: 'Sending binary data in a MCU connection is not supported'
                 NSString *message = [NSString stringWithFormat:@"\n%@", e];
-                if ([e.reason isEqualToString:@"Sending binary data in a MCU connection is not supported"]) message = [message stringByAppendingString:@"\n\nMCU can be enabled/disabled in Key configuration on the developer portal: http://developer.temasys.com.sg/"];
+                if ([e.reason isEqualToString:@"Sending binary data in a MCU connection is not supported"]) message = [message stringByAppendingString:@"\n\nSkylink Media Relay can be enabled/disabled in Key configuration on the developer portal: http://developer.temasys.com.sg/"];
                 [[[UIAlertView alloc] initWithTitle:@"Exeption when sending binary data"  message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
                 showSentMessage = NO;
             }
