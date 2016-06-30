@@ -3,7 +3,7 @@
 **Skylink** Sample App for **iOS**
 ==========================
 
-![Welcome to SkylinkSDK for iOS !](Readme_images/header01.jpg)
+![Welcome to SkylinkSDK for iOS !](Readme_images/header01.jpg) 
 
 
 **WebRTC** powered App
