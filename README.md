@@ -37,6 +37,9 @@ This App has 6 distinct view controllers, each of them demonstrate how to build 
 ==========================
 Installation
 -------
+
+This sample app uses SkylinkSDK for iOS: [http://github.com/Temasys/SKYLINK-iOS](http://github.com/Temasys/SKYLINK-iOS)
+
 > It is recommended to install the SDK via **cocoapods**, if you don't have it installed follow these steps:
 >  - Check that you have Xcode command line tools installed (Xcode > Preferences > Locations > Command line tools). If not, open the terminal and run `xcode-select --install` ([more details here](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/) if needed).
 >  - Install cocoa pods in the terminal: `$ sudo gem install cocoapods`
