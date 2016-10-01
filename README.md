@@ -210,20 +210,20 @@ After setting the `SKYLINKConnection` delegates, you need to implement the corre
 
 Support portal
 -------
- If you encounter any issues or have any enquiries regarding Skylink, drop us a note on our [support portal](http://support.temasys.com.sg/support/login) and we would be happy to help! 
+ If you encounter any issues or have any enquiries regarding Skylink, drop us a note on our [support portal](http://support.temasys.io/support/login) and we would be happy to help! 
 
 Tutorials
 -------
 
-Getting started with SkylinkSDK for iOS: http://temasys.com.sg/getting-started-skylinksdk-ios/
-Handle the video view stretching: http://temasys.com.sg/a-simple-solution-for-video-stretching/
+Getting started with SkylinkSDK for iOS: http://temasys.io/getting-started-skylinksdk-ios/
+Handle the video view stretching: http://temasys.io/a-simple-solution-for-video-stretching/
 
 Skylink, by **Temasys**
 -------
 
 Check our company websites:
 - **Skylink**: http://skylink.io
-- By **Temasys**: http://temasys.com.sg
+- By **Temasys**: http://temasys.io
 Also checkout our Skylink SDKs for [Web](http://skylink.io/web/) and [Android](http://skylink.io/android)
 
 Other library used (via cocoapods)
