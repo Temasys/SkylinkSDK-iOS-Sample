@@ -1,10 +1,7 @@
 
 
-**Skylink** Sample App for **iOS**
+**Temasys iOS SDK** Sample App
 ==========================
-
-![Welcome to SkylinkSDK for iOS !](Readme_images/header01.jpg) 
-
 
 **WebRTC** powered App
 -------
@@ -12,12 +9,12 @@ WebRTC is **real-time audio, video and data exchange** for your **website and na
 
 With WebRTC browsers and apps learn to talk to each other instead of just to web servers. They can share audio and video streams from your microphone and camera, exchange files and images or just send and receive simple messages the fastest possible way: **peer-to-peer**.
 
-**SkylinkSDK for iOS** demo
+**Temasys iOS SDK** demo
 -------
-Skylink is a cross platform solution for building WebRTC rich messaging applications. You also might want to check the Android and JavaScript SDKs on http://skylink.io.
+The Temasys iOS SDK is a cross platform solution for building WebRTC rich messaging applications. You also might want to check the Android and JavaScript SDKs on http://skylink.io.
 
-*This sample application and its code is intended to demonstrate to developers usage samples of the Temasys's SkylinkSDK for iOS.*
-> To use this sample app, you need to **get you API key** at http://developer.temasys.com.sg/register
+*This sample application and it's code is intended to demonstrate use of the Temasys iOS SDK in various use-cases.*
+> To use this sample app, you need to **get you API key** at http://console.temasys.io/register
 
 This App has 6 distinct view controllers, each of them demonstrate how to build the following features:
 
@@ -28,7 +25,7 @@ This App has 6 distinct view controllers, each of them demonstrate how to build 
 - File transfers
 - Data transfer
 
-**SkylinkSDK for iOS documentation:** http://skylink.io/ios/
+**Temasys iOS SDK documentation:** http://skylink.io/ios/
 
 
 ----------
@@ -50,7 +47,7 @@ Installation
 Code introduction
 -------
 The code should be self explanatory: each view controller works by itself and there is very few UI code thanks to Storyoard usage. 
-In each view controller, the main idea is to **configure and instanciate a connection to a room with Skylink**. 
+In each view controller, the main idea is to **configure and instanciate a connection to a room with the Temasys iOS SDK (formerly Skylink SDK for iOS)**. 
 You will then be able to communicate with other peer joining the same room.
 
     // Creating configuration
@@ -79,9 +76,9 @@ Always set at least the `lifeCycleDelegate`.
 Aditionally, in each view controller example's viewDidLoad/initWithCoder method, some properties are initialized.
 A disconnect button is set in the navigation bar (left corner) as well as its selector implementation (called disconnect). An info button is set on the right corner, as well as its implementation (called showInfos). Those 2 navigation bar buttons selectors are the same in every VC example.
 
-The rest of the example view controllers gives you 5 example usages of SkylinkSDK for iOS.
+The rest of the example view controllers gives you 5 example usages of the Temasys iOS SDK.
 
-In what example view controller can I find **specific SkylinkSDK for iOS sample usages** ?
+In what example view controller can I find **specific Temasys iOS SDK for iOS sample usages** ?
 ==========================
 **SDK usage table for this sample App**
 This table lists the complete set of the SDK elements as of version 1.0.8 and the view controllers of this sample App where you can find example usages.
@@ -207,21 +204,13 @@ After setting the `SKYLINKConnection` delegates, you need to implement the corre
 
 Support portal
 -------
- If you encounter any issues or have any enquiries regarding Skylink, drop us a note on our [support portal](http://support.temasys.com.sg/support/login) and we would be happy to help! 
+ If you encounter any issues or have any enquiries regarding the Temasys iOS SDK, drop us a note on our [support portal](http://support.temasys.io/support/login) and we would be happy to help! 
 
 Tutorials
 -------
 
-Getting started with SkylinkSDK for iOS: http://temasys.com.sg/getting-started-skylinksdk-ios/
-Handle the video view stretching: http://temasys.com.sg/a-simple-solution-for-video-stretching/
-
-Skylink, by **Temasys**
--------
-
-Check our company websites:
-- **Skylink**: http://skylink.io
-- By **Temasys**: http://temasys.com.sg
-Also checkout our Skylink SDKs for [Web](http://skylink.io/web/) and [Android](http://skylink.io/android)
+Getting started with Temasys iOS SDK: http://temasys.io/getting-started-skylinksdk-ios/
+Handle the video view stretching: http://temasys.io/a-simple-solution-for-video-stretching/
 
 Other library used (via cocoapods)
 -------
@@ -231,10 +220,10 @@ Other library used (via cocoapods)
 
 ----------
 
-*This document was edited for SkylinkSDK for iOS version 1.0.9*
+*This document was edited for Temasys iOS SDK version 1.0.9*
 
 ----------
 
-![Skylink technology is trusted by our partners](Readme_images/about.png)
+![Temasys technology is trusted by our partners](Readme_images/about.png)
 
 
