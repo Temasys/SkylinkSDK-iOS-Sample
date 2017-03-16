@@ -10,17 +10,10 @@
 
 
 
-
-
-// ====== SET YOUR KEY / SECRET HERE TO HAVE IT BY DEFAULT. ======
-// If you don't have any key/secret, enroll at developer.temasys.com.sg
+/// ====== SET YOUR KEY / SECRET HERE TO HAVE IT BY DEFAULT. ======
 #define SKYLINK_APP_KEY @""
 #define SKYLINK_SECRET  @""
-
-// remove the folowing warning once you filled the above with your API key/secret
-#warning directive You need to set your Skylink API key & secret
-
-
+/// ===============================================================
 
 
 
@@ -28,6 +21,7 @@
 // Just the NSUserDefaults keys.
 #define USERDEFAULTS_KEY_SKYLINK_APP_KEY @"SKYLINK_APP_KEY"
 #define USERDEFAULTS_KEY_SKYLINK_SECRET  @"SKYLINK_SECRET"
+
 
 
 @interface HomeViewController () // This View controller only passes your API Key and Secret to the sample view controllers. No need to explore this VC's code to understand Skylink SDK.
@@ -58,7 +52,7 @@
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     BOOL shouldPerform = (self.keyTextField.text.length == 36 && self.secretTextField.text.length == 13);
     if (!shouldPerform) {
-        [[[UIAlertView alloc] initWithTitle:@"Wrong Key / Secret" message:@"\nYou haven't correctly set your \nSkylink API Key (36 characters) or Secret (13 characters)\n\nIf you don't have access to the API yet, enroll at \ndeveloper.temasys.com.sg/register" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        [[[UIAlertView alloc] initWithTitle:@"Wrong Key / Secret" message:@"\nYou haven't correctly set your \nSkylink API Key (36 characters) or Secret (13 characters)\n\nIf you don't have access to the API yet, enroll at \nconsole.temasys.io" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     } else {
         [[NSUserDefaults standardUserDefaults] setObject:self.keyTextField.text forKey:USERDEFAULTS_KEY_SKYLINK_APP_KEY];
         [[NSUserDefaults standardUserDefaults] setObject:self.secretTextField.text forKey:USERDEFAULTS_KEY_SKYLINK_SECRET];
@@ -86,7 +80,7 @@
 // Information alerts only
 
 - (IBAction)homeInfoTap:(UIButton *)sender {
-    [[[UIAlertView alloc] initWithTitle:@"HomeViewController" message:@"\nSet you Skylink API Key and secret in the appropriate text field or modify HomeViewController's code to have it by default.\nIf you don't have your Key/Secret, enroll at developer.temasys.com.sg/register\n\nIn all view controllers, you can tap the info button in the upper right corner to get the current room name, your current local ID, the current API key and the current SDK version. Refer to the documentation for more infos on how to use it.\n" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    [[[UIAlertView alloc] initWithTitle:@"HomeViewController" message:@"\nSet you Skylink API Key and secret in the appropriate text field or modify HomeViewController's code to have it by default.\nIf you don't have your Key/Secret, enroll at console.temasys.io\n\nIn all view controllers, you can tap the info button in the upper right corner to get the current room name, your current local ID, the current API key and the current SDK version. Refer to the documentation for more infos on how to use it.\n" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
 - (IBAction)videoCallVCinfoTap:(UIButton *)sender {
     [[[UIAlertView alloc] initWithTitle:@"VideoCallViewController" message:@"\nOne to one video call sample\n\nThe first 2 people to enter the room will be able to have a video call. The bottom bar contains buttons to refresh the peer connection, mute/unmute the camera, mute/unmute the mic and switch the device camera if available.\n\nRefer to the view controller's code and to the documentation for more infos.\n" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];

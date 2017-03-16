@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <SKYLINK/SKYLINK.h>
 
-@interface VideoCallViewController : UIViewController <SKYLINKConnectionMediaDelegate, SKYLINKConnectionLifeCycleDelegate, SKYLINKConnectionRemotePeerDelegate>
+@interface VideoCallViewController : UIViewController <SKYLINKConnectionStatsDelegate, SKYLINKConnectionMediaDelegate, SKYLINKConnectionLifeCycleDelegate, SKYLINKConnectionRemotePeerDelegate>
 
 @property (strong, nonatomic) NSString *skylinkApiKey;
 @property (strong, nonatomic) NSString *skylinkApiSecret;

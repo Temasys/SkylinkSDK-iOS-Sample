@@ -13,7 +13,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 
-#define ROOM_NAME  @"FILE-TRANSFER-ROOM"
+#define ROOM_NAME [[NSUserDefaults standardUserDefaults] objectForKey:@"ROOMNAME_FILETRANSFER"]
 
 
 @interface FileTransferViewController ()
@@ -53,6 +53,7 @@
     SKYLINKConnectionConfig *config = [SKYLINKConnectionConfig new];
     config.video = NO;
     config.audio = NO;
+    config.receiveAudio = YES; // workaround for SFU rooms
     config.fileTransfer = YES;
     config.timeout = 30;
     config.dataChannel = YES;

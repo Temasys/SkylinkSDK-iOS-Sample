@@ -9,9 +9,11 @@
 #import "VideoCallViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-#define ROOM_NAME  @"VIDEO-CALL-ROOM"
+
+#define ROOM_NAME [[NSUserDefaults standardUserDefaults] objectForKey:@"ROOMNAME_ONETOONEVIDEOCALL"]
 
 @interface VideoCallViewController ()
+
 // IBOutlets
 @property (weak, nonatomic) IBOutlet UIView *localVideoContainerView; // note: .clipsToBounds property set to YES via storyboard;
 @property (weak, nonatomic) IBOutlet UIView *remotePeerVideoContainerView;
@@ -24,14 +26,17 @@
 // Other properties
 @property (strong, nonatomic) SKYLINKConnection *skylinkConnection;
 @property (strong, nonatomic) NSString *remotePeerId;
+
 @end
 
 
 @implementation VideoCallViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     
     NSLog(@"SKYLINKConnection version = %@", [SKYLINKConnection getSkylinkVersion]);
     self.title = @"1-1 Video Call";
@@ -43,8 +48,12 @@
     
     // Creating configuration
     SKYLINKConnectionConfig *config = [SKYLINKConnectionConfig new];
-    config.video = YES;
+    config.receiveVideo = YES;
+    config.sendVideo = YES;
     config.audio = YES;
+    //config.maxVideoBitrate = 256; // default is 512
+    //config.maxAudioBitrate = 20; // default is no limit same for data
+    // uncomment this to have a low but more effective video resolution: [config advancedSettingKey:@"preferedCaptureSessionPresets" setValue:@[AVCaptureSessionPresetLow]];
     
     // Creating SKYLINKConnection
     self.skylinkConnection = [[SKYLINKConnection alloc] initWithConfig:config appKey:self.skylinkApiKey];
@@ -57,6 +66,8 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self.skylinkConnection connectToRoomWithSecret:self.skylinkApiSecret roomName:ROOM_NAME userInfo:nil];
+        self.skylinkConnection.statsDelegate = self;
+        [self continuousStats];
     });
 }
 
@@ -79,6 +90,18 @@
     if (self.peerVideoView) {
         self.peerVideoView.frame = [self aspectFillRectForSize:self.peerVideoSize containedInRect:self.remotePeerVideoContainerView.frame];
     }
+}
+
+-(void)continuousStats {
+    if (self.skylinkConnection) {
+        [self.skylinkConnection getWebRTCStatsForPeerId:nil mediaDirection:0];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            if (self.skylinkConnection) [self continuousStats];
+        });
+    }
+}
+-(void)connection:(SKYLINKConnection *)connection didGetWebRTCStats:(NSDictionary *)stats forPeerId:(NSString *)peerId mediaDirection:(int)mediaDirection {
+    NSLog(@"%@", [NSString stringWithFormat:@"#Stats\nmd=%d pid=%@\n%@", mediaDirection, peerId, [stats description]]);
 }
 
 #pragma mark - SKYLINKConnectionLifeCycleDelegate
@@ -110,7 +133,6 @@
 - (void)connection:(SKYLINKConnection*)connection didJoinPeer:(id)userInfo mediaProperties:(SKYLINKPeerMediaProperties*)pmProperties peerId:(NSString*)peerId {
     [self.activityIndicator stopAnimating];
     self.remotePeerId = peerId;
-    //[self.skylinkConnection lockTheRoom];
 }
 
 - (void)connection:(SKYLINKConnection*)connection didRenderPeerVideo:(UIView*)peerVideoView peerId:(NSString*)peerId {
@@ -118,9 +140,10 @@
 }
 
 - (void)connection:(SKYLINKConnection*)connection didLeavePeerWithMessage:(NSString*)errorMessage peerId:(NSString*)peerId {
-     self.remotePeerId = nil;
+    self.remotePeerId = nil;
     [self.skylinkConnection unlockTheRoom];
 }
+
 
 #pragma mark - SKYLINKConnectionMediaDelegate
 - (void)connection:(SKYLINKConnection*)connection didChangeVideoSize:(CGSize)videoSize videoView:(UIView*)videoView
@@ -145,7 +168,6 @@
 // for didRender.. Delegates
 -(void)addRenderedVideo:(UIView *)videoView insideContainer:(UIView *)containerView mirror:(BOOL)shouldMirror {
     videoView.frame = containerView.bounds;
-    //if (shouldMirror) videoView.transform = CGAffineTransformMakeScale(-1.0, 1.0); // SDK now handles this, appliying the transfor would not change anything.
     for (UIView *subview in containerView.subviews) {
         [subview removeFromSuperview];
     }
@@ -169,10 +191,11 @@
 }
 
 #pragma mark - IBActions
-- (IBAction)toogleVideoTap:(UIButton *)sender {
+
+- (IBAction)toogleVideoTap:(UIButton *)sender{
     [self.skylinkConnection muteVideo:!self.skylinkConnection.isVideoMuted];
     [sender setImage:[UIImage imageNamed:( (self.skylinkConnection.isVideoMuted) ? @"NoVideoFilled.png" : @"VideoCall.png")] forState:UIControlStateNormal];
-    self.localVideoContainerView.hidden = (self.skylinkConnection.isVideoMuted);
+    //self.localVideoContainerView.hidden = (self.skylinkConnection.isVideoMuted);
 }
 - (IBAction)toogleSoundTap:(UIButton *)sender {
     [self.skylinkConnection muteAudio:!self.skylinkConnection.isAudioMuted];
@@ -183,6 +206,7 @@
 }
 
 - (IBAction)refreshTap:(UIButton *)sender {
+    
     if (self.remotePeerId) {
         [self.activityIndicator startAnimating];
         [self.skylinkConnection unlockTheRoom];

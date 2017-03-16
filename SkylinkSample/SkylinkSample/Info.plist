@@ -17,18 +17,22 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.9</string>
+	<string>2.0.11</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
-		<true/>
+		<false/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Perform webRTC video calls</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Perform webRTC video &amp; audio calls</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Save images &amp; videos received via webRTC file transfer</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>voip</string>

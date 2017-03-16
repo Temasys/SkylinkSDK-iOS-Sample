@@ -48,14 +48,29 @@
 		654DF93F1C62176B00299EF3 /* logoSkylink.png in Resources */ = {isa = PBXBuildFile; fileRef = 654DF9281C62176A00299EF3 /* logoSkylink.png */; };
 		654DF9401C62176B00299EF3 /* logoSkylink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 654DF9291C62176A00299EF3 /* logoSkylink@2x.png */; };
 		654DF9411C62176B00299EF3 /* logoSkylink@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 654DF92A1C62176A00299EF3 /* logoSkylink@3x.png */; };
-		933E50490413A320F72BEA65 /* libPods-SkylinkSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 484001F59F8F6EADD76F5678 /* libPods-SkylinkSample.a */; };
+		65CD75D41D74B6E800388C33 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD75D31D74B6E700388C33 /* SettingsViewController.m */; };
+		65CD760C1D74BC4700388C33 /* IASKAppSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD75D91D74BC4700388C33 /* IASKAppSettingsViewController.m */; };
+		65CD760D1D74BC4700388C33 /* IASKAppSettingsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD75DB1D74BC4700388C33 /* IASKAppSettingsWebViewController.m */; };
+		65CD760E1D74BC4700388C33 /* IASKMultipleValueSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD75DD1D74BC4700388C33 /* IASKMultipleValueSelection.m */; };
+		65CD760F1D74BC4700388C33 /* IASKSpecifierValuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD75DF1D74BC4700388C33 /* IASKSpecifierValuesViewController.m */; };
+		65CD76101D74BC4700388C33 /* IASKSettingsReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD75E31D74BC4700388C33 /* IASKSettingsReader.m */; };
+		65CD76111D74BC4700388C33 /* IASKSettingsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD75E51D74BC4700388C33 /* IASKSettingsStore.m */; };
+		65CD76121D74BC4700388C33 /* IASKSettingsStoreFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD75E71D74BC4700388C33 /* IASKSettingsStoreFile.m */; };
+		65CD76131D74BC4700388C33 /* IASKSettingsStoreUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD75E91D74BC4700388C33 /* IASKSettingsStoreUserDefaults.m */; };
+		65CD76141D74BC4700388C33 /* IASKSpecifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD75EB1D74BC4700388C33 /* IASKSpecifier.m */; };
+		65CD76151D74BC4700388C33 /* IASKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65CD75ED1D74BC4700388C33 /* IASKLocalizable.strings */; };
+		65CD76161D74BC4700388C33 /* IASKPSSliderSpecifierViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD75FF1D74BC4700388C33 /* IASKPSSliderSpecifierViewCell.m */; };
+		65CD76171D74BC4700388C33 /* IASKPSTextFieldSpecifierViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD76011D74BC4700388C33 /* IASKPSTextFieldSpecifierViewCell.m */; };
+		65CD76181D74BC4700388C33 /* IASKSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD76031D74BC4700388C33 /* IASKSlider.m */; };
+		65CD76191D74BC4700388C33 /* IASKSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD76051D74BC4700388C33 /* IASKSwitch.m */; };
+		65CD761A1D74BC4700388C33 /* IASKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD76071D74BC4700388C33 /* IASKTextField.m */; };
+		65CD761B1D74BC4700388C33 /* IASKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD76091D74BC4700388C33 /* IASKTextView.m */; };
+		65CD761C1D74BC4700388C33 /* IASKTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD760B1D74BC4700388C33 /* IASKTextViewCell.m */; };
+		65CD761E1D74BC7500388C33 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65CD761D1D74BC7500388C33 /* Settings.bundle */; };
+		B8EEB1EE2EF4494DBF86C83C /* libPods-SkylinkSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3812CCB03E3ECEC61BCA85 /* libPods-SkylinkSample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		10E87090EB3C8A5C10314277 /* Pods-SkylinkSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.release.xcconfig"; sourceTree = "<group>"; };
-		14DA9F698158FD19FBE6CF41 /* Pods-SkylinkSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.debug.xcconfig"; sourceTree = "<group>"; };
-		484001F59F8F6EADD76F5678 /* libPods-SkylinkSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkylinkSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EB87F1A42B5B02B41BACFF0 /* Pods-SkylinkSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.debug.xcconfig"; path = "../../engineering-sdk-ios/Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.debug.xcconfig"; sourceTree = "<group>"; };
 		650C9CBA1C6CA2ED0088BF15 /* libSKYLINK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSKYLINK.a; path = "../../../../../Library/Developer/Xcode/DerivedData/SkylinkSDK-cjcqtsmmiufpwhgbvjafyysnaxjh/Build/Products/Debug-iphoneos/libSKYLINK.a"; sourceTree = "<group>"; };
 		650C9CBC1C6CA67B0088BF15 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		650C9CBE1C6CA6880088BF15 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
@@ -110,7 +125,60 @@
 		654DF9281C62176A00299EF3 /* logoSkylink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoSkylink.png; sourceTree = "<group>"; };
 		654DF9291C62176A00299EF3 /* logoSkylink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoSkylink@2x.png"; sourceTree = "<group>"; };
 		654DF92A1C62176A00299EF3 /* logoSkylink@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoSkylink@3x.png"; sourceTree = "<group>"; };
-		E802E56BA63F4840C33FAD27 /* Pods-SkylinkSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.release.xcconfig"; path = "../../engineering-sdk-ios/Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.release.xcconfig"; sourceTree = "<group>"; };
+		65CD75D21D74B6E700388C33 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Settings/SettingsViewController.h; sourceTree = "<group>"; };
+		65CD75D31D74B6E700388C33 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Settings/SettingsViewController.m; sourceTree = "<group>"; };
+		65CD75D81D74BC4700388C33 /* IASKAppSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKAppSettingsViewController.h; sourceTree = "<group>"; };
+		65CD75D91D74BC4700388C33 /* IASKAppSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKAppSettingsViewController.m; sourceTree = "<group>"; };
+		65CD75DA1D74BC4700388C33 /* IASKAppSettingsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKAppSettingsWebViewController.h; sourceTree = "<group>"; };
+		65CD75DB1D74BC4700388C33 /* IASKAppSettingsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKAppSettingsWebViewController.m; sourceTree = "<group>"; };
+		65CD75DC1D74BC4700388C33 /* IASKMultipleValueSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKMultipleValueSelection.h; sourceTree = "<group>"; };
+		65CD75DD1D74BC4700388C33 /* IASKMultipleValueSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKMultipleValueSelection.m; sourceTree = "<group>"; };
+		65CD75DE1D74BC4700388C33 /* IASKSpecifierValuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSpecifierValuesViewController.h; sourceTree = "<group>"; };
+		65CD75DF1D74BC4700388C33 /* IASKSpecifierValuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSpecifierValuesViewController.m; sourceTree = "<group>"; };
+		65CD75E01D74BC4700388C33 /* IASKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKViewController.h; sourceTree = "<group>"; };
+		65CD75E21D74BC4700388C33 /* IASKSettingsReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSettingsReader.h; sourceTree = "<group>"; };
+		65CD75E31D74BC4700388C33 /* IASKSettingsReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSettingsReader.m; sourceTree = "<group>"; };
+		65CD75E41D74BC4700388C33 /* IASKSettingsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSettingsStore.h; sourceTree = "<group>"; };
+		65CD75E51D74BC4700388C33 /* IASKSettingsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSettingsStore.m; sourceTree = "<group>"; };
+		65CD75E61D74BC4700388C33 /* IASKSettingsStoreFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSettingsStoreFile.h; sourceTree = "<group>"; };
+		65CD75E71D74BC4700388C33 /* IASKSettingsStoreFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSettingsStoreFile.m; sourceTree = "<group>"; };
+		65CD75E81D74BC4700388C33 /* IASKSettingsStoreUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSettingsStoreUserDefaults.h; sourceTree = "<group>"; };
+		65CD75E91D74BC4700388C33 /* IASKSettingsStoreUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSettingsStoreUserDefaults.m; sourceTree = "<group>"; };
+		65CD75EA1D74BC4700388C33 /* IASKSpecifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSpecifier.h; sourceTree = "<group>"; };
+		65CD75EB1D74BC4700388C33 /* IASKSpecifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSpecifier.m; sourceTree = "<group>"; };
+		65CD75EE1D74BC4700388C33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/IASKLocalizable.strings; sourceTree = "<group>"; };
+		65CD75EF1D74BC4700388C33 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/IASKLocalizable.strings; sourceTree = "<group>"; };
+		65CD75F01D74BC4700388C33 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/IASKLocalizable.strings; sourceTree = "<group>"; };
+		65CD75F11D74BC4700388C33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IASKLocalizable.strings; sourceTree = "<group>"; };
+		65CD75F21D74BC4700388C33 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/IASKLocalizable.strings; sourceTree = "<group>"; };
+		65CD75F31D74BC4700388C33 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/IASKLocalizable.strings; sourceTree = "<group>"; };
+		65CD75F41D74BC4700388C33 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/IASKLocalizable.strings; sourceTree = "<group>"; };
+		65CD75F51D74BC4700388C33 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IASKLocalizable.strings; sourceTree = "<group>"; };
+		65CD75F61D74BC4700388C33 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/IASKLocalizable.strings; sourceTree = "<group>"; };
+		65CD75F71D74BC4700388C33 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/IASKLocalizable.strings"; sourceTree = "<group>"; };
+		65CD75F81D74BC4700388C33 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/IASKLocalizable.strings; sourceTree = "<group>"; };
+		65CD75F91D74BC4700388C33 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/IASKLocalizable.strings; sourceTree = "<group>"; };
+		65CD75FA1D74BC4700388C33 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/IASKLocalizable.strings; sourceTree = "<group>"; };
+		65CD75FB1D74BC4700388C33 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/IASKLocalizable.strings; sourceTree = "<group>"; };
+		65CD75FC1D74BC4700388C33 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/IASKLocalizable.strings; sourceTree = "<group>"; };
+		65CD75FE1D74BC4700388C33 /* IASKPSSliderSpecifierViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKPSSliderSpecifierViewCell.h; sourceTree = "<group>"; };
+		65CD75FF1D74BC4700388C33 /* IASKPSSliderSpecifierViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKPSSliderSpecifierViewCell.m; sourceTree = "<group>"; };
+		65CD76001D74BC4700388C33 /* IASKPSTextFieldSpecifierViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKPSTextFieldSpecifierViewCell.h; sourceTree = "<group>"; };
+		65CD76011D74BC4700388C33 /* IASKPSTextFieldSpecifierViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKPSTextFieldSpecifierViewCell.m; sourceTree = "<group>"; };
+		65CD76021D74BC4700388C33 /* IASKSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSlider.h; sourceTree = "<group>"; };
+		65CD76031D74BC4700388C33 /* IASKSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSlider.m; sourceTree = "<group>"; };
+		65CD76041D74BC4700388C33 /* IASKSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSwitch.h; sourceTree = "<group>"; };
+		65CD76051D74BC4700388C33 /* IASKSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSwitch.m; sourceTree = "<group>"; };
+		65CD76061D74BC4700388C33 /* IASKTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKTextField.h; sourceTree = "<group>"; };
+		65CD76071D74BC4700388C33 /* IASKTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKTextField.m; sourceTree = "<group>"; };
+		65CD76081D74BC4700388C33 /* IASKTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKTextView.h; sourceTree = "<group>"; };
+		65CD76091D74BC4700388C33 /* IASKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKTextView.m; sourceTree = "<group>"; };
+		65CD760A1D74BC4700388C33 /* IASKTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKTextViewCell.h; sourceTree = "<group>"; };
+		65CD760B1D74BC4700388C33 /* IASKTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKTextViewCell.m; sourceTree = "<group>"; };
+		65CD761D1D74BC7500388C33 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		6D3812CCB03E3ECEC61BCA85 /* libPods-SkylinkSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkylinkSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B914AC28B208D308E906D3FE /* Pods-SkylinkSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.release.xcconfig"; sourceTree = "<group>"; };
+		EF310ACE5905D72315E9EDEA /* Pods-SkylinkSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,31 +189,20 @@
 				650C9CC11C6CA6990088BF15 /* libstdc++.tbd in Frameworks */,
 				650C9CBF1C6CA6880088BF15 /* VideoToolbox.framework in Frameworks */,
 				650C9CBD1C6CA67B0088BF15 /* GLKit.framework in Frameworks */,
-				933E50490413A320F72BEA65 /* libPods-SkylinkSample.a in Frameworks */,
+				B8EEB1EE2EF4494DBF86C83C /* libPods-SkylinkSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39540A41B126DE0F83DB607D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				14DA9F698158FD19FBE6CF41 /* Pods-SkylinkSample.debug.xcconfig */,
-				10E87090EB3C8A5C10314277 /* Pods-SkylinkSample.release.xcconfig */,
-				4EB87F1A42B5B02B41BACFF0 /* Pods-SkylinkSample.debug.xcconfig */,
-				E802E56BA63F4840C33FAD27 /* Pods-SkylinkSample.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		654DF8921C5F3EE400299EF3 = {
 			isa = PBXGroup;
 			children = (
 				654DF89D1C5F3EE400299EF3 /* SkylinkSample */,
 				654DF89C1C5F3EE400299EF3 /* Products */,
-				39540A41B126DE0F83DB607D /* Pods */,
 				9AF99D477FDCFC748C037C3E /* Frameworks */,
+				B5FEA12AB0629F4DF656DCCB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +217,7 @@
 		654DF89D1C5F3EE400299EF3 /* SkylinkSample */ = {
 			isa = PBXGroup;
 			children = (
+				65CD75D11D74B6B500388C33 /* Settings */,
 				654DF8A11C5F3EE400299EF3 /* AppDelegate.h */,
 				654DF8A21C5F3EE400299EF3 /* AppDelegate.m */,
 				654DF8C91C5F516A00299EF3 /* HomeViewController.h */,
@@ -181,6 +239,8 @@
 		654DF89E1C5F3EE400299EF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				65CD761D1D74BC7500388C33 /* Settings.bundle */,
+				65CD75D51D74BC1B00388C33 /* Third party */,
 				654DF89F1C5F3EE400299EF3 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -252,6 +312,96 @@
 			path = icons;
 			sourceTree = "<group>";
 		};
+		65CD75D11D74B6B500388C33 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				65CD75D21D74B6E700388C33 /* SettingsViewController.h */,
+				65CD75D31D74B6E700388C33 /* SettingsViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		65CD75D51D74BC1B00388C33 /* Third party */ = {
+			isa = PBXGroup;
+			children = (
+				65CD75D61D74BC4700388C33 /* InAppSettingsKit */,
+			);
+			name = "Third party";
+			sourceTree = "<group>";
+		};
+		65CD75D61D74BC4700388C33 /* InAppSettingsKit */ = {
+			isa = PBXGroup;
+			children = (
+				65CD75D71D74BC4700388C33 /* Controllers */,
+				65CD75E11D74BC4700388C33 /* Models */,
+				65CD75EC1D74BC4700388C33 /* Resources */,
+				65CD75FD1D74BC4700388C33 /* Views */,
+			);
+			path = InAppSettingsKit;
+			sourceTree = "<group>";
+		};
+		65CD75D71D74BC4700388C33 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				65CD75D81D74BC4700388C33 /* IASKAppSettingsViewController.h */,
+				65CD75D91D74BC4700388C33 /* IASKAppSettingsViewController.m */,
+				65CD75DA1D74BC4700388C33 /* IASKAppSettingsWebViewController.h */,
+				65CD75DB1D74BC4700388C33 /* IASKAppSettingsWebViewController.m */,
+				65CD75DC1D74BC4700388C33 /* IASKMultipleValueSelection.h */,
+				65CD75DD1D74BC4700388C33 /* IASKMultipleValueSelection.m */,
+				65CD75DE1D74BC4700388C33 /* IASKSpecifierValuesViewController.h */,
+				65CD75DF1D74BC4700388C33 /* IASKSpecifierValuesViewController.m */,
+				65CD75E01D74BC4700388C33 /* IASKViewController.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		65CD75E11D74BC4700388C33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65CD75E21D74BC4700388C33 /* IASKSettingsReader.h */,
+				65CD75E31D74BC4700388C33 /* IASKSettingsReader.m */,
+				65CD75E41D74BC4700388C33 /* IASKSettingsStore.h */,
+				65CD75E51D74BC4700388C33 /* IASKSettingsStore.m */,
+				65CD75E61D74BC4700388C33 /* IASKSettingsStoreFile.h */,
+				65CD75E71D74BC4700388C33 /* IASKSettingsStoreFile.m */,
+				65CD75E81D74BC4700388C33 /* IASKSettingsStoreUserDefaults.h */,
+				65CD75E91D74BC4700388C33 /* IASKSettingsStoreUserDefaults.m */,
+				65CD75EA1D74BC4700388C33 /* IASKSpecifier.h */,
+				65CD75EB1D74BC4700388C33 /* IASKSpecifier.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		65CD75EC1D74BC4700388C33 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				65CD75ED1D74BC4700388C33 /* IASKLocalizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		65CD75FD1D74BC4700388C33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				65CD75FE1D74BC4700388C33 /* IASKPSSliderSpecifierViewCell.h */,
+				65CD75FF1D74BC4700388C33 /* IASKPSSliderSpecifierViewCell.m */,
+				65CD76001D74BC4700388C33 /* IASKPSTextFieldSpecifierViewCell.h */,
+				65CD76011D74BC4700388C33 /* IASKPSTextFieldSpecifierViewCell.m */,
+				65CD76021D74BC4700388C33 /* IASKSlider.h */,
+				65CD76031D74BC4700388C33 /* IASKSlider.m */,
+				65CD76041D74BC4700388C33 /* IASKSwitch.h */,
+				65CD76051D74BC4700388C33 /* IASKSwitch.m */,
+				65CD76061D74BC4700388C33 /* IASKTextField.h */,
+				65CD76071D74BC4700388C33 /* IASKTextField.m */,
+				65CD76081D74BC4700388C33 /* IASKTextView.h */,
+				65CD76091D74BC4700388C33 /* IASKTextView.m */,
+				65CD760A1D74BC4700388C33 /* IASKTextViewCell.h */,
+				65CD760B1D74BC4700388C33 /* IASKTextViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9AF99D477FDCFC748C037C3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,9 +410,18 @@
 				650C9CBE1C6CA6880088BF15 /* VideoToolbox.framework */,
 				650C9CBC1C6CA67B0088BF15 /* GLKit.framework */,
 				650C9CBA1C6CA2ED0088BF15 /* libSKYLINK.a */,
-				484001F59F8F6EADD76F5678 /* libPods-SkylinkSample.a */,
+				6D3812CCB03E3ECEC61BCA85 /* libPods-SkylinkSample.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5FEA12AB0629F4DF656DCCB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF310ACE5905D72315E9EDEA /* Pods-SkylinkSample.debug.xcconfig */,
+				B914AC28B208D308E906D3FE /* Pods-SkylinkSample.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,13 +431,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 654DF8B21C5F3EE400299EF3 /* Build configuration list for PBXNativeTarget "SkylinkSample" */;
 			buildPhases = (
-				419C4CB3C635F25A40328CC8 /* Check Pods Manifest.lock */,
+				5C5885887DBADD0009A31DC4 /* [CP] Check Pods Manifest.lock */,
 				654DF8971C5F3EE400299EF3 /* Sources */,
 				654DF8981C5F3EE400299EF3 /* Frameworks */,
 				654DF8991C5F3EE400299EF3 /* Resources */,
-				186CD6ADBC30BF424128DEBD /* Embed Pods Frameworks */,
-				962B9F56140A875506A20B2F /* Copy Pods Resources */,
 				65D2F37C1CA3FC1500084EEC /* ShellScript */,
+				338520B4911ADADE5301B2F9 /* [CP] Embed Pods Frameworks */,
+				3941104A8D2F5C51A76518FB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,7 +459,7 @@
 				TargetAttributes = {
 					654DF89A1C5F3EE400299EF3 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = VVYWH469LG;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -316,6 +475,19 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				el,
+				es,
+				fr,
+				it,
+				ja,
+				nl,
+				"pt-PT",
+				pt,
+				ru,
+				sv,
+				th,
+				tr,
 			);
 			mainGroup = 654DF8921C5F3EE400299EF3;
 			productRefGroup = 654DF89C1C5F3EE400299EF3 /* Products */;
@@ -349,10 +521,12 @@
 				654DF9391C62176B00299EF3 /* SwitchCamera.png in Resources */,
 				654DF8AB1C5F3EE400299EF3 /* Assets.xcassets in Resources */,
 				654DF9301C62176A00299EF3 /* LockFilled@2x.png in Resources */,
+				65CD76151D74BC4700388C33 /* IASKLocalizable.strings in Resources */,
 				654DF92B1C62176A00299EF3 /* Cancel.png in Resources */,
 				654DF92F1C62176A00299EF3 /* LockFilled.png in Resources */,
 				654DF93E1C62176B00299EF3 /* VideoCall@2x.png in Resources */,
 				654DF8A91C5F3EE400299EF3 /* Main.storyboard in Resources */,
+				65CD761E1D74BC7500388C33 /* Settings.bundle in Resources */,
 				654DF9341C62176B00299EF3 /* NoMicrophoneFilled@2x.png in Resources */,
 				654DF9381C62176B00299EF3 /* Refresh@2x.png in Resources */,
 				654DF9321C62176B00299EF3 /* Microphone@2x.png in Resources */,
@@ -366,14 +540,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		186CD6ADBC30BF424128DEBD /* Embed Pods Frameworks */ = {
+		338520B4911ADADE5301B2F9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,19 +555,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		419C4CB3C635F25A40328CC8 /* Check Pods Manifest.lock */ = {
+		3941104A8D2F5C51A76518FB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C5885887DBADD0009A31DC4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		65D2F37C1CA3FC1500084EEC /* ShellScript */ = {
@@ -409,21 +598,6 @@
 			shellPath = /bin/sh;
 			shellScript = "";
 		};
-		962B9F56140A875506A20B2F /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -431,16 +605,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65CD760F1D74BC4700388C33 /* IASKSpecifierValuesViewController.m in Sources */,
+				65CD76161D74BC4700388C33 /* IASKPSSliderSpecifierViewCell.m in Sources */,
 				654DF8C21C5F4BC400299EF3 /* FileTransferViewController.m in Sources */,
 				654DF8C31C5F4BC400299EF3 /* MessagesViewController.m in Sources */,
+				65CD76181D74BC4700388C33 /* IASKSlider.m in Sources */,
 				654DF8C11C5F4BC400299EF3 /* AudioCallViewController.m in Sources */,
+				65CD76131D74BC4700388C33 /* IASKSettingsStoreUserDefaults.m in Sources */,
+				65CD76171D74BC4700388C33 /* IASKPSTextFieldSpecifierViewCell.m in Sources */,
 				651675911D07E2900049778C /* DataTransferViewController.m in Sources */,
 				654DF8CF1C5F542E00299EF3 /* UIAspectFitButton.m in Sources */,
 				654DF8A31C5F3EE400299EF3 /* AppDelegate.m in Sources */,
+				65CD761C1D74BC4700388C33 /* IASKTextViewCell.m in Sources */,
+				65CD76141D74BC4700388C33 /* IASKSpecifier.m in Sources */,
 				654DF8CB1C5F516A00299EF3 /* HomeViewController.m in Sources */,
 				654DF8C41C5F4BC400299EF3 /* MultiVideoCallViewController.m in Sources */,
+				65CD760E1D74BC4700388C33 /* IASKMultipleValueSelection.m in Sources */,
+				65CD761B1D74BC4700388C33 /* IASKTextView.m in Sources */,
+				65CD75D41D74B6E800388C33 /* SettingsViewController.m in Sources */,
+				65CD76111D74BC4700388C33 /* IASKSettingsStore.m in Sources */,
+				65CD76191D74BC4700388C33 /* IASKSwitch.m in Sources */,
+				65CD76121D74BC4700388C33 /* IASKSettingsStoreFile.m in Sources */,
+				65CD76101D74BC4700388C33 /* IASKSettingsReader.m in Sources */,
+				65CD760D1D74BC4700388C33 /* IASKAppSettingsWebViewController.m in Sources */,
+				65CD761A1D74BC4700388C33 /* IASKTextField.m in Sources */,
 				654DF8C51C5F4BC400299EF3 /* VideoCallViewController.m in Sources */,
 				654DF8A01C5F3EE400299EF3 /* main.m in Sources */,
+				65CD760C1D74BC4700388C33 /* IASKAppSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +652,28 @@
 				654DF8AD1C5F3EE400299EF3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		65CD75ED1D74BC4700388C33 /* IASKLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65CD75EE1D74BC4700388C33 /* Base */,
+				65CD75EF1D74BC4700388C33 /* de */,
+				65CD75F01D74BC4700388C33 /* el */,
+				65CD75F11D74BC4700388C33 /* en */,
+				65CD75F21D74BC4700388C33 /* es */,
+				65CD75F31D74BC4700388C33 /* fr */,
+				65CD75F41D74BC4700388C33 /* it */,
+				65CD75F51D74BC4700388C33 /* ja */,
+				65CD75F61D74BC4700388C33 /* nl */,
+				65CD75F71D74BC4700388C33 /* pt-PT */,
+				65CD75F81D74BC4700388C33 /* pt */,
+				65CD75F91D74BC4700388C33 /* ru */,
+				65CD75FA1D74BC4700388C33 /* sv */,
+				65CD75FB1D74BC4700388C33 /* th */,
+				65CD75FC1D74BC4700388C33 /* tr */,
+			);
+			name = IASKLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -487,6 +700,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -503,7 +717,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "99b34085-4ac1-406f-94c7-b9141aaabd63";
@@ -533,6 +747,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -543,7 +758,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "99b34085-4ac1-406f-94c7-b9141aaabd63";
 				SDKROOT = iphoneos;
@@ -554,11 +769,12 @@
 		};
 		654DF8B31C5F3EE400299EF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14DA9F698158FD19FBE6CF41 /* Pods-SkylinkSample.debug.xcconfig */;
+			baseConfigurationReference = EF310ACE5905D72315E9EDEA /* Pods-SkylinkSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -567,95 +783,28 @@
 				INFOPLIST_FILE = SkylinkSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"ObjC\"",
-					"-l\"SocketRocket\"",
-					"-l\"UIAlertView-Blocks\"",
-					"-l\"c\"",
-					"-l\"icucore\"",
-					"-l\"sqlite3\"",
-					"-l\"stdc++\"",
-					"-l\"tema-ios-ntp\"",
-					"-framework",
-					"\"AVFoundation\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"CoreAudio\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreMedia\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GLKit\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"UIKit\"",
-					"-framework",
-					"\"VideoToolbox\"",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = sg.com.temasys.skylink.iOS.SkylinkSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "99b34085-4ac1-406f-94c7-b9141aaabd63";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		654DF8B41C5F3EE400299EF3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10E87090EB3C8A5C10314277 /* Pods-SkylinkSample.release.xcconfig */;
+			baseConfigurationReference = B914AC28B208D308E906D3FE /* Pods-SkylinkSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SkylinkSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"ObjC\"",
-					"-l\"SocketRocket\"",
-					"-l\"UIAlertView-Blocks\"",
-					"-l\"c\"",
-					"-l\"icucore\"",
-					"-l\"sqlite3\"",
-					"-l\"stdc++\"",
-					"-l\"tema-ios-ntp\"",
-					"-framework",
-					"\"AVFoundation\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"CoreAudio\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreMedia\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GLKit\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"UIKit\"",
-					"-framework",
-					"\"VideoToolbox\"",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = sg.com.temasys.skylink.iOS.SkylinkSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "99b34085-4ac1-406f-94c7-b9141aaabd63";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

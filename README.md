@@ -25,7 +25,14 @@ This App has 6 distinct view controllers, each of them demonstrate how to build 
 - File transfers
 - Data transfer
 
-**Temasys iOS SDK documentation:** http://skylink.io/ios/
+## Documentation & SDK repo
+
+Check out the documentation and our sample app to get usage instructions and examples.
+
+| Description | Link |
+| --- | --- |
+| Temasys iOS SDK documentation | https://cdn.temasys.io/skylink/skylinksdk/ios/latest/docs/index.html |
+| SDK (Github) |  http://github.com/Temasys/SKYLINK-iOS |
 
 
 ----------
@@ -81,127 +88,6 @@ A disconnect button is set in the navigation bar (left corner) as well as its se
 
 The rest of the example view controllers gives you 5 example usages of the Temasys iOS SDK.
 
-In what example view controller can I find **specific Temasys iOS SDK for iOS sample usages** ?
-==========================
-**SDK usage table for this sample App**
-This table lists the complete set of the SDK elements as of version 1.0.8 and the view controllers of this sample App where you can find example usages.
-
-In this table we use nicks to refer to the sample app's view controllers, here is the correspondance table:
-
-| View controller's Nick | Corresponding View Controller (.m file) |
-| 	-------:	| 	:--------	|
-| **`1to1V`** |  VideoCallViewController | 
-| **`MultiV`** |  MultiVideoCallViewController | 
-| **`Audio`** |  AudioCallViewController | 
-| **`Chat`** |  MessagesViewController | 
-| **`File`** |  FileTransferViewController | 
-
-(Note: additional examples are demonstrated in the DataTransferViewController)
-
-**Classes** sample usages
--------
-The following describes the **SKYLINKConnection** class usage. This is the most important class as it is the main place to control the SDK.
-
-| 	***SKYLINKConnection*** | 	`1to1V`	| 	`MultiV `	| 	`Audio`	| 	`Chat`	| 	`File`	| 
-| 	-------:	| 	:--------:	| 	:--------:	| 	:--------:	| 	:--------:	| 	:--------:	| 
-| 	**Delegates**	| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
-| 	  lifeCycleDelegate	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
-| 	  remotePeerDelegate	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
-| 	  mediaDelegate	| 	`✓`	| 	`✓`	| 	`✓`	| 		| 		| 
-| 	  messagesDelegate	| 		| 		| 		| 	`✓`	| 		| 
-| 	  fileTransferDelegate	| 		| 		| 		| 		| 	`✓`	| 
-| 	**Peer Id**	| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
-| 	  myPeerId	| 	`(✓)`			| 	`(✓)`			| 	`(✓)`			| 	`✓`	| 	`(✓)`			| 
-| 	**Lifecycle**	| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
-| 	- initWithConfig:appKey:	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
-| 	- connectToRoomWithSecret:roomName:userInfo:	| 	`✓`	| 	`✓`	| 		| 	`✓`	| 	`✓`	| 
-| 	- connectToRoomWithCredentials:roomName:userInfo:	| 		| 		| 	`✓`	| 		| 		| 
-| 	- disconnect:	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
-| 	**Room Control.**	| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
-| 	- refreshConnection:	| 	`✓`	| 		| 		| 		| 		| 
-| 	- lockTheRoom	| 	`(✓)`			| 	`✓`	| 		| 		| 		| 
-| 	- unlockTheRoom	| 	`(✓)`			| 	`✓`	| 		| 		| 		| 
-| 	**Media**	| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
-| 	- muteAudio:	| 	`✓`	| 	`✓`	| 	`✓`	| 		| 		| 
-| 	- muteVideo:	| 	`✓`	| 	`✓`	| 		| 		| 		| 
-| 	- isAudioMuted	| 	`✓`	| 	`✓`	| 	`✓`	| 		| 		| 
-| 	- isVideoMuted	| 	`✓`	| 	`✓`	| 		| 		| 		| 
-| 	- switchCamera	| 	`✓`	| 	`✓`	| 		| 		| 		| 
-| 	**Messaging**	| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
-| 	- sendCustomMessage:peerId:	| 		| 		| 		| 	`✓`	| 		| 
-| 	- sendDCMessage:peerId:	| 		| 		| 		| 	`✓`	| 		| 
-| 	- sendBinaryData:peerId:	| 		| 		| 		| 	`✓`	| 		| 
-| 	**File Transfer**	| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
-| 	- sendFileTransferRequest:assetType:peerId:	| 		| 		| 		| 		| 	`✓`	| 
-| 	- sendFileTransferRequest:assetType:	| 		| 		| 		| 		| 	`✓`	| 
-| 	- acceptFileTransfer:filename:peerId:	| 		| 		| 		| 		| 	`✓`	| 
-| 	- cancelFileTransfer:peerId:	| 		| 		| 		| 		| 	`✓`	| 
-| 	**Miscellaneous**	| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
-| 	- sendUserInfo:	| 		| 		| 		| 	`✓`	| 		| 
-| 	- getUserInfo:	| 		| 		| 		| 		| 		| 
-| 	**Utility**| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
-| 	+ getSkylinkVersion	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
-| 	+ setVerbose:	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
-| 	+ calculateCredentials:duration:startTime\:secret \:	| 		| 		| 	`✓`	| 		| 		| 
-
-
-The **SKYLINKConnectionConfig** is the class used to configure a newly created `SKYLINKConnection` instance.
-
-| 	***SKYLINKConnectionConfig*** | 	`1to1V`	| 	`MultiV `	| 	`Audio`	| 	`Chat`	| 	`File`	| 
-| 	-------:	| 	:--------:	| 	:--------:	| 	:--------:	| 	:--------:	| 	:--------:	| 
-| 	  audio	| 	`✓`	| 	`✓`	| 	`✓`	| 	.	| 	.	| 
-| 	  video	| 	`✓`	| 	`✓`	| 	.	| 	.	| 	.	| 
-| 	  dataChannel	| 		| 		| 		| 	`✓`	| 	`✓`	| 
-| 	  fileTransfer	| 		| 		| 		| 	.	| 	`✓`	| 
-| 	  timeout	| 		| 		| 		| 		| 	`✓`	| 
-| 	  userInfo	| 		| 		| 		| 		| 		| 
-
-The **SKYLINKPeerMediaProperties** class is the type of the property list returned in the `metaProperties` parameter in `- connection:didJoinPeer:mediaProperties:peerId:`	delegate method from the `SKYLINKConnectionRemotePeerDelegate`.
-
-| 	***SKYLINKPeerMediaProperties*** | 	`1to1V`	| 	`MultiV `	| 	`Audio`	| 	`Chat`	| 	`File`	| 
-| 	-------:	| 	:--------:	| 	:--------:	| 	:--------:	| 	:--------:	| 	:--------:	| 
-| 	 hasAudio	| 		| 		| 		| 		| 		| 
-| 	  isAudioStereo	| 		| 		| 		| 		| 		| 
-| 	  isAudioMuted	| 		| 	`✓`	| 	`✓`	| 		| 		| 
-| 	  hasVideo	| 		| 		| 		| 		| 		| 
-| 	  isVideoMuted	| 		| 	`✓`	| 		| 		| 		| 
-| 	  videoWidth	| 		| 	`✓`	| 		| 		| 		| 
-| 	  videoHeight	| 		| 	`✓`	| 		| 		| 		| 
-| 	  videoFrameRate	| 		| 		| 		| 		| 		| 
-
-**Protocols**  sample usages
--------
-After setting the `SKYLINKConnection` delegates, you need to implement the corresponding delegate methods to react to events.
-
-| 	***Protocols*** | 	`1to1V`	| 	`MultiV `	| 	`Audio`	| 	`Chat`	| 	`File`	| 
-| 	-------:	| 	:--------:	| 	:--------:	| 	:--------:	| 	:--------:	| 	:--------:	| 
-| 	**SKYLINKConnectionFileTransferDelegate**	| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
-| 	- connection:didReceiveRequest:peerId:	| 		| 		| 		| 		| 	`✓`	| 
-| 	- connection:didReceivePermission:filename:peerId:	| 		| 		| 		| 		| 	`✓`	| 
-| 	- connection:didDropTransfer:reason:isExplicit:peerId:	| 		| 		| 		| 		| 	`✓`	| 
-| 	- connection:didCompleteTransfer:fileData:peerId:	| 		| 		| 		| 		| 	`✓`	| 
-| 	**SKYLINKConnectionLifeCycleDelegate**	| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
-| 	- connection:didConnectWithMessage:success:	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
-| 	- connection:didRenderUserVideo:	| 	`✓`	| 	`✓`	| 		| 		| 		| 
-| 	- connection:didLockTheRoom:peerId:	| 		| 	`✓`	| 		| 		| 		| 
-| 	- connection:didReceiveWarning:	| 		| 		| 		| 		| 		| 
-| 	- connection:didDisconnectWithMessage:	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
-| 	**SKYLINKConnectionMediaDelegate**	| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
-| 	- connection:didChangeVideoSize:videoView:	| 	`✓`	| 	`✓`	| 		| 		| 		| 
-| 	- connection:didToggleAudio:peerId:	| 		| 	`✓`	| 	`✓`	| 		| 		| 
-| 	- connection:didToggleVideo:peerId:	| 		| 	`✓`	| 		| 		| 		| 
-| 	**SKYLINKConnectionMessagesDelegate**	| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
-| 	- connection:didReceiveCustomMessage:public:peerId:	| 		| 		| 		| 	`✓`	| 		| 
-| 	- connection:didReceiveDCMessage:public:peerId:	| 		| 		| 		| 	`✓`	| 		| 
-| 	- connection:didReceiveBinaryData:peerId:	| 		| 		| 		| 	`✓`	| 		| 
-| 	**SKYLINKConnectionRemotePeerDelegate**| 	1to1V| 	MultiV 	| 	Audio	| 	Chat| 	File |
-| 	- connection:didJoinPeer:mediaProperties:peerId:	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
-| 	- connection:didRenderPeerVideo:peerId:	| 	`✓`	| 	`✓`	| 		| 		| 		| 
-| 	- connection:didReceiveUserInfo:peerId:	| 		| 		| 		| 	`✓`	| 		| 
-| 	- connection:didLeavePeerWithMessage:peerId:	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 	`✓`	| 
-
-----------
-
 **Resources**
 ==========================
 
@@ -213,15 +99,13 @@ Support portal
  If you encounter any issues or have any enquiries regarding Skylink, drop us a note on our [support portal](http://support.temasys.io/support/login) and we would be happy to help! 
 >>>>>>> master
 
-Tutorials
--------
+### Tutorials
 
-<<<<<<< HEAD
-Getting started with Temasys iOS SDK: http://temasys.io/getting-started-skylinksdk-ios/
-Handle the video view stretching: http://temasys.io/a-simple-solution-for-video-stretching/
-=======
-Getting started with SkylinkSDK for iOS: http://temasys.io/getting-started-skylinksdk-ios/
-Handle the video view stretching: http://temasys.io/a-simple-solution-for-video-stretching/
+| Tutorial | Link |
+| --- | --- |
+| Getting started with Temasys iOS SDK for iOS | http://temasys.io/getting-started-skylinksdk-ios/ |
+| Handle the video view stretching | http://temasys.io/a-simple-solution-for-video-stretching/ |
+
 
 Skylink, by **Temasys**
 -------
@@ -242,8 +126,5 @@ Other library used (via cocoapods)
 
 *This document was edited for Temasys iOS SDK version 1.0.9*
 
-----------
-
-![Temasys technology is trusted by our partners](Readme_images/about.png)
 
 

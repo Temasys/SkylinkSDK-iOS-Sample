@@ -10,7 +10,7 @@
 #import "UIAlertView+Blocks.h"
 
 
-#define ROOM_NAME  @"MESSAGES-ROOM"
+#define ROOM_NAME [[NSUserDefaults standardUserDefaults] objectForKey:@"ROOMNAME_MESSAGES"]
 
 
 @interface MessagesViewController ()
@@ -26,6 +26,7 @@
 
 // Properties
 @property (strong, nonatomic) SKYLINKConnection *skylinkConnection;
+@property (strong, nonatomic) SKYLINKConnection *skylinkConnection2;
 @property (strong, nonatomic) NSMutableArray *messages;
 @property (strong, nonatomic) NSMutableDictionary *peers;
 
@@ -53,6 +54,7 @@
     SKYLINKConnectionConfig *config = [SKYLINKConnectionConfig new];
     config.video = NO;
     config.audio = NO;
+    config.receiveAudio = YES;
     config.fileTransfer = NO;
     config.dataChannel = YES; // for data chanel messages
     
@@ -66,6 +68,16 @@
     [SKYLINKConnection setVerbose:TRUE];
 #endif
     [self.skylinkConnection connectToRoomWithSecret:self.skylinkApiSecret roomName:ROOM_NAME userInfo:nil]; // a nickname could be sent here via userInfo cf the implementation of - (void)connection:(SKYLINKConnection*)connection didJoinPeer:(id)userInfo mediaProperties:(SKYLINKPeerMediaProperties*)pmProperties peerId:(NSString*)peerId
+    
+    
+    // Creating SKYLINKConnection
+    self.skylinkConnection2 = [[SKYLINKConnection alloc] initWithConfig:config appKey:self.skylinkApiKey];
+    self.skylinkConnection2.lifeCycleDelegate = self;
+    self.skylinkConnection2.messagesDelegate = self;
+    self.skylinkConnection2.remotePeerDelegate = self;
+    // Connecting to a room
+    [self.skylinkConnection2 connectToRoomWithSecret:self.skylinkApiSecret roomName:@"room2" userInfo:nil]; // a nickname could be sent here via userInfo cf the implementation of - (void)connection:(SKYLINKConnection*)connection didJoinPeer:(id)userInfo mediaProperties:(SKYLINKPeerMediaProperties*)pmProperties peerId:(NSString*)peerId
+
 }
 
 -(void)disconnect {
@@ -153,8 +165,8 @@
 
 - (void)connection:(SKYLINKConnection*)connection didReceiveUserInfo:(id)userInfo peerId:(NSString*)peerId {
     [self.peers removeObjectForKey:peerId];
-    NSString *displayNickname = (userInfo[@"nickname"]) ? userInfo[@"nickname"] : [NSString stringWithFormat:@"ID: %@", peerId];
-    [self.peers addEntriesFromDictionary:@{peerId:displayNickname}];
+    //NSString *displayNickname = ([userInfo[@"nickname"] isKindOfClass:[NSString class]]) ? userInfo[@"nickname"] : [NSString stringWithFormat:@"ID: %@", peerId];
+    //[self.peers addEntriesFromDictionary:@{peerId:displayNickname}];
     [self updatePeersButtonTitle];
     [self.tableView reloadData]; // will reload the sender label
 }
@@ -308,7 +320,7 @@
             }
             @catch (NSException *e) {
                 NSString *message = [NSString stringWithFormat:@"\n%@", e];
-                if ([e.reason isEqualToString:@"Sending binary data in a MCU connection is not supported"]) message = [message stringByAppendingString:@"\n\nSkylink Media Relay can be enabled/disabled in Key configuration on the developer portal: http://developer.temasys.com.sg/"];
+                if ([e.reason isEqualToString:@"Sending binary data in a MCU connection is not supported"]) message = [message stringByAppendingString:@"\n\nSkylink Media Relay can be enabled/disabled in Key configuration on the developer portal: console.temasys.io"];
                 [[[UIAlertView alloc] initWithTitle:@"Exeption when sending binary data"  message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
                 showSentMessage = NO;
             }

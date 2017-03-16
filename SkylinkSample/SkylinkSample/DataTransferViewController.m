@@ -8,7 +8,7 @@
 
 #import "DataTransferViewController.h"
 
-#define ROOM_NAME  @"DATA-TRANSFER-ROOM"
+#define ROOM_NAME [[NSUserDefaults standardUserDefaults] objectForKey:@"ROOMNAME_DATATRANSFER"]
 
 @interface DataTransferViewController ()
 @property (strong, nonatomic) SKYLINKConnection *skylinkConnection;
@@ -40,6 +40,7 @@
     
     SKYLINKConnectionConfig *config = [SKYLINKConnectionConfig new];
     config.dataChannel = YES;
+    config.receiveAudio = YES;
     self.skylinkConnection = [[SKYLINKConnection alloc] initWithConfig:config appKey:self.skylinkApiKey];
     self.skylinkConnection.messagesDelegate = self;
     self.skylinkConnection.lifeCycleDelegate = self;

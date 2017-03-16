@@ -9,7 +9,7 @@
 #import "AudioCallViewController.h"
 
 
-#define ROOM_NAME  @"AUDIO-CALL-ROOM"
+#define ROOM_NAME [[NSUserDefaults standardUserDefaults] objectForKey:@"ROOMNAME_AUDIOCALL"]
 
 
 @interface AudioCallViewController ()
@@ -39,21 +39,26 @@
     
     // Creating configuration
     SKYLINKConnectionConfig *config = [SKYLINKConnectionConfig new];
-    config.video = NO;
     config.audio = YES;
+    
     // Creating SKYLINKConnection
     self.skylinkConnection = [[SKYLINKConnection alloc] initWithConfig:config appKey:self.skylinkApiKey];
     self.skylinkConnection.lifeCycleDelegate = self;
     self.skylinkConnection.mediaDelegate = self;
     self.skylinkConnection.remotePeerDelegate = self;
 #ifdef DEBUG
-    [SKYLINKConnection setVerbose:TRUE];
+    [SKYLINKConnection setVerbose:YES];
 #endif
     // Connecting to a room
     // connectToRoomWithCredentials example
     NSDictionary *credInfos = @{@"startTime" : [NSDate date], @"duration" : [NSNumber numberWithFloat:24.000f]};
-    NSString *credential = [SKYLINKConnection calculateCredentials:ROOM_NAME duration:credInfos[@"duration"] /*stringValue]*/ startTime:credInfos[@"startTime"] secret:self.skylinkApiSecret];
-    [self.skylinkConnection connectToRoomWithCredentials:@{@"credential" : credential, @"startTime" : credInfos[@"startTime"], @"duration" : credInfos[@"duration"]} roomName:ROOM_NAME userInfo:[NSString stringWithFormat:@"Audio call user #%d - iOS %@", arc4random()%1000, [[UIDevice currentDevice] systemVersion]]];
+    NSString *credential = [SKYLINKConnection calculateCredentials:ROOM_NAME
+                                                          duration:credInfos[@"duration"]
+                                                         startTime:credInfos[@"startTime"]
+                                                            secret:self.skylinkApiSecret];
+    [self.skylinkConnection connectToRoomWithCredentials:@{@"credential" : credential, @"startTime" : credInfos[@"startTime"], @"duration" : credInfos[@"duration"]}
+                                                roomName:ROOM_NAME
+                                                userInfo:[NSString stringWithFormat:@"Audio call user #%d - iOS %@", arc4random()%1000, [[UIDevice currentDevice] systemVersion]]];
 }
 
 -(void)disconnect {
@@ -110,9 +115,11 @@
 
 - (void)connection:(SKYLINKConnection*)connection didLeavePeerWithMessage:(NSString*)errorMessage peerId:(NSString*)peerId {
     NSLog(@"Peer with id %@ left the room with message: %@", peerId, errorMessage);
+    NSDictionary *dicToRemove;
     for (NSDictionary *peerDic in self.remotePeerArray) {
-        if ([peerDic[@"id"] isEqualToString:peerId]) [self.remotePeerArray removeObject:peerDic];
+        if ([peerDic[@"id"] isEqualToString:peerId]) dicToRemove = peerDic;
     }
+    [self.remotePeerArray removeObject:dicToRemove];
     [self.tableView reloadData];
 }
 

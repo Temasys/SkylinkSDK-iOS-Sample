@@ -1,12 +1,60 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QEM-G0-C5G">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QEM-G0-C5G">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="VBt-ze-wEF">
+            <objects>
+                <tableViewController id="JDK-Lp-XU6" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="INb-cz-ilU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="8y7-cZ-X4H" detailTextLabel="vVF-RP-ihW" style="IBUITableViewCellStyleSubtitle" id="rnc-zh-c7Z">
+                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rnc-zh-c7Z" id="7Mp-h1-ZOd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8y7-cZ-X4H">
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vVF-RP-ihW">
+                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JDK-Lp-XU6" id="Zt5-xF-8Tt"/>
+                            <outlet property="delegate" destination="JDK-Lp-XU6" id="SIQ-gO-B1V"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3eH-vW-IGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752" y="1115"/>
+        </scene>
         <!--Skylink Examples-->
         <scene sceneID="gsg-oP-kUU">
             <objects>
@@ -16,18 +64,18 @@
                         <viewControllerLayoutGuide type="bottom" id="RR5-ZO-AC6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="km6-WM-yRE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10f-Gj-5CF">
-                                <rect key="frame" x="20" y="34" width="560" height="129"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="16" y="34" width="343" height="163"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="V7G-4K-e96"/>
                                 </constraints>
                                 <string key="text">Enter your Skylink API key and secret above.
-Get it at developer.temasys.com.sg/register</string>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+Get it at console.temasys.io</string>
+                                <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
@@ -35,29 +83,23 @@ Get it at developer.temasys.com.sg/register</string>
                                         <exclude reference="V7G-4K-e96"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="0.0" width="560" height="116.5"/>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="0.0" width="760" height="116.5"/>
-                                </variation>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoSkylink.png" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-wf-fnY">
-                                <rect key="frame" x="20" y="535" width="560" height="45"/>
+                                <rect key="frame" x="16" y="602" width="343" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="oD8-Af-bTQ"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sz-Wr-Iyf">
-                                <rect key="frame" x="20" y="224" width="560" height="45"/>
-                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="258" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="9Xx-0l-ji0"/>
                                     <constraint firstAttribute="height" constant="45" id="QzQ-nm-LVc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                 <state key="normal" title="Multi party video call">
-                                    <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -82,15 +124,15 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NR-6n-G4o">
-                                <rect key="frame" x="20" y="383" width="560" height="45"/>
-                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="417" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="OBk-xm-JTK"/>
                                     <constraint firstAttribute="height" constant="45" id="tXb-5l-6fn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                 <state key="normal" title="File transfer">
-                                    <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -115,15 +157,15 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xzd-NJ-GhE">
-                                <rect key="frame" x="20" y="330" width="560" height="45"/>
-                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="364" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="B8V-km-LX6"/>
                                     <constraint firstAttribute="height" constant="45" id="I4v-pj-oOh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                 <state key="normal" title="Messages">
-                                    <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -141,12 +183,6 @@ Get it at developer.temasys.com.sg/register</string>
                                         <include reference="I4v-pj-oOh"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="314" y="190" width="173" height="45"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="314" y="190" width="173" height="45"/>
-                                </variation>
                                 <connections>
                                     <segue destination="Zcp-Wk-Mip" kind="show" id="7mV-gL-ujU">
                                         <nil key="action"/>
@@ -154,15 +190,15 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HG-gJ-mC7">
-                                <rect key="frame" x="20" y="277" width="560" height="45"/>
-                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="311" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="VM6-O0-Jne"/>
                                     <constraint firstAttribute="height" constant="45" id="l0N-mm-VBh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                 <state key="normal" title="Audio call">
-                                    <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -180,12 +216,6 @@ Get it at developer.temasys.com.sg/register</string>
                                         <include reference="l0N-mm-VBh"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="314" y="243" width="173" height="45"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="314" y="243" width="173" height="45"/>
-                                </variation>
                                 <connections>
                                     <segue destination="g3I-iG-8nt" kind="show" id="5pR-ku-rDf">
                                         <nil key="action"/>
@@ -193,15 +223,15 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ga-9K-bpo">
-                                <rect key="frame" x="20" y="171" width="560" height="45"/>
-                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="205" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="I88-Fa-Pw3"/>
                                     <constraint firstAttribute="height" constant="45" id="xun-eo-NJu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                 <state key="normal" title="1-1 video call">
-                                    <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -226,12 +256,12 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Key" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="26g-UV-ciW">
-                                <rect key="frame" x="20" y="72" width="276" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.1985991379" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="72" width="163.5" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.1985991379" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CkO-G4-5Hf"/>
                                 </constraints>
-                                <color key="textColor" red="0.95745192310000005" green="0.95745192310000005" blue="0.95745192310000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.95745192310000005" green="0.95745192310000005" blue="0.95745192310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done"/>
                                 <connections>
@@ -239,12 +269,12 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Secret" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XKP-3k-jOj">
-                                <rect key="frame" x="304" y="72" width="276" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.1985991379" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="187.5" y="72" width="171.5" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.1985991379" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7q9-RE-5yg"/>
                                 </constraints>
-                                <color key="textColor" red="0.95745192310000005" green="0.95745192310000005" blue="0.95745192310000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.95745192310000005" green="0.95745192310000005" blue="0.95745192310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
@@ -252,7 +282,7 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKR-0J-iBb">
-                                <rect key="frame" x="535" y="171" width="45" height="45"/>
+                                <rect key="frame" x="314" y="205" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="YDH-vd-UD7"/>
                                     <constraint firstAttribute="width" constant="45" id="iCs-sd-SZM"/>
@@ -262,7 +292,7 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXU-tQ-zuC">
-                                <rect key="frame" x="535" y="224" width="45" height="45"/>
+                                <rect key="frame" x="314" y="258" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="D1B-K8-Dps"/>
                                     <constraint firstAttribute="height" constant="45" id="vyv-bi-WBi"/>
@@ -272,7 +302,7 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3s-vE-Oli">
-                                <rect key="frame" x="535" y="277" width="45" height="45"/>
+                                <rect key="frame" x="314" y="311" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="U21-Z8-MGy"/>
                                     <constraint firstAttribute="height" constant="45" id="u7a-cN-9y0"/>
@@ -282,7 +312,7 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQm-LR-LNo">
-                                <rect key="frame" x="535" y="330" width="45" height="45"/>
+                                <rect key="frame" x="314" y="364" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="Gfl-5x-r5Q"/>
                                     <constraint firstAttribute="height" constant="45" id="lWd-cs-weA"/>
@@ -292,7 +322,7 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQ5-Hi-5lf">
-                                <rect key="frame" x="535" y="383" width="45" height="45"/>
+                                <rect key="frame" x="314" y="417" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="NOg-R1-uKK"/>
                                     <constraint firstAttribute="width" constant="45" id="zUh-m8-d4a"/>
@@ -302,15 +332,15 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Olw-yl-Ujz">
-                                <rect key="frame" x="20" y="436" width="560" height="45"/>
-                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="470" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="NlZ-x4-piT"/>
                                     <constraint firstAttribute="height" constant="45" id="ZJB-Sy-uBY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                 <state key="normal" title="Data transfer">
-                                    <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -333,7 +363,7 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KQm-LR-LNo" firstAttribute="trailing" secondItem="Xzd-NJ-GhE" secondAttribute="trailing" id="1e1-Jg-cHP"/>
                             <constraint firstItem="6HG-gJ-mC7" firstAttribute="top" secondItem="1Ga-9K-bpo" secondAttribute="bottom" constant="8" id="2Fz-DS-43f"/>
@@ -433,6 +463,10 @@ Get it at developer.temasys.com.sg/register</string>
                                 <exclude reference="mrE-9A-Lds"/>
                                 <exclude reference="y5n-qv-h3D"/>
                                 <exclude reference="ZO9-B8-Gg9"/>
+                                <exclude reference="5V7-bT-1Yx"/>
+                                <exclude reference="EbR-dq-aFr"/>
+                                <exclude reference="GSc-mH-elR"/>
+                                <exclude reference="KdP-Tm-waf"/>
                                 <exclude reference="Auc-lh-OYH"/>
                                 <exclude reference="Rbx-0u-7aU"/>
                                 <exclude reference="TkT-GO-GPV"/>
@@ -441,10 +475,6 @@ Get it at developer.temasys.com.sg/register</string>
                                 <exclude reference="t8H-Hp-22K"/>
                                 <exclude reference="Cuh-P3-QZY"/>
                                 <exclude reference="lyO-kM-L5D"/>
-                                <exclude reference="5V7-bT-1Yx"/>
-                                <exclude reference="EbR-dq-aFr"/>
-                                <exclude reference="GSc-mH-elR"/>
-                                <exclude reference="KdP-Tm-waf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -497,9 +527,14 @@ Get it at developer.temasys.com.sg/register</string>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Skylink Examples" id="5b1-ep-DiU">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="edit" id="92i-vH-CKV">
+                            <connections>
+                                <segue destination="JDK-Lp-XU6" kind="show" id="ePc-aJ-fOo"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="CA6-pA-fp5">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="0T5-ab-ufS">
-                                <rect key="frame" x="558" y="11" width="22" height="22"/>
+                                <rect key="frame" x="337" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="homeInfoTap:" destination="4aO-7M-Jih" eventType="touchUpInside" id="YOf-Ue-tns"/>
@@ -525,12 +560,12 @@ Get it at developer.temasys.com.sg/register</string>
                         <viewControllerLayoutGuide type="bottom" id="0pL-16-w9E"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yQb-BB-otD">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBc-aU-am8">
-                                <rect key="frame" x="20" y="20" width="560" height="42"/>
-                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="20" width="343" height="42"/>
+                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="WtD-0X-QBe"/>
                                     <constraint firstAttribute="height" constant="30" id="zno-yn-rcb"/>
@@ -552,34 +587,34 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jaz-fM-1rP">
-                                <rect key="frame" x="0.0" y="70" width="600" height="466"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="533"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ACpeerCell" textLabel="u2p-oZ-eX3" detailTextLabel="ell-go-eKL" style="IBUITableViewCellStyleSubtitle" id="zMX-rJ-Deq">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zMX-rJ-Deq" id="WTg-5p-UNU">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u2p-oZ-eX3">
-                                                    <rect key="frame" x="15" y="3" width="31" height="22"/>
+                                                    <rect key="frame" x="15" y="2" width="31" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ell-go-eKL">
-                                                    <rect key="frame" x="15" y="25" width="44" height="16.5"/>
+                                                    <rect key="frame" x="15" y="24" width="44" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
-                                                    <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.35470753205128192" green="0.35470753205128192" blue="0.35470753205128192" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.35470753205128192" green="0.35470753205128192" blue="0.35470753205128192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -588,8 +623,8 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oeZ-kd-CW5">
-                                <rect key="frame" x="274.5" y="243" width="50" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.50406788790000001" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="162.5" y="276.5" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.50406788790000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="HOM-UO-iiY"/>
                                     <constraint firstAttribute="height" constant="50" id="hD0-BL-dK5"/>
@@ -601,7 +636,7 @@ Get it at developer.temasys.com.sg/register</string>
                                 </userDefinedRuntimeAttributes>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oeZ-kd-CW5" firstAttribute="centerX" secondItem="yQb-BB-otD" secondAttribute="centerX" id="1VF-Rj-hzl"/>
                             <constraint firstItem="Jaz-fM-1rP" firstAttribute="leading" secondItem="yQb-BB-otD" secondAttribute="leading" id="E8e-Mx-InY"/>
@@ -639,16 +674,16 @@ Get it at developer.temasys.com.sg/register</string>
                         <viewControllerLayoutGuide type="bottom" id="a0c-67-moj"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="m76-rE-JG8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWc-yM-iLZ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URp-tl-Ego">
-                                <rect key="frame" x="20" y="72" width="100" height="140"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="16" y="72" width="100" height="140"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="7xn-SD-AxB"/>
                                     <constraint firstAttribute="width" constant="140" id="V4j-Yg-2jd"/>
@@ -676,19 +711,19 @@ Get it at developer.temasys.com.sg/register</string>
                                 </variation>
                             </view>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svw-eU-Dzg">
-                                <rect key="frame" x="0.0" y="539" width="600" height="61"/>
+                                <rect key="frame" x="0.0" y="606" width="375" height="61"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gVE-Yo-4LP">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAW-aH-ggZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qhd-DO-26b">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D70-Mv-DTR" customClass="UIAspectFitButton">
-                                                        <rect key="frame" x="304.5" y="8" width="45" height="36"/>
+                                                        <rect key="frame" x="192" y="8" width="45" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="45" id="Oqz-IN-ugu"/>
                                                             <constraint firstAttribute="height" constant="36" id="Uyt-bJ-yaw"/>
@@ -699,7 +734,7 @@ Get it at developer.temasys.com.sg/register</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzF-nn-Q9G" customClass="UIAspectFitButton">
-                                                        <rect key="frame" x="547" y="8" width="45" height="36"/>
+                                                        <rect key="frame" x="322" y="8" width="45" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="45" id="Qxj-Ae-EeZ"/>
                                                             <constraint firstAttribute="height" constant="36" id="v1u-ff-6cF"/>
@@ -721,7 +756,7 @@ Get it at developer.temasys.com.sg/register</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2Q-fJ-1OJ" customClass="UIAspectFitButton">
-                                                        <rect key="frame" x="251" y="8" width="45" height="36"/>
+                                                        <rect key="frame" x="138.5" y="8" width="45" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="45" id="9Pf-7e-jdB"/>
                                                             <constraint firstAttribute="height" constant="36" id="p3M-x9-qWs"/>
@@ -752,9 +787,6 @@ Get it at developer.temasys.com.sg/register</string>
                                             <vibrancyEffect>
                                                 <blurEffect style="dark"/>
                                             </vibrancyEffect>
-                                            <variation key="heightClass=compact" misplaced="YES">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
-                                            </variation>
                                         </visualEffectView>
                                     </subviews>
                                     <constraints>
@@ -785,15 +817,15 @@ Get it at developer.temasys.com.sg/register</string>
                                 </variation>
                             </visualEffectView>
                             <imageView userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoSkylink.png" translatesAutoresizingMaskIntoConstraints="NO" id="10O-fh-PWb">
-                                <rect key="frame" x="488" y="72" width="92" height="32"/>
+                                <rect key="frame" x="267" y="72" width="92" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="92" id="2K7-L1-1yz"/>
                                     <constraint firstAttribute="height" constant="32" id="5x5-rZ-aio"/>
                                 </constraints>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="du8-x5-cZM">
-                                <rect key="frame" x="275.5" y="274.5" width="50" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.50406788790000001" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="162.5" y="308.5" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.50406788790000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="AmV-fV-Bkm"/>
                                     <constraint firstAttribute="width" constant="50" id="gif-Y3-nRI"/>
@@ -805,7 +837,7 @@ Get it at developer.temasys.com.sg/register</string>
                                 </userDefinedRuntimeAttributes>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="10O-fh-PWb" firstAttribute="top" secondItem="sbn-F4-pOV" secondAttribute="bottom" constant="8" id="3K3-gH-Acg"/>
                             <constraint firstAttribute="trailing" secondItem="lWc-yM-iLZ" secondAttribute="trailing" id="3Tn-pv-eFi"/>
@@ -841,39 +873,39 @@ Get it at developer.temasys.com.sg/register</string>
                         <viewControllerLayoutGuide type="bottom" id="ats-MJ-wYK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zgK-v5-9MF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="5bL-Dg-xJG">
-                                <rect key="frame" x="20" y="64" width="276" height="536"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="20" y="64" width="339" height="328"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="peerCell" textLabel="rz4-IR-fJq" detailTextLabel="jdr-Xg-tlk" style="IBUITableViewCellStyleSubtitle" id="YW3-gW-o0V">
-                                        <rect key="frame" x="0.0" y="113.5" width="276" height="44"/>
+                                        <rect key="frame" x="0.0" y="56" width="339" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YW3-gW-o0V" id="KUv-Th-T6v">
-                                            <rect key="frame" x="0.0" y="0.0" width="276" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="339" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Peer cell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rz4-IR-fJq">
-                                                    <rect key="frame" x="15" y="3" width="61.5" height="22"/>
+                                                    <rect key="frame" x="15" y="3" width="62" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
-                                                    <color key="textColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Tap to transfer a file to this peer." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jdr-Xg-tlk">
-                                                    <rect key="frame" x="15" y="25" width="158.5" height="15.5"/>
+                                                    <rect key="frame" x="15" y="25" width="159" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.27033253210000002" green="0.27033253210000002" blue="0.27033253210000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.27033253210000002" green="0.27033253210000002" blue="0.27033253210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </prototypes>
@@ -883,35 +915,35 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="84C-mh-CRU">
-                                <rect key="frame" x="304" y="64" width="296" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="400" width="375" height="267"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="fileTransferCell" textLabel="ybK-hZ-c6g" detailTextLabel="Xp1-xs-v2z" style="IBUITableViewCellStyleSubtitle" id="kms-Ll-TcT">
-                                        <rect key="frame" x="0.0" y="28" width="296" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kms-Ll-TcT" id="EP1-MY-M5y">
-                                            <rect key="frame" x="0.0" y="0.0" width="296" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="File transfer cell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ybK-hZ-c6g">
-                                                    <rect key="frame" x="15" y="6" width="98.5" height="19.5"/>
+                                                    <rect key="frame" x="15" y="5" width="99" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                    <color key="textColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xp1-xs-v2z">
-                                                    <rect key="frame" x="15" y="25.5" width="27.5" height="12.5"/>
+                                                    <rect key="frame" x="15" y="25" width="28" height="13"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="9"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.27033253210000002" green="0.27033253210000002" blue="0.27033253210000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.27033253210000002" green="0.27033253210000002" blue="0.27033253210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </prototypes>
@@ -921,8 +953,8 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yb-Tm-BrF">
-                                <rect key="frame" x="20" y="72" width="276" height="44"/>
-                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="72" width="339" height="44"/>
+                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="XYK-eo-FE6"/>
                                 </constraints>
@@ -938,8 +970,8 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="bUE-Vp-sxA">
-                                <rect key="frame" x="275" y="275" width="50" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.50406788790000001" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="162.5" y="308.5" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.50406788790000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="FU0-JB-rRe"/>
                                     <constraint firstAttribute="height" constant="50" id="eAQ-8k-mpG"/>
@@ -951,7 +983,7 @@ Get it at developer.temasys.com.sg/register</string>
                                 </userDefinedRuntimeAttributes>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5bL-Dg-xJG" firstAttribute="top" secondItem="wN9-P9-PS0" secondAttribute="bottom" id="1Ms-9l-GvD"/>
                             <constraint firstItem="bUE-Vp-sxA" firstAttribute="centerX" secondItem="zgK-v5-9MF" secondAttribute="centerX" id="5vp-uR-I70"/>
@@ -1023,12 +1055,12 @@ Get it at developer.temasys.com.sg/register</string>
                         <viewControllerLayoutGuide type="bottom" id="3ef-M6-tKy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="K0f-aU-AmT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vh-HA-eda">
-                                <rect key="frame" x="20" y="186" width="106" height="46"/>
-                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="186" width="106" height="46"/>
+                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="gcG-2d-5W3"/>
                                 </constraints>
@@ -1043,22 +1075,22 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.80000000000000004" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yhz-hf-H3P">
-                                <rect key="frame" x="170" y="72" width="412" height="31"/>
-                                <color key="minimumTrackTintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="166" y="72" width="195" height="31"/>
+                                <color key="minimumTrackTintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="onAnySliderChange:" destination="tbF-YR-mob" eventType="valueChanged" id="5Yo-08-57X"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.59999999999999998" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="A8p-CQ-lPo">
-                                <rect key="frame" x="170" y="110" width="412" height="31"/>
-                                <color key="minimumTrackTintColor" red="0.41790050203006118" green="0.9220552884615385" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="166" y="110" width="195" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.41790050203006118" green="0.9220552884615385" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="onAnySliderChange:" destination="tbF-YR-mob" eventType="valueChanged" id="52F-5l-mAy"/>
                                 </connections>
                             </slider>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQj-hS-xsx">
-                                <rect key="frame" x="20" y="72" width="106" height="106"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="16" y="72" width="106" height="106"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="106" id="MIi-Fm-uNM"/>
                                     <constraint firstAttribute="width" constant="106" id="ocq-YE-ma0"/>
@@ -1070,14 +1102,14 @@ Get it at developer.temasys.com.sg/register</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mL2-a7-0Nl">
-                                <rect key="frame" x="134" y="72" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.2027747845" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="130" y="72" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.2027747845" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2tC-qj-jdc"/>
                                     <constraint firstAttribute="width" constant="30" id="A85-7u-uNN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="0.88145406969999995" green="0.87289626320000002" blue="0.8900118762" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.88145406969999995" green="0.87289626320000002" blue="0.8900118762" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1086,14 +1118,14 @@ Get it at developer.temasys.com.sg/register</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dkx-VH-HTF">
-                                <rect key="frame" x="134" y="110" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.2027747845" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="130" y="110" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.2027747845" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="7em-BB-VAE"/>
                                     <constraint firstAttribute="height" constant="30" id="mEc-YK-kmn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="0.88145406969999995" green="0.87289626320000002" blue="0.8900118762" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.88145406969999995" green="0.87289626320000002" blue="0.8900118762" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1102,14 +1134,14 @@ Get it at developer.temasys.com.sg/register</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugx-rx-u4T">
-                                <rect key="frame" x="134" y="148" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.2027747845" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="130" y="148" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.2027747845" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="UUv-hI-Sjv"/>
                                     <constraint firstAttribute="height" constant="30" id="zrn-6w-OB6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="0.88145406969999995" green="0.87289626320000002" blue="0.8900118762" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.88145406969999995" green="0.87289626320000002" blue="0.8900118762" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1118,17 +1150,17 @@ Get it at developer.temasys.com.sg/register</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ztW-CR-539">
-                                <rect key="frame" x="8" y="370" width="584" height="222"/>
+                                <rect key="frame" x="8" y="370" width="359" height="289"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ij7-Hf-Bc7">
-                                <rect key="frame" x="8" y="296" width="592" height="304"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="8" y="296" width="367" height="371"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="270" id="BYv-yh-jUA"/>
                                     <constraint firstAttribute="height" constant="360" id="Cgq-ks-KHk"/>
                                 </constraints>
                                 <string key="text"> This view controller allows you to select a color and send it to all the connected peers (who are in the same room). When this view controller receives a color, it assigns it to it's view's background color.</string>
-                                <color key="textColor" red="0.95745192310000005" green="0.95745192310000005" blue="0.95745192310000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.95745192310000005" green="0.95745192310000005" blue="0.95745192310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
@@ -1139,32 +1171,32 @@ Get it at developer.temasys.com.sg/register</string>
                                 </variation>
                             </textView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.40000000000000002" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F9l-QT-rAJ">
-                                <rect key="frame" x="170" y="148" width="412" height="31"/>
-                                <color key="minimumTrackTintColor" red="0.25882352939999997" green="0.52156862749999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="166" y="148" width="195" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.25882352939999997" green="0.52156862749999999" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="onAnySliderChange:" destination="tbF-YR-mob" eventType="valueChanged" id="n7K-Z3-9Gj"/>
                                 </connections>
                             </slider>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mmp-2Q-UqU">
-                                <rect key="frame" x="531" y="186" width="51" height="31"/>
-                                <color key="onTintColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="310" y="186" width="51" height="31"/>
+                                <color key="onTintColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="isContinuousSwitchChanged:" destination="tbF-YR-mob" eventType="valueChanged" id="Sjd-Pf-SOY"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send color when it changes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="164-Rz-NRI">
-                                <rect key="frame" x="434" y="219" width="146" height="13"/>
+                                <rect key="frame" x="213" y="219" width="146" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="146" id="Xql-q9-vFB"/>
                                     <constraint firstAttribute="height" constant="13" id="qbx-XF-gYJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <color key="textColor" red="0.88145406969999995" green="0.87289626320000002" blue="0.8900118762" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.88145406969999995" green="0.87289626320000002" blue="0.8900118762" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f84-FS-TSf">
-                                <rect key="frame" x="20" y="240" width="106" height="46"/>
-                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="240" width="106" height="46"/>
+                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="GYG-mL-LVx"/>
                                     <constraint firstAttribute="width" constant="106" id="MA7-bx-9E2"/>
@@ -1180,23 +1212,23 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TNw-Pw-Mth">
-                                <rect key="frame" x="531" y="240" width="51" height="31"/>
+                                <rect key="frame" x="310" y="240" width="51" height="31"/>
                                 <connections>
                                     <action selector="autoChangeColorSwitchChanged:" destination="tbF-YR-mob" eventType="valueChanged" id="3cQ-DZ-Rrl"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto change color" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yki-AM-W6s">
-                                <rect key="frame" x="434" y="273" width="146" height="13"/>
+                                <rect key="frame" x="213" y="273" width="146" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="AfS-qS-4Tz"/>
                                     <constraint firstAttribute="width" constant="146" id="oAx-wC-BOG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <color key="textColor" red="0.88145406969999995" green="0.87289626320000002" blue="0.8900118762" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.88145406969999995" green="0.87289626320000002" blue="0.8900118762" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="F9l-QT-rAJ" firstAttribute="trailing" secondItem="K0f-aU-AmT" secondAttribute="trailingMargin" id="0N9-BG-iWA"/>
                             <constraint firstItem="A8p-CQ-lPo" firstAttribute="centerY" secondItem="Dkx-VH-HTF" secondAttribute="centerY" id="0V3-pR-A5j"/>
@@ -1262,33 +1294,33 @@ Get it at developer.temasys.com.sg/register</string>
                         <viewControllerLayoutGuide type="bottom" id="J1F-Br-0tb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jLk-9H-Cia">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="USE-Fp-A1H">
-                                <rect key="frame" x="0.0" y="241" width="600" height="359"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="241" width="375" height="426"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" textLabel="X4D-Lq-8Uk" detailTextLabel="veT-tY-3WF" style="IBUITableViewCellStyleSubtitle" id="lt0-q8-rPz">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lt0-q8-rPz" id="bdp-hE-Z0P">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X4D-Lq-8Uk">
                                                     <rect key="frame" x="15" y="3" width="31" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="veT-tY-3WF">
-                                                    <rect key="frame" x="15" y="25" width="38" height="15.5"/>
+                                                    <rect key="frame" x="15" y="25" width="38" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="11"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1301,19 +1333,19 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </tableView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4W-XI-YsR">
-                                <rect key="frame" x="0.0" y="120" width="600" height="61"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="61"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hB1-EF-0YI">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFU-ID-c7g">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FRB-xU-fsT">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uCK-Kw-9gg">
-                                                        <rect key="frame" x="8" y="17" width="521" height="29"/>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="uCK-Kw-9gg">
+                                                        <rect key="frame" x="8" y="17" width="296" height="29"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="28" id="OJE-zo-jIz"/>
                                                         </constraints>
@@ -1322,12 +1354,9 @@ Get it at developer.temasys.com.sg/register</string>
                                                             <segment title="Signaling server"/>
                                                             <segment title="Binary Data"/>
                                                         </segments>
-                                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
-                                                            <rect key="frame" x="8" y="13" width="721" height="29"/>
-                                                        </variation>
                                                     </segmentedControl>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T4j-5G-W8a">
-                                                        <rect key="frame" x="543" y="8" width="51" height="31"/>
+                                                        <rect key="frame" x="318" y="8" width="51" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="4nn-as-Rfg"/>
                                                             <constraint firstAttribute="width" constant="49" id="ClU-UF-BPS"/>
@@ -1355,7 +1384,7 @@ Get it at developer.temasys.com.sg/register</string>
                                             </vibrancyEffect>
                                         </visualEffectView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Public" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTY-Km-SLn">
-                                            <rect key="frame" x="537" y="41" width="61" height="20"/>
+                                            <rect key="frame" x="312" y="41" width="61" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="7tZ-bU-k5f"/>
                                                 <constraint firstAttribute="width" constant="61" id="I0P-KX-gRX"/>
@@ -1363,7 +1392,7 @@ Get it at developer.temasys.com.sg/register</string>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="q7L-GI-AUM"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -1417,8 +1446,8 @@ Get it at developer.temasys.com.sg/register</string>
                                 </variation>
                             </visualEffectView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="AhW-ap-kP1">
-                                <rect key="frame" x="275" y="275" width="50" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.50406788790000001" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="162.5" y="308.5" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.50406788790000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9hK-oz-dfq"/>
                                     <constraint firstAttribute="width" constant="50" id="Dh6-XO-7pV"/>
@@ -1430,8 +1459,8 @@ Get it at developer.temasys.com.sg/register</string>
                                 </userDefinedRuntimeAttributes>
                             </activityIndicatorView>
                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" alpha="0.80000001192092896" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Chat nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aAY-lu-Anp">
-                                <rect key="frame" x="20" y="77" width="379" height="30"/>
-                                <color key="backgroundColor" red="0.83070659940000002" green="0.83662965020000002" blue="0.85439880280000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="77" width="162" height="30"/>
+                                <color key="backgroundColor" red="0.83070659940000002" green="0.83662965020000002" blue="0.85439880280000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="118" id="evK-Um-8UQ"/>
                                     <constraint firstAttribute="height" constant="30" id="fsL-XI-7Jg"/>
@@ -1453,8 +1482,8 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </textField>
                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tuc-Ls-FM9">
-                                <rect key="frame" x="20" y="196" width="477" height="30"/>
-                                <color key="backgroundColor" red="0.83070659940000002" green="0.83662965020000002" blue="0.85439880280000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="196" width="260" height="30"/>
+                                <color key="backgroundColor" red="0.83070659940000002" green="0.83662965020000002" blue="0.85439880280000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="send"/>
                                 <connections>
@@ -1462,8 +1491,8 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </textField>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykU-6o-q3F">
-                                <rect key="frame" x="505" y="189" width="75" height="44"/>
-                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="284" y="189" width="75" height="44"/>
+                                <color key="backgroundColor" red="0.26940387230000001" green="0.26940387230000001" blue="0.26940387230000001" alpha="0.75196659480000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="f82-VX-0ah"/>
                                     <constraint firstAttribute="height" constant="44" id="qLg-bJ-bYt"/>
@@ -1480,20 +1509,20 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-zB-7Oe" customClass="UIAspectFitButton">
-                                <rect key="frame" x="505" y="72" width="75" height="40"/>
+                                <rect key="frame" x="284" y="72" width="75" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="hvl-3g-eBW"/>
                                     <constraint firstAttribute="width" constant="75" id="z6I-cw-85X"/>
                                 </constraints>
                                 <state key="normal" image="HideKeyboard.png">
-                                    <color key="titleColor" red="0.83070659940000002" green="0.83662965020000002" blue="0.85439880280000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.83070659940000002" green="0.83662965020000002" blue="0.85439880280000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="dismissKeyboardTap:" destination="Zcp-Wk-Mip" eventType="touchUpInside" id="h7K-A6-Gnf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4A-43-H85">
-                                <rect key="frame" x="407" y="72" width="90" height="40"/>
+                                <rect key="frame" x="186" y="72" width="90" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="P7F-ik-LxO"/>
                                     <constraint firstAttribute="height" constant="40" id="w1B-Qs-AWI"/>
@@ -1505,7 +1534,7 @@ Get it at developer.temasys.com.sg/register</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ykU-6o-q3F" firstAttribute="top" secondItem="MNh-zB-7Oe" secondAttribute="bottom" constant="77" id="0HV-ix-jLY"/>
                             <constraint firstItem="J1F-Br-0tb" firstAttribute="top" secondItem="USE-Fp-A1H" secondAttribute="bottom" id="3z6-bd-Yq7"/>
@@ -1624,32 +1653,32 @@ Get it at developer.temasys.com.sg/register</string>
                         <viewControllerLayoutGuide type="bottom" id="kih-3D-CBb"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Ffi-QW-dJp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6d5-Ye-BZi">
-                                <rect key="frame" x="0.0" y="64" width="600" height="475"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="542"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v4t-fg-dTw">
-                                        <rect key="frame" x="0.0" y="238" width="300" height="237"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.04703663793" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="271.5" width="187.5" height="270.5"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.04703663793" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJV-f3-yek">
-                                        <rect key="frame" x="300" y="237" width="300" height="238"/>
-                                        <color key="backgroundColor" white="1" alpha="0.1048491379" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="187.5" y="270.5" width="187.5" height="271.5"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.1048491379" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIs-Lm-lyg">
-                                        <rect key="frame" x="300" y="0.0" width="300" height="238"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.098599137929999997" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="271.5"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.098599137929999997" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEb-xU-PLa">
-                                        <rect key="frame" x="308" y="198" width="284" height="25"/>
-                                        <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.2027747845" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="195.5" y="231.5" width="171.5" height="25"/>
+                                        <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.2027747845" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="rGj-sV-o2x"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
-                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1658,14 +1687,14 @@ Get it at developer.temasys.com.sg/register</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahv-9t-XfP">
-                                        <rect key="frame" x="8" y="435" width="284" height="25"/>
-                                        <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.2027747845" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="8" y="502" width="171.5" height="25"/>
+                                        <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.2027747845" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="3dg-h1-r2z"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="Pwy-eH-rJ5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
-                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1679,14 +1708,14 @@ Get it at developer.temasys.com.sg/register</string>
                                         </variation>
                                     </label>
                                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZT0-Hh-hJG">
-                                        <rect key="frame" x="308" y="435" width="284" height="25"/>
-                                        <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.2027747845" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="195.5" y="502" width="171.5" height="25"/>
+                                        <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.2027747845" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="4R7-GU-J6u"/>
                                             <constraint firstAttribute="height" constant="25" id="7Jb-24-CRL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
-                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1700,8 +1729,8 @@ Get it at developer.temasys.com.sg/register</string>
                                         </variation>
                                     </label>
                                     <view clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLk-N4-hCT">
-                                        <rect key="frame" x="8" y="8" width="284" height="222"/>
-                                        <color key="backgroundColor" white="1" alpha="0.1048491379" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="8" y="8" width="171.5" height="255.5"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.1048491379" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="J9K-Za-zM5"/>
                                             <constraint firstAttribute="width" constant="140" id="WDA-9C-P60"/>
@@ -1730,8 +1759,15 @@ Get it at developer.temasys.com.sg/register</string>
                                             </mask>
                                         </variation>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFH-DZ-v07">
+                                        <rect key="frame" x="127.5" y="8" width="120" height="30"/>
+                                        <state key="normal" title="Toogle Recording"/>
+                                        <connections>
+                                            <action selector="recordingTap:" destination="ieC-jP-Wwi" eventType="touchUpInside" id="XXA-ux-oQh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.02790948276" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.02790948276" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="eLk-N4-hCT" firstAttribute="top" secondItem="6d5-Ye-BZi" secondAttribute="top" constant="8" id="4pv-0O-DHr"/>
                                     <constraint firstItem="bJV-f3-yek" firstAttribute="height" secondItem="6d5-Ye-BZi" secondAttribute="height" multiplier="0.5" id="5yG-ag-4qM"/>
@@ -1744,9 +1780,11 @@ Get it at developer.temasys.com.sg/register</string>
                                     <constraint firstAttribute="trailing" secondItem="tIs-Lm-lyg" secondAttribute="trailing" id="BCd-Gx-MTq"/>
                                     <constraint firstItem="tIs-Lm-lyg" firstAttribute="top" secondItem="6d5-Ye-BZi" secondAttribute="top" id="Ij7-oo-ZTE"/>
                                     <constraint firstAttribute="bottom" secondItem="bJV-f3-yek" secondAttribute="bottom" id="JMa-eM-yKf"/>
+                                    <constraint firstItem="CFH-DZ-v07" firstAttribute="top" secondItem="6d5-Ye-BZi" secondAttribute="top" constant="8" id="KkY-rn-b0o"/>
                                     <constraint firstItem="ZT0-Hh-hJG" firstAttribute="trailing" secondItem="bJV-f3-yek" secondAttribute="trailing" constant="-8" id="LDh-KS-Pr4"/>
                                     <constraint firstItem="tIs-Lm-lyg" firstAttribute="leading" secondItem="eLk-N4-hCT" secondAttribute="trailing" constant="8" id="LNS-ee-Hd6"/>
                                     <constraint firstItem="v4t-fg-dTw" firstAttribute="leading" secondItem="6d5-Ye-BZi" secondAttribute="leading" id="P1b-Sl-NAD"/>
+                                    <constraint firstItem="CFH-DZ-v07" firstAttribute="centerX" secondItem="6d5-Ye-BZi" secondAttribute="centerX" id="WO3-Cm-k1n"/>
                                     <constraint firstItem="v4t-fg-dTw" firstAttribute="width" secondItem="6d5-Ye-BZi" secondAttribute="width" multiplier="0.5" id="WgY-ij-8Lf"/>
                                     <constraint firstItem="QEb-xU-PLa" firstAttribute="trailing" secondItem="tIs-Lm-lyg" secondAttribute="trailing" constant="-8" id="cEu-jR-MlG"/>
                                     <constraint firstAttribute="trailing" secondItem="bJV-f3-yek" secondAttribute="trailing" id="dbN-nK-XqG"/>
@@ -1771,19 +1809,19 @@ Get it at developer.temasys.com.sg/register</string>
                                 </variation>
                             </view>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHo-ym-tTq">
-                                <rect key="frame" x="0.0" y="539" width="600" height="61"/>
+                                <rect key="frame" x="0.0" y="606" width="375" height="61"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DjG-6Q-4gS">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aZ-HN-d14">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dOg-k7-hvZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dol-pN-o2i" customClass="UIAspectFitButton">
-                                                        <rect key="frame" x="431" y="8" width="45" height="36"/>
+                                                        <rect key="frame" x="206" y="8" width="45" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="45" id="Oa2-De-ULJ"/>
                                                             <constraint firstAttribute="height" constant="36" id="oT3-J7-CgN"/>
@@ -1794,7 +1832,7 @@ Get it at developer.temasys.com.sg/register</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4Y-th-tzc" customClass="UIAspectFitButton">
-                                                        <rect key="frame" x="489" y="8" width="45" height="36"/>
+                                                        <rect key="frame" x="264" y="8" width="45" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="45" id="Kg8-Pl-aGy"/>
                                                             <constraint firstAttribute="height" constant="36" id="Zze-Tx-gOP"/>
@@ -1805,7 +1843,7 @@ Get it at developer.temasys.com.sg/register</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kg3-j3-D9m" customClass="UIAspectFitButton">
-                                                        <rect key="frame" x="547" y="8" width="45" height="36"/>
+                                                        <rect key="frame" x="322" y="8" width="45" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="45" id="M6r-O6-wcM"/>
                                                             <constraint firstAttribute="height" constant="36" id="ebq-c8-MFr"/>
@@ -1822,7 +1860,7 @@ Get it at developer.temasys.com.sg/register</string>
                                                             <constraint firstAttribute="width" constant="100" id="qZA-w9-u6R"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <variation key="default">
                                                             <mask key="constraints">
@@ -1885,9 +1923,6 @@ Get it at developer.temasys.com.sg/register</string>
                                             <vibrancyEffect>
                                                 <blurEffect style="dark"/>
                                             </vibrancyEffect>
-                                            <variation key="heightClass=compact" misplaced="YES">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
-                                            </variation>
                                         </visualEffectView>
                                     </subviews>
                                     <constraints>
@@ -1918,15 +1953,15 @@ Get it at developer.temasys.com.sg/register</string>
                                 </variation>
                             </visualEffectView>
                             <imageView userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoSkylink.png" translatesAutoresizingMaskIntoConstraints="NO" id="YHU-p0-geP">
-                                <rect key="frame" x="488" y="72" width="92" height="32"/>
+                                <rect key="frame" x="267" y="72" width="92" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="Dxo-xv-ftf"/>
                                     <constraint firstAttribute="width" constant="92" id="UwD-5U-5yv"/>
                                 </constraints>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Gui-ga-6Dp">
-                                <rect key="frame" x="275" y="275" width="50" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.50406788790000001" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="162.5" y="308.5" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.50406788790000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="ZD0-NS-mnW"/>
                                     <constraint firstAttribute="height" constant="50" id="uRd-Yg-HNo"/>
@@ -1938,7 +1973,7 @@ Get it at developer.temasys.com.sg/register</string>
                                 </userDefinedRuntimeAttributes>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="6d5-Ye-BZi" secondAttribute="trailing" id="13r-lx-HiC"/>
                             <constraint firstItem="YHU-p0-geP" firstAttribute="trailing" secondItem="Ffi-QW-dJp" secondAttribute="trailingMargin" id="2bh-2r-fJu"/>
@@ -1986,5 +2021,5 @@ Get it at developer.temasys.com.sg/register</string>
         <image name="VideoCall.png" width="50" height="50"/>
         <image name="logoSkylink.png" width="270" height="90"/>
     </resources>
-    <color key="tintColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

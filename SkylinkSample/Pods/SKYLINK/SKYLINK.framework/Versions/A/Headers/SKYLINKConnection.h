@@ -1,7 +1,7 @@
 //
 //  TEMAConnectionManager.h
 //
-//  Created by TemaSys on 01/02/2015.
+//  Created by Temasys.
 //  Copyright (c) 2015 TemaSys. All rights reserved.
 //
 
@@ -247,6 +247,69 @@ typedef enum SKYLINKAssetType {
 @end
 
 /**
+ @brief Protocol to receive events related to stats.
+ @discussion Delegate methods are called on the main thread.
+ */
+@protocol SKYLINKConnectionStatsDelegate <NSObject>
+@optional
+/**
+ @brief Called upon webRTC stats delivery.
+ @param connection The underlying connection object.
+ @param stats A dictionary with stats name as keys and values as NSString values.
+ @param peerId The unique id of the peer.
+ @param mediaDirection int indicating the related media direction (mediaSent: 1, mediaReceived: 2).
+ */
+-(void)connection:(SKYLINKConnection *)connection didGetWebRTCStats:(NSDictionary *)stats forPeerId:(NSString *)peerId mediaDirection:(int)mediaDirection;
+@end
+
+
+/**
+ @brief Protocol to receive backend events related to room recording (BETA).
+ @discussion Delegate methods are called on the main thread.
+ */
+@protocol SKYLINKConnectionRecordingDelegate <NSObject>
+
+@optional
+
+/**
+ @brief Called upon recording start event.
+ @warning This feature is in BETA.
+ @param connection The underlying connection object.
+ @param recordingID The id of the generated recording.
+ @discussion This will be triggered after you call startRecording successfully.
+ */
+- (void)connection:(SKYLINKConnection*)connection recordingDidStartWithID:(NSString *)recordingID;
+
+/**
+ @brief Called upon recording stop event.
+ @warning This feature is in BETA.
+ @param connection The underlying connection object.
+ @param recordingID The id of the recording.
+ @discussion This will be triggered after you call stopRecording successfully or if the backend notifies of recording stoped.
+ */
+- (void)connection:(SKYLINKConnection*)connection recordingDidStopWithID:(NSString *)recordingID;
+/**
+ @brief Called upon recording error event.
+ @warning This feature is in BETA.
+ @param connection The underlying connection object.
+ @param recordingID The id of the recording (might be nil if unknown).
+ @param errorMessage The error description as a string.
+ */
+- (void)connection:(SKYLINKConnection*)connection recording:(NSString *)recordingID didError:(NSString *)errorMessage;
+/**
+ @brief Called upon recording completion event.
+ @warning This feature is in BETA.
+ @param connection The underlying connection object.
+ @param recordingId The id of the recording.
+ @param videoLink The mixing recording URL as a string.
+ @param peerId The peerId who's recording the link is for. If nil then the URL is a mixin recording link.
+ */
+- (void)connection:(SKYLINKConnection*)connection recordingVideoLink:(NSString *)videoLink peerId:(NSString *)peerId recordingId:(NSString *)recordingId;
+
+@end
+
+
+/**
  @brief Class representing the handshaking peer properties.
  @discussion This class is used in the delegate method called when a peer joins the room to carry informations about the joining peer media properties.
  */
@@ -300,14 +363,34 @@ typedef enum SKYLINKAssetType {
 
 /**
  @brief enable/disable audio.
- @discussion Default value is NO.
+ @discussion Default value is NO. This is a convinience property to set both sendAudio and receiveAudio to the same value.
  */
 @property (nonatomic, unsafe_unretained) BOOL audio;
 /**
  @brief enable/disable video.
- @discussion Default value is NO.
+ @discussion Default value is NO. This is a convinience property to set both sendVideo and receiveVideo to the same value.
  */
 @property (nonatomic, unsafe_unretained) BOOL video;
+/**
+ @brief enable/disable sending audio.
+ @discussion Default value is NO.
+ */
+@property (nonatomic, unsafe_unretained) BOOL sendAudio;
+/**
+ @brief enable/disable sending audio.
+ @discussion Default value is NO.
+ */
+@property (nonatomic, unsafe_unretained) BOOL receiveAudio;
+/**
+ @brief enable/disable sending video.
+ @discussion Default value is NO.
+ */
+@property (nonatomic, unsafe_unretained) BOOL sendVideo;
+/**
+ @brief enable/disable receiving video.
+ @discussion Default value is NO.
+ */
+@property (nonatomic, unsafe_unretained) BOOL receiveVideo;
 /**
  @brief enable/disable dataChannel.
  @discussion Default value is NO.
@@ -323,16 +406,47 @@ typedef enum SKYLINKAssetType {
  @discussion Default value is 60.
  */
 @property (nonatomic, unsafe_unretained) NSInteger timeout;
+/**
+ @brief Used to limit remote peers audio media bitrate.
+ @discussion Default value is 0, meaning not bitrate limit.
+ */
+@property (nonatomic, unsafe_unretained) NSInteger maxAudioBitrate;
+/**
+ @brief Used to limit remote peers video media bitrate.
+ @discussion Default value is 512.
+ */
+@property (nonatomic, unsafe_unretained) NSInteger maxVideoBitrate;
+/**
+ @brief Used to limit remote peers data bitrate.
+ @discussion Default value is 0, meaning not bitrate limit.
+ */
+@property (nonatomic, unsafe_unretained) NSInteger maxDataBitrate;
 /*!
  * @brief Optional configuration for advanced users.
  * @discussion The userInfo dictionnary key and associated settings are:
  * @"STUN" key (NSNumber value): set @"STUN" to @YES to DISABLE STUN server.
  * @"TURN" key (NSNumber value): set @"TURN" to @YES to DISABLE TURN server.
+ * @"disableHOST" key, set @YES to disable HOST.
  * @"transport" key (NSString value): expected values are @"TCP" or @"UDP".
  * @"audio" key (NSString value): preferred audio codec, expected values are @"Opus" or @"iLBC".
  * @param userInfo NSDictionary carrying the desired settings. Read the discussion for details.
+ * @deprecated Use -(BOOL)advancedSetting:(NSString *)settingKey setValue:(id)value instead.
  */
-@property (nonatomic, weak) NSDictionary *userInfo;
+@property (nonatomic, weak) NSDictionary *userInfo DEPRECATED_MSG_ATTRIBUTE("Use -(BOOL)advancedSetting:(NSString *)settingKey setValue:(id)value instead.");
+
+/*!
+ * @brief Optional configuration for advanced users.
+ * @discussion The settingKey and associated settings values are:
+ * @"STUN" key, (NSNumber value): set @"disableSTUN" to @YES to disable STUN server.
+ * @"TURN" key, (NSNumber value): set @"disableTURN" to @YES to disable TURN server.
+ * @"disableHOST" key, set @YES to disable HOST.
+ * @"transport" key, (NSString value): expected values are @"TCP" or @"UDP".
+ * @"audio" key, (NSString value): preferred audio codec, expected values are @"Opus" or @"iLBC".
+ * @"startWithBackCamera" key, (NSNumber value): if you send the camera, this will determine the local camera to start the video capture. Default is @NO (ie: use front camera)
+ * @"preferedCaptureSessionPresets" key, (NSArray value): ordered array of AVCaptureSessionPreset for the video capture, the first if any that can be used for the device will be picked.
+ * @return YES if the setting was sucessfully set (valid setting key and associated value).
+ */
+-(BOOL)advancedSettingKey:(NSString *)settingKey setValue:(id)settingValue;
 
 
 @end
@@ -367,6 +481,14 @@ typedef enum SKYLINKAssetType {
  @brief delegate related to file transfer, implementing the SKYLINKConnectionFileTransferDelegate protocol.
  */
 @property(nonatomic, weak) id<SKYLINKConnectionFileTransferDelegate> fileTransferDelegate;
+/**
+ @brief delegate related to room recording, implementing the SKYLINKConnectionRecordingDelegate protocol.
+ */
+@property(nonatomic, weak) id<SKYLINKConnectionRecordingDelegate> recordingDelegate;
+/**
+ @brief delegate related to stats providing, implementing the SkylinkStatsDelegate protocol.
+ */
+@property(nonatomic, weak) id<SKYLINKConnectionStatsDelegate> statsDelegate;
 
 /**
  @name Peer Id
@@ -486,6 +608,26 @@ typedef enum SKYLINKAssetType {
 - (void)switchCamera;
 
 /**
+ @name Recording (Beta)
+ */
+
+/**
+ @brief Start the recording of the room.
+ @warning This feature is in BETA.
+ @discussion This is a Skylink Media Relay only feature, it needs to be enable for the API Key in Temasys developer console.
+ @return The NSString return value is an error description. A nil value means no error occured.
+ */
+- (NSString *)startRecording;
+
+/**
+ @brief Stop the recording of the room.
+ @warning This feature is in BETA.
+ @discussion This is a Skylink Media Relay only feature, it needs to be enable for the API Key in Temasys developer console.
+ @return The NSString return value is an error description. A nil value means no error occured.
+ */
+- (NSString *)stopRecording;
+
+/**
  @name Messaging
  */
 
@@ -502,8 +644,9 @@ typedef enum SKYLINKAssetType {
  @discussion If the 'peerId' is not given then the message is broadcasted to all the peers.
  @param message User defined message to be sent. May be an NSString, NSDictionary, NSArray.
  @param peerId The unique id of the peer to whom the message is sent.
+ @return YES if the message has been succesfully sent to all targeted peers, if NO is returned and verbose is enabled then informations will be logged.
  */
-- (void)sendDCMessage:(id)message peerId:(NSString*)peerId;
+- (BOOL)sendDCMessage:(id)message peerId:(NSString*)peerId;
 
 /**
  @brief Send binary data to a peer via data channel.
@@ -565,6 +708,15 @@ typedef enum SKYLINKAssetType {
  @return User defined information. May be an NSString, NSDictionary or NSArray.
  */
 - (id)getUserInfo:(NSString*)peerId;
+
+/**
+ @brief Get webRTC stats.
+ @warning This feature is in BETA.
+ @param peerId the peerId for which connection you want the stats
+ @param mediaDirection used to specify whether you want upload or download stats, or both (Both:0, mediaSent: 1, mediaReceived: 2).
+ @discussion Stats are returned within the SKYLINKConnectionStatsDelegate
+ */
+- (void)getWebRTCStatsForPeerId:(NSString *)peerId mediaDirection:(int)mediaDirection;
 
 /**
  @name Utility

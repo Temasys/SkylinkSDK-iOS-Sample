@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 
-#define ROOM_NAME  @"MULTI-VIDEO-CALL-ROOM"
+#define ROOM_NAME [[NSUserDefaults standardUserDefaults] objectForKey:@"ROOMNAME_MULTIVIDEOCALL"]
 
 
 @interface MultiVideoCallViewController ()
@@ -39,6 +39,7 @@
 
 @implementation MultiVideoCallViewController {
     BOOL isRoomLocked;
+    BOOL isRecording;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder {
@@ -46,6 +47,7 @@
     if (self) {
         self.peerIds = [[NSMutableArray alloc] init];
         isRoomLocked = NO;
+        isRecording = NO;
         self.peersInfos = [[NSMutableDictionary alloc] initWithDictionary:@{}];
     }
     return self;
@@ -73,10 +75,11 @@
     self.skylinkConnection.lifeCycleDelegate = self;
     self.skylinkConnection.mediaDelegate = self;
     self.skylinkConnection.remotePeerDelegate = self;
+    //self.skylinkConnection.recordingDelegate = self;
 #ifdef DEBUG
     [SKYLINKConnection setVerbose:TRUE];
 #endif
-    [self.skylinkConnection connectToRoomWithSecret:self.skylinkApiSecret roomName:ROOM_NAME userInfo:nil];
+    [self.skylinkConnection connectToRoomWithSecret:self.skylinkApiSecret roomName:ROOM_NAME userInfo:@{@"sampleUserDataKey":@"sampleUserDataStringValue"}];
 }
 
 -(void)disconnect {
@@ -104,9 +107,7 @@
 
 - (void)connection:(SKYLINKConnection*)connection didConnectWithMessage:(NSString*)errorMessage success:(BOOL)isSuccess {
     if (isSuccess) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.localVideoContainerView.alpha = 1;
-        });
+        self.localVideoContainerView.alpha = 1;
     } else {
         [[[UIAlertView alloc] initWithTitle:@"Connection failed" message:errorMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         [self.navigationController popViewControllerAnimated:YES];
@@ -249,7 +250,7 @@
     for (NSString *aPeerId in self.peerIds) {
         // Add the rendered view
         NSInteger index = [self.peerIds indexOfObject:aPeerId];
-        if (index < peerContainerViews.count) [self addRenderedVideo:self.peersInfos[aPeerId][@"videoView"] insideContainer:peerContainerViews[index] mirror:NO]; // if the peer is on simulator then self.peersInfos[aPeerId][@"videoView"] would be null so this would crash.
+        if (index < peerContainerViews.count && ![self.peersInfos[aPeerId][@"videoView"] isKindOfClass:[NSNull class]]) [self addRenderedVideo:self.peersInfos[aPeerId][@"videoView"] insideContainer:peerContainerViews[index] mirror:NO]; // if the peer is on simulator then self.peersInfos[aPeerId][@"videoView"] would be null so this would crash.
         // refresh the label
         id audioMuted = self.peersInfos[aPeerId][@"isAudioMuted"];
         id videoMuted = self.peersInfos[aPeerId][@"isVideoMuted"];
@@ -273,9 +274,14 @@
         id pvSize = self.peersInfos[self.peerIds[i]][@"videoSize"];
         if (pvView && [pvView isKindOfClass:[UIView class]] && pvSize && [pvSize isKindOfClass:[NSValue class]])
         {
-            ((UIView *)pvView).frame = (self.videoAspectSegmentControl.selectedSegmentIndex == 0) ?
-                [self aspectFillRectForSize:[((NSValue *)pvSize) CGSizeValue] containedInRect:[[self containerViewForVideoView:pvView] frame]]
-                : AVMakeRectWithAspectRatioInsideRect([((NSValue *)pvSize) CGSizeValue], [[self containerViewForVideoView:pvView] bounds]);
+            CGRect aFrame = ((UIView *)pvView).frame;
+            BOOL shouldAspectFill = (self.videoAspectSegmentControl.selectedSegmentIndex == 0);
+            if (shouldAspectFill) {
+                aFrame = [self aspectFillRectForSize:[((NSValue *)pvSize) CGSizeValue] containedInRect:[[self containerViewForVideoView:pvView] frame]];
+            }
+            else {
+                aFrame = AVMakeRectWithAspectRatioInsideRect([((NSValue *)pvSize) CGSizeValue], [[self containerViewForVideoView:pvView] bounds]);
+            }
         }
     }
 }
@@ -286,12 +292,37 @@
     [self.lockButton setImage:[UIImage imageNamed:( (isRoomLocked) ? @"LockFilled" : @"Unlock.png")] forState:UIControlStateNormal];
 }
 
+#pragma mark SKYLINKConnectionRecordingDelegate
+- (void)connection:(SKYLINKConnection*)connection recordingDidStartWithID:(NSString *)recordingID {
+    [[[UIAlertView alloc] initWithTitle:@"recordingDidStart"
+                                message:[NSString stringWithFormat:@"\nRecording ID:\n%@", recordingID]
+                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+}
+
+- (void)connection:(SKYLINKConnection*)connection recordingDidStopWithID:(NSString *)recordingID {
+    [[[UIAlertView alloc] initWithTitle:@"recordingDidStop"
+                                message:[NSString stringWithFormat:@"\nRecording ID:\n%@", recordingID]
+                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+}
+
+- (void)connection:(SKYLINKConnection*)connection recording:(NSString *)recordingID didError:(NSString *)errorMessage {
+    [[[UIAlertView alloc] initWithTitle:@"recording didError"
+                                message:[NSString stringWithFormat:@"\nError:\n%@", errorMessage]
+                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+}
+
+- (void)connection:(SKYLINKConnection*)connection recording:(NSString *)recordingID didCompleteWithMixingURL:(NSString *)recordingURL peersURLs:(NSDictionary *)peersRecordingURLs {
+    [[[UIAlertView alloc] initWithTitle:@"recording didComplete"
+                                message:[NSString stringWithFormat:@"\nRecording URL:\n%@\nRecoding peer URLs:\n%@", recordingURL, peersRecordingURLs.description]
+                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+}
+
 #pragma mark - IBActions
 
 - (IBAction)toogleVideoTap:(UIButton *)sender {
     [self.skylinkConnection muteVideo:!self.skylinkConnection.isVideoMuted];
     [sender setImage:[UIImage imageNamed:( (self.skylinkConnection.isVideoMuted) ? @"NoVideoFilled.png" : @"VideoCall.png")] forState:UIControlStateNormal];
-    self.localVideoContainerView.hidden = (self.skylinkConnection.isVideoMuted);
+    //self.localVideoContainerView.hidden = (self.skylinkConnection.isVideoMuted);
 }
 - (IBAction)toogleSoundTap:(UIButton *)sender {
     [self.skylinkConnection muteAudio:!self.skylinkConnection.isAudioMuted];
@@ -306,6 +337,24 @@
 
 - (IBAction)videoAspectSegmentControlChanged:(UISegmentedControl *)sender {
     [self updatePeersVideosFrames];
+}
+
+- (IBAction)recordingTap:(UIButton *)sender {
+    
+    NSString *errorMessage;
+    if(isRecording) {
+        errorMessage = [self.skylinkConnection stopRecording];
+    } else {
+        errorMessage = [self.skylinkConnection startRecording];
+    }
+    if (errorMessage) {
+        [[[UIAlertView alloc] initWithTitle:@"recording command error"
+                                    message:[NSString stringWithFormat:@"%@", errorMessage]
+                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    else {
+        isRecording = !isRecording;
+    }
 }
 
 @end
