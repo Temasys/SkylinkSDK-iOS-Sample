@@ -34,6 +34,9 @@ This App has 6 distinct view controllers, each of them demonstrate how to build 
 ==========================
 Installation
 -------
+
+This sample app uses SkylinkSDK for iOS: [http://github.com/Temasys/SKYLINK-iOS](http://github.com/Temasys/SKYLINK-iOS)
+
 > It is recommended to install the SDK via **cocoapods**, if you don't have it installed follow these steps:
 >  - Check that you have Xcode command line tools installed (Xcode > Preferences > Locations > Command line tools). If not, open the terminal and run `xcode-select --install` ([more details here](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/) if needed).
 >  - Install cocoa pods in the terminal: `$ sudo gem install cocoapods`
@@ -204,13 +207,30 @@ After setting the `SKYLINKConnection` delegates, you need to implement the corre
 
 Support portal
 -------
+<<<<<<< HEAD
  If you encounter any issues or have any enquiries regarding the Temasys iOS SDK, drop us a note on our [support portal](http://support.temasys.io/support/login) and we would be happy to help! 
+=======
+ If you encounter any issues or have any enquiries regarding Skylink, drop us a note on our [support portal](http://support.temasys.io/support/login) and we would be happy to help! 
+>>>>>>> master
 
 Tutorials
 -------
 
+<<<<<<< HEAD
 Getting started with Temasys iOS SDK: http://temasys.io/getting-started-skylinksdk-ios/
 Handle the video view stretching: http://temasys.io/a-simple-solution-for-video-stretching/
+=======
+Getting started with SkylinkSDK for iOS: http://temasys.io/getting-started-skylinksdk-ios/
+Handle the video view stretching: http://temasys.io/a-simple-solution-for-video-stretching/
+
+Skylink, by **Temasys**
+-------
+
+Check our company websites:
+- **Skylink**: http://skylink.io
+- By **Temasys**: http://temasys.io
+Also checkout our Skylink SDKs for [Web](http://skylink.io/web/) and [Android](http://skylink.io/android)
+>>>>>>> master
 
 Other library used (via cocoapods)
 -------
