@@ -93,11 +93,9 @@ The rest of the example view controllers gives you 5 example usages of the Temas
 
 Support portal
 -------
-<<<<<<< HEAD
  If you encounter any issues or have any enquiries regarding the Temasys iOS SDK, drop us a note on our [support portal](http://support.temasys.io/support/login) and we would be happy to help! 
 =======
  If you encounter any issues or have any enquiries regarding Skylink, drop us a note on our [support portal](http://support.temasys.io/support/login) and we would be happy to help! 
->>>>>>> master
 
 ### Tutorials
 
@@ -114,7 +112,6 @@ Check our company websites:
 - **Skylink**: http://skylink.io
 - By **Temasys**: http://temasys.io
 Also checkout our Skylink SDKs for [Web](http://skylink.io/web/) and [Android](http://skylink.io/android)
->>>>>>> master
 
 Other library used (via cocoapods)
 -------
