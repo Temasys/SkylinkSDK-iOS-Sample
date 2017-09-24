@@ -42,7 +42,7 @@ typedef enum SKYLINKAssetType {
  @param errorMessage Error message in case the connection is unsuccessful.
  @param isSuccess Flag to specify whether the connection was successful.
  */
-- (void)connection:(SKYLINKConnection*)connection didConnectWithMessage:(NSString*)errorMessage success:(BOOL)isSuccess;
+- (void)connection:(SKYLINKConnection*)connection didConnectWithMessage:(NSString*)errorMessage success:(BOOL)isSuccess; 
 
 /**
  @brief Called upon successful capturing and rendering of the local front camera.
@@ -265,7 +265,7 @@ typedef enum SKYLINKAssetType {
 
 /**
  @brief Protocol to receive backend events related to room recording (BETA).
- @discussion Delegate methods are called on the main thread.
+ @discussion This works only on Skylink Media Relay enabled App Keys. Delegate methods are called on the main thread.
  */
 @protocol SKYLINKConnectionRecordingDelegate <NSObject>
 
@@ -303,6 +303,7 @@ typedef enum SKYLINKAssetType {
  @param recordingId The id of the recording.
  @param videoLink The mixing recording URL as a string.
  @param peerId The peerId who's recording the link is for. If nil then the URL is a mixin recording link.
+ @discussion For this to be called you need to make sure the app key used is configured for recording.
  */
 - (void)connection:(SKYLINKConnection*)connection recordingVideoLink:(NSString *)videoLink peerId:(NSString *)peerId recordingId:(NSString *)recordingId;
 
@@ -717,6 +718,14 @@ typedef enum SKYLINKAssetType {
  @discussion Stats are returned within the SKYLINKConnectionStatsDelegate
  */
 - (void)getWebRTCStatsForPeerId:(NSString *)peerId mediaDirection:(int)mediaDirection;
+
+/**
+ @brief Get room ID.
+ @return Room ID.
+ @discussion This is generally not needed.
+ */
+- (NSString *)roomId;
+
 
 /**
  @name Utility

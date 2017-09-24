@@ -1,8 +1,8 @@
 PODS:
-  - SKYLINK (1.0.11):
-    - SocketRocket (~> 0.3.1-beta2)
+  - SKYLINK (1.1.0):
+    - SocketRocket (~> 0.5.1)
     - tema-ios-ntp (~> 1.0.0)
-  - SocketRocket (0.3.1-beta2)
+  - SocketRocket (0.5.1)
   - tema-ios-ntp (1.0.0)
   - UIAlertView-Blocks (1.0)
 
@@ -11,11 +11,11 @@ DEPENDENCIES:
   - UIAlertView-Blocks
 
 SPEC CHECKSUMS:
-  SKYLINK: 020c66b07da12f0febbf817c5b2482820052e37b
-  SocketRocket: 7284ab9370a06c99aba92b2fe3a32aedd0f9a6fa
+  SKYLINK: cc38e04fa163fbc20ff3f5c1b5a56023b46d5430
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   tema-ios-ntp: a6f001396b5944bff739f409dc422966e5b08408
   UIAlertView-Blocks: 7904744fca618afbd2ec646608924f5e69d5acd1
 
 PODFILE CHECKSUM: 43e97bc9111188c77b0a4a490ca51ba0a011bc05
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

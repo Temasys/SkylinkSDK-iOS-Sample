@@ -7,40 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04141DA858DD62D12B5D8A46E282B871 /* NetworkClock.h in Headers */ = {isa = PBXBuildFile; fileRef = BC56A8E6D2F7FE91653834E7F6555A26 /* NetworkClock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		04141DA858DD62D12B5D8A46E282B871 /* NetworkClock.h in Headers */ = {isa = PBXBuildFile; fileRef = 72E87AD16A6B5E2A8528EA3A7719C568 /* NetworkClock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		070CD7A709857C7B2D89F4C89A214F84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7FDE18FCFD6B3A9F89DBF33E9AF25F /* Foundation.framework */; };
 		166B7FF8DE6D7A589BE2E6E534D0630C /* Pods-SkylinkSample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C312FB0751DFCAC0F922C4CB2E681 /* Pods-SkylinkSample-dummy.m */; };
 		2D6E45437517BF4E484E817545AA1DC9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C38F925548677B767DDB1115C895EF1 /* CFNetwork.framework */; };
 		2F60AD62D0300CD54681589127D9F67D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7FDE18FCFD6B3A9F89DBF33E9AF25F /* Foundation.framework */; };
-		2F9F7BE9025248625BD45F497D2119D2 /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = BCA72F0E9F814D8939FE2CA52F7466D8 /* SRWebSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		33861CE05DA50E1831670AF71026EED7 /* base64.h in Headers */ = {isa = PBXBuildFile; fileRef = A80BDED4D37B9F81DB3E7BE5CF368B5D /* base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B6DD07010F14925F58C1EE04BE46547 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD064A7ED56D6A4172DF2429B0F08EA /* UIAlertView+Blocks.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		469F9DF9489E2A431798DA82CAAD1900 /* NSDate+NetworkClock.h in Headers */ = {isa = PBXBuildFile; fileRef = FC0A73101FC09BFF94D1166F64DBDCA0 /* NSDate+NetworkClock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		49115E54F9DEA9084062186EF2C8A61E /* UIAlertView-Blocks-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 976B1C019364DB4D258D12AAAEF2F6D0 /* UIAlertView-Blocks-dummy.m */; };
-		50F14FB668CE7B4A2A61FC5F0A48D541 /* UIActionSheet+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B337F439A8B3CE22EBC0AD25D58FE17 /* UIActionSheet+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B35F4B00A1D8785899AD12912256AAE /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1859386C689A45B4A49B0E67E5B1F1FB /* SRWebSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		65B2DCD8384AE2888689932DC06716B6 /* SocketRocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 691696501FFC309D11706E6673DB25A9 /* SocketRocket-dummy.m */; };
+		3B6DD07010F14925F58C1EE04BE46547 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = D390CDD8788B3EC6ADFF53F74C949A17 /* UIAlertView+Blocks.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		469F9DF9489E2A431798DA82CAAD1900 /* NSDate+NetworkClock.h in Headers */ = {isa = PBXBuildFile; fileRef = A7D6620278714D45460E8D089C138D7C /* NSDate+NetworkClock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49115E54F9DEA9084062186EF2C8A61E /* UIAlertView-Blocks-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCAD1A28E1A1D1F83757EB0557D3B1A /* UIAlertView-Blocks-dummy.m */; };
+		4E192800A48A33E47CC6B2AAB2E7E74F /* SocketRocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 214DB5F790D85512DFE6400808771CAE /* SocketRocket-dummy.m */; };
+		50F14FB668CE7B4A2A61FC5F0A48D541 /* UIActionSheet+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D28380577123874D5289AD6598CE0D1 /* UIActionSheet+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6ADEFEC9AC88D13FF071E1A25132E58A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7FDE18FCFD6B3A9F89DBF33E9AF25F /* Foundation.framework */; };
 		78DD8E73BFB3D1E01C083DDFCD5600FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D25BBA381CDF30C22A364AD5F6984600 /* UIKit.framework */; };
-		817BFFA2610DC09641CBC5EF931254BC /* RIButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = E298DE1F162F032F42A97BB78B32AAE9 /* RIButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9465F2EFF27F114A906239B8D4C984DC /* NetAssociation.h in Headers */ = {isa = PBXBuildFile; fileRef = 594C4D2CF84C6DC673FD8E4F28DE4A14 /* NetAssociation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		99D57A97B98B50D0E8DB4D3B0143079D /* tema-ios-ntp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F35CC5BA045E29DAF0CF7B456BD9F5B3 /* tema-ios-ntp-dummy.m */; };
+		817BFFA2610DC09641CBC5EF931254BC /* RIButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A25634AEDA5C1AD3ED9E4D2E435992 /* RIButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CD2DADF9919302C762FD8B15F2BBCFF /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 1052EF60EBEE863D1F113ADC74799A41 /* SRWebSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9465F2EFF27F114A906239B8D4C984DC /* NetAssociation.h in Headers */ = {isa = PBXBuildFile; fileRef = D5F6CAA0587A1C0D02655BB9280437EF /* NetAssociation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99D57A97B98B50D0E8DB4D3B0143079D /* tema-ios-ntp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C90A0245AC242F4AD6FE23B09B17576 /* tema-ios-ntp-dummy.m */; };
 		9CC2ABF7659FEEED784FCB18B4B37FB1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C38F925548677B767DDB1115C895EF1 /* CFNetwork.framework */; };
 		A9B09C95271CA94458BAA7AF2F9161C4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14287A774491882A759880326652E25E /* Security.framework */; };
-		AF64680DB53F85601019F7687C00D8DE /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DBC87D9BB0D9ADBCA0C9D916AA4507 /* NSData+SRB64Additions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		B246B31FA87BD559FE3686AEF85BD2D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F95FE2DEF3AAB9D43C691AFF69BD035 /* CoreGraphics.framework */; };
 		B26042E862512CA0E9CAC826F19370DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7FDE18FCFD6B3A9F89DBF33E9AF25F /* Foundation.framework */; };
-		BFA9418E35509D47F6ED6AD8510C4E52 /* RIButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C1EA3D143B7730CCFBD3FCDA0233EA /* RIButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		CBECD2A493EFC31E0D2112D635FC6BFA /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 77804743013BB9F23B25D17ED16349BF /* base64.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		D4E7B4017FDB4B78BA7B2A374C84F229 /* NetworkClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C780C651004EFE64145A649589A3D76 /* NetworkClock.m */; };
-		E1C8AE75C56BFF2CC45D1670D7838768 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EC9D1C5502D933E0BB8E0E9078E239 /* GCDAsyncUdpSocket.m */; };
-		E28B855CE0D46448B021FA1A9642E7B2 /* UIAlertView+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = B42F0834A7EE8F23F14C4D67AA1FCC3F /* UIAlertView+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E56E02B5A1D619241AC029B44F391576 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DBC6D97389D0BD81994E9E39557290 /* UIActionSheet+Blocks.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E5D0FFC01FAA68A65F990EC6E8296FCD /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = F35340F6579035B35F1B28D3AA39AEAC /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2EEF8291FF5B6A398CE57E569903006 /* NSData+SRB64Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3055F4870D1A012DC6410D9B401840EA /* NSData+SRB64Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F66DCF52AC2786A4A7B35317448CE40F /* NetAssociation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31397966DA0654ADB9EDEC2D92F40789 /* NetAssociation.m */; };
-		FAC99C3353C0444460B177B4E5B2A671 /* NSDate+NetworkClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 06111964E51E61B27F38B108669C792A /* NSDate+NetworkClock.m */; };
-		FCACE5BE928379977C9AE2CB9279E1EF /* ios-ntp.h in Headers */ = {isa = PBXBuildFile; fileRef = 883CB424C7464F94E31E532CFFC942DD /* ios-ntp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA172A340983F0C87265852461751DCA /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EE65F4067C5F68993024E1FE0C9B531E /* SRWebSocket.m */; };
+		BFA9418E35509D47F6ED6AD8510C4E52 /* RIButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 087495FEE1ACE5ABB1820414362C71D8 /* RIButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C8FF2C49C5B578F7ADB8564E18B87C05 /* SocketRocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 75848A28741EC5731D3ACEE0B774BE4E /* SocketRocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4E7B4017FDB4B78BA7B2A374C84F229 /* NetworkClock.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FDBDED3E4785AD4330C916FC3B8DB5 /* NetworkClock.m */; };
+		E1C8AE75C56BFF2CC45D1670D7838768 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A302F2B056E85DB261214A5E2D353576 /* GCDAsyncUdpSocket.m */; };
+		E28B855CE0D46448B021FA1A9642E7B2 /* UIAlertView+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FDE2FD50CE370F4D0BD988DCF172D61 /* UIAlertView+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E56E02B5A1D619241AC029B44F391576 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C30311874A8902ED7F4CCB75D9668F21 /* UIActionSheet+Blocks.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E5D0FFC01FAA68A65F990EC6E8296FCD /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6937ABBB434A9EC2A9AB3CBA21EE315D /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F66DCF52AC2786A4A7B35317448CE40F /* NetAssociation.m in Sources */ = {isa = PBXBuildFile; fileRef = 050B00B2CAE2B9B073F7ADE49669673F /* NetAssociation.m */; };
+		FAC99C3353C0444460B177B4E5B2A671 /* NSDate+NetworkClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4025799657F28D2851A17B4A5AA618F2 /* NSDate+NetworkClock.m */; };
+		FCACE5BE928379977C9AE2CB9279E1EF /* ios-ntp.h in Headers */ = {isa = PBXBuildFile; fileRef = 98D0E4164D3EFCC57DF6682A30F225D7 /* ios-ntp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,54 +66,51 @@
 
 /* Begin PBXFileReference section */
 		04E27950FF1CCE1BDAFDF0B7B03CA401 /* libPods-SkylinkSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-SkylinkSample.a"; path = "libPods-SkylinkSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		06111964E51E61B27F38B108669C792A /* NSDate+NetworkClock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+NetworkClock.m"; path = "ios-ntp-lib/NSDate+NetworkClock.m"; sourceTree = "<group>"; };
-		098785630598D6D0CF08EF0995570F73 /* SocketRocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SocketRocket.xcconfig; sourceTree = "<group>"; };
-		0B3FD2BB8535C43B934A3EE914026751 /* tema-ios-ntp.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "tema-ios-ntp.xcconfig"; sourceTree = "<group>"; };
-		11C2B2D955E2A1AB29D5D733F2933918 /* SocketRocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-prefix.pch"; sourceTree = "<group>"; };
+		050B00B2CAE2B9B073F7ADE49669673F /* NetAssociation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NetAssociation.m; path = "ios-ntp-lib/NetAssociation.m"; sourceTree = "<group>"; };
+		087495FEE1ACE5ABB1820414362C71D8 /* RIButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RIButtonItem.m; sourceTree = "<group>"; };
+		0C90A0245AC242F4AD6FE23B09B17576 /* tema-ios-ntp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "tema-ios-ntp-dummy.m"; sourceTree = "<group>"; };
+		1052EF60EBEE863D1F113ADC74799A41 /* SRWebSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRWebSocket.h; path = SocketRocket/SRWebSocket.h; sourceTree = "<group>"; };
 		14287A774491882A759880326652E25E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		1859386C689A45B4A49B0E67E5B1F1FB /* SRWebSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SRWebSocket.m; path = SocketRocket/SRWebSocket.m; sourceTree = "<group>"; };
+		174196E8CA4402B2FAA61F257173E766 /* tema-ios-ntp.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "tema-ios-ntp.xcconfig"; sourceTree = "<group>"; };
 		1B8F07FC5809CC390A6753105D2AECC6 /* Pods-SkylinkSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SkylinkSample.debug.xcconfig"; sourceTree = "<group>"; };
 		1C38F925548677B767DDB1115C895EF1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		1C780C651004EFE64145A649589A3D76 /* NetworkClock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NetworkClock.m; path = "ios-ntp-lib/NetworkClock.m"; sourceTree = "<group>"; };
-		1EDE95886924C90BFF28932A63C93DF7 /* tema-ios-ntp-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "tema-ios-ntp-prefix.pch"; sourceTree = "<group>"; };
 		1F95FE2DEF3AAB9D43C691AFF69BD035 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		214DB5F790D85512DFE6400808771CAE /* SocketRocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SocketRocket-dummy.m"; sourceTree = "<group>"; };
 		25596A41A13BD3C6A891CBF230E10741 /* Pods-SkylinkSample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SkylinkSample-frameworks.sh"; sourceTree = "<group>"; };
-		3055F4870D1A012DC6410D9B401840EA /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+SRB64Additions.h"; path = "SocketRocket/NSData+SRB64Additions.h"; sourceTree = "<group>"; };
-		31397966DA0654ADB9EDEC2D92F40789 /* NetAssociation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NetAssociation.m; path = "ios-ntp-lib/NetAssociation.m"; sourceTree = "<group>"; };
-		4CD064A7ED56D6A4172DF2429B0F08EA /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
-		4EA216AFE58435BD27E9D16A43B4E35B /* UIAlertView-Blocks-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIAlertView-Blocks-prefix.pch"; sourceTree = "<group>"; };
+		4025799657F28D2851A17B4A5AA618F2 /* NSDate+NetworkClock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+NetworkClock.m"; path = "ios-ntp-lib/NSDate+NetworkClock.m"; sourceTree = "<group>"; };
+		44200D217EE7216911591D34EBD66A79 /* UIAlertView-Blocks.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UIAlertView-Blocks.xcconfig"; sourceTree = "<group>"; };
 		57638F4CB9B25EB247877C94192A8BEE /* Pods-SkylinkSample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SkylinkSample-resources.sh"; sourceTree = "<group>"; };
-		594C4D2CF84C6DC673FD8E4F28DE4A14 /* NetAssociation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NetAssociation.h; path = "ios-ntp-lib/NetAssociation.h"; sourceTree = "<group>"; };
-		5B337F439A8B3CE22EBC0AD25D58FE17 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
-		60DBC87D9BB0D9ADBCA0C9D916AA4507 /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+SRB64Additions.m"; path = "SocketRocket/NSData+SRB64Additions.m"; sourceTree = "<group>"; };
+		5B161F9ABD5AF94019CFD70820C0650A /* UIAlertView-Blocks-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIAlertView-Blocks-prefix.pch"; sourceTree = "<group>"; };
 		60F884D52A194C94951834E29B5FA685 /* libSocketRocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSocketRocket.a; path = libSocketRocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		63926A00AE59C55D701A5C801ADA51EE /* libtema-ios-ntp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libtema-ios-ntp.a"; path = "libtema-ios-ntp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		691696501FFC309D11706E6673DB25A9 /* SocketRocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SocketRocket-dummy.m"; sourceTree = "<group>"; };
+		6937ABBB434A9EC2A9AB3CBA21EE315D /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = "network-udp/GCDAsyncUdpSocket.h"; sourceTree = "<group>"; };
+		6C34609CECB77C11FCBEA2F80B661E52 /* tema-ios-ntp-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "tema-ios-ntp-prefix.pch"; sourceTree = "<group>"; };
 		6D0C312FB0751DFCAC0F922C4CB2E681 /* Pods-SkylinkSample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SkylinkSample-dummy.m"; sourceTree = "<group>"; };
-		77804743013BB9F23B25D17ED16349BF /* base64.c */ = {isa = PBXFileReference; includeInIndex = 1; name = base64.c; path = SocketRocket/base64.c; sourceTree = "<group>"; };
+		6D28380577123874D5289AD6598CE0D1 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
+		72E87AD16A6B5E2A8528EA3A7719C568 /* NetworkClock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NetworkClock.h; path = "ios-ntp-lib/NetworkClock.h"; sourceTree = "<group>"; };
+		75848A28741EC5731D3ACEE0B774BE4E /* SocketRocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SocketRocket.h; path = SocketRocket/SocketRocket.h; sourceTree = "<group>"; };
 		7C25B5837B5DFEBDEA684A0A87EC3B52 /* Pods-SkylinkSample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SkylinkSample-acknowledgements.markdown"; sourceTree = "<group>"; };
-		81DBC6D97389D0BD81994E9E39557290 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
-		85F5FBB3F459B7096E9ED89948F12A58 /* UIAlertView-Blocks.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UIAlertView-Blocks.xcconfig"; sourceTree = "<group>"; };
-		883CB424C7464F94E31E532CFFC942DD /* ios-ntp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ios-ntp.h"; path = "ios-ntp-lib/ios-ntp.h"; sourceTree = "<group>"; };
-		89EC9D1C5502D933E0BB8E0E9078E239 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = "network-udp/GCDAsyncUdpSocket.m"; sourceTree = "<group>"; };
+		7FDE2FD50CE370F4D0BD988DCF172D61 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		90A210AD20600FCA4B003CEFE90CB225 /* Pods-SkylinkSample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SkylinkSample-acknowledgements.plist"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		976B1C019364DB4D258D12AAAEF2F6D0 /* UIAlertView-Blocks-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView-Blocks-dummy.m"; sourceTree = "<group>"; };
-		A80BDED4D37B9F81DB3E7BE5CF368B5D /* base64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = base64.h; path = SocketRocket/base64.h; sourceTree = "<group>"; };
-		A895B9446E8367BAF05CC1E4A0D8A13D /* SKYLINK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SKYLINK.framework; sourceTree = "<group>"; };
+		98D0E4164D3EFCC57DF6682A30F225D7 /* ios-ntp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ios-ntp.h"; path = "ios-ntp-lib/ios-ntp.h"; sourceTree = "<group>"; };
+		A302F2B056E85DB261214A5E2D353576 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = "network-udp/GCDAsyncUdpSocket.m"; sourceTree = "<group>"; };
+		A3A25634AEDA5C1AD3ED9E4D2E435992 /* RIButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RIButtonItem.h; sourceTree = "<group>"; };
+		A7D6620278714D45460E8D089C138D7C /* NSDate+NetworkClock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+NetworkClock.h"; path = "ios-ntp-lib/NSDate+NetworkClock.h"; sourceTree = "<group>"; };
 		B32291D771C0B9B27AC1C52A5F34F08B /* Pods-SkylinkSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SkylinkSample.release.xcconfig"; sourceTree = "<group>"; };
-		B42F0834A7EE8F23F14C4D67AA1FCC3F /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
-		BC56A8E6D2F7FE91653834E7F6555A26 /* NetworkClock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NetworkClock.h; path = "ios-ntp-lib/NetworkClock.h"; sourceTree = "<group>"; };
-		BCA72F0E9F814D8939FE2CA52F7466D8 /* SRWebSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRWebSocket.h; path = SocketRocket/SRWebSocket.h; sourceTree = "<group>"; };
 		BF7FDE18FCFD6B3A9F89DBF33E9AF25F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		C5C1EA3D143B7730CCFBD3FCDA0233EA /* RIButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RIButtonItem.m; sourceTree = "<group>"; };
-		CA53CCE5D2BA7672EF6E7DBD62001BAD /* ntp.hosts */ = {isa = PBXFileReference; includeInIndex = 1; name = ntp.hosts; path = "ios-ntp-rez/ntp.hosts"; sourceTree = "<group>"; };
+		C30311874A8902ED7F4CCB75D9668F21 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
+		C58CD4DB751F1F63315A37CBDC6FC779 /* SocketRocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-prefix.pch"; sourceTree = "<group>"; };
 		D25BBA381CDF30C22A364AD5F6984600 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D26EBC5AD422448F6BF66B467606BF46 /* SocketRocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SocketRocket.xcconfig; sourceTree = "<group>"; };
+		D390CDD8788B3EC6ADFF53F74C949A17 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		D5F6CAA0587A1C0D02655BB9280437EF /* NetAssociation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NetAssociation.h; path = "ios-ntp-lib/NetAssociation.h"; sourceTree = "<group>"; };
 		D7354B7D454B3408D3D84A076927FFA0 /* libUIAlertView-Blocks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libUIAlertView-Blocks.a"; path = "libUIAlertView-Blocks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E298DE1F162F032F42A97BB78B32AAE9 /* RIButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RIButtonItem.h; sourceTree = "<group>"; };
-		F35340F6579035B35F1B28D3AA39AEAC /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = "network-udp/GCDAsyncUdpSocket.h"; sourceTree = "<group>"; };
-		F35CC5BA045E29DAF0CF7B456BD9F5B3 /* tema-ios-ntp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "tema-ios-ntp-dummy.m"; sourceTree = "<group>"; };
-		FC0A73101FC09BFF94D1166F64DBDCA0 /* NSDate+NetworkClock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+NetworkClock.h"; path = "ios-ntp-lib/NSDate+NetworkClock.h"; sourceTree = "<group>"; };
+		E5FDBDED3E4785AD4330C916FC3B8DB5 /* NetworkClock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NetworkClock.m; path = "ios-ntp-lib/NetworkClock.m"; sourceTree = "<group>"; };
+		E8E5513A3432AC977605F2D9B4A83B61 /* SKYLINK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SKYLINK.framework; sourceTree = "<group>"; };
+		ECCAD1A28E1A1D1F83757EB0557D3B1A /* UIAlertView-Blocks-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView-Blocks-dummy.m"; sourceTree = "<group>"; };
+		ED6BC5205B7A52C8BDFAF12435360F1E /* ntp.hosts */ = {isa = PBXFileReference; includeInIndex = 1; name = ntp.hosts; path = "ios-ntp-rez/ntp.hosts"; sourceTree = "<group>"; };
+		EE65F4067C5F68993024E1FE0C9B531E /* SRWebSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SRWebSocket.m; path = SocketRocket/SRWebSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,15 +154,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0086DA4A204DAAD77448E3C792A95ED5 /* Support Files */ = {
+		0187509432842BA8D7D3DEC569952779 /* SKYLINK */ = {
 			isa = PBXGroup;
 			children = (
-				85F5FBB3F459B7096E9ED89948F12A58 /* UIAlertView-Blocks.xcconfig */,
-				976B1C019364DB4D258D12AAAEF2F6D0 /* UIAlertView-Blocks-dummy.m */,
-				4EA216AFE58435BD27E9D16A43B4E35B /* UIAlertView-Blocks-prefix.pch */,
+				4C86854E52B8E4101E81F2F35EC724E8 /* Frameworks */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/UIAlertView-Blocks";
+			name = SKYLINK;
+			path = SKYLINK;
 			sourceTree = "<group>";
 		};
 		03CC5496799ABA998311B872D52F653A /* Pods-SkylinkSample */ = {
@@ -186,23 +178,27 @@
 			path = "Target Support Files/Pods-SkylinkSample";
 			sourceTree = "<group>";
 		};
-		04258D14D368FD309FC48381A74C0A0B /* Frameworks */ = {
+		0A13FD50E5D028F08C58AFDBCB7FFD18 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A895B9446E8367BAF05CC1E4A0D8A13D /* SKYLINK.framework */,
+				174196E8CA4402B2FAA61F257173E766 /* tema-ios-ntp.xcconfig */,
+				0C90A0245AC242F4AD6FE23B09B17576 /* tema-ios-ntp-dummy.m */,
+				6C34609CECB77C11FCBEA2F80B661E52 /* tema-ios-ntp-prefix.pch */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/tema-ios-ntp";
 			sourceTree = "<group>";
 		};
-		207567F361335908694DAA1210FFC8B4 /* Pods */ = {
+		0D6C15690FA583C4EB61944CF7584F54 /* SocketRocket */ = {
 			isa = PBXGroup;
 			children = (
-				5DCBBE4AB6CC4A391CDF63EB8041D101 /* SKYLINK */,
-				D998460E0199BE0B4D79BA9A5419C92F /* SocketRocket */,
-				FF681BF8292EDB29444C2178CEDF8A45 /* tema-ios-ntp */,
-				C44ECAB4F9D32CC4FFBAA90B61EC4DD8 /* UIAlertView-Blocks */,
+				75848A28741EC5731D3ACEE0B774BE4E /* SocketRocket.h */,
+				1052EF60EBEE863D1F113ADC74799A41 /* SRWebSocket.h */,
+				EE65F4067C5F68993024E1FE0C9B531E /* SRWebSocket.m */,
+				2BEB5E012D4FC6ABD2288E483683B91B /* Support Files */,
 			);
-			name = Pods;
+			name = SocketRocket;
+			path = SocketRocket;
 			sourceTree = "<group>";
 		};
 		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
@@ -213,15 +209,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3F983E42D0231B105B406B55E7DC2BF4 /* Support Files */ = {
+		2BEB5E012D4FC6ABD2288E483683B91B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				098785630598D6D0CF08EF0995570F73 /* SocketRocket.xcconfig */,
-				691696501FFC309D11706E6673DB25A9 /* SocketRocket-dummy.m */,
-				11C2B2D955E2A1AB29D5D733F2933918 /* SocketRocket-prefix.pch */,
+				D26EBC5AD422448F6BF66B467606BF46 /* SocketRocket.xcconfig */,
+				214DB5F790D85512DFE6400808771CAE /* SocketRocket-dummy.m */,
+				C58CD4DB751F1F63315A37CBDC6FC779 /* SocketRocket-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SocketRocket";
+			sourceTree = "<group>";
+		};
+		3BD1DCF1CD3A586B36FAF79E62B12BE9 /* tema-ios-ntp */ = {
+			isa = PBXGroup;
+			children = (
+				6937ABBB434A9EC2A9AB3CBA21EE315D /* GCDAsyncUdpSocket.h */,
+				A302F2B056E85DB261214A5E2D353576 /* GCDAsyncUdpSocket.m */,
+				98D0E4164D3EFCC57DF6682A30F225D7 /* ios-ntp.h */,
+				D5F6CAA0587A1C0D02655BB9280437EF /* NetAssociation.h */,
+				050B00B2CAE2B9B073F7ADE49669673F /* NetAssociation.m */,
+				72E87AD16A6B5E2A8528EA3A7719C568 /* NetworkClock.h */,
+				E5FDBDED3E4785AD4330C916FC3B8DB5 /* NetworkClock.m */,
+				A7D6620278714D45460E8D089C138D7C /* NSDate+NetworkClock.h */,
+				4025799657F28D2851A17B4A5AA618F2 /* NSDate+NetworkClock.m */,
+				B60A9DF39B244531C6261A9929235181 /* Resources */,
+				0A13FD50E5D028F08C58AFDBCB7FFD18 /* Support Files */,
+			);
+			name = "tema-ios-ntp";
+			path = "tema-ios-ntp";
+			sourceTree = "<group>";
+		};
+		4C86854E52B8E4101E81F2F35EC724E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8E5513A3432AC977605F2D9B4A83B61 /* SKYLINK.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5739A1F822ACE8DA8E0DD8A7EE6B7D2E /* iOS */ = {
@@ -236,21 +259,30 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		5CB2B302015008F5A5458DB38C4E1FE7 /* Resources */ = {
+		67E4B7375109E3276A0BB195EBC265AC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CA53CCE5D2BA7672EF6E7DBD62001BAD /* ntp.hosts */,
+				0187509432842BA8D7D3DEC569952779 /* SKYLINK */,
+				0D6C15690FA583C4EB61944CF7584F54 /* SocketRocket */,
+				3BD1DCF1CD3A586B36FAF79E62B12BE9 /* tema-ios-ntp */,
+				75734517D13042C19FCD31A09A691E15 /* UIAlertView-Blocks */,
 			);
-			name = Resources;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		5DCBBE4AB6CC4A391CDF63EB8041D101 /* SKYLINK */ = {
+		75734517D13042C19FCD31A09A691E15 /* UIAlertView-Blocks */ = {
 			isa = PBXGroup;
 			children = (
-				04258D14D368FD309FC48381A74C0A0B /* Frameworks */,
+				A3A25634AEDA5C1AD3ED9E4D2E435992 /* RIButtonItem.h */,
+				087495FEE1ACE5ABB1820414362C71D8 /* RIButtonItem.m */,
+				6D28380577123874D5289AD6598CE0D1 /* UIActionSheet+Blocks.h */,
+				C30311874A8902ED7F4CCB75D9668F21 /* UIActionSheet+Blocks.m */,
+				7FDE2FD50CE370F4D0BD988DCF172D61 /* UIAlertView+Blocks.h */,
+				D390CDD8788B3EC6ADFF53F74C949A17 /* UIAlertView+Blocks.m */,
+				9BFBACFE4F221AB8A53FCD8903418F87 /* Support Files */,
 			);
-			name = SKYLINK;
-			path = SKYLINK;
+			name = "UIAlertView-Blocks";
+			path = "UIAlertView-Blocks";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -258,40 +290,29 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
-				207567F361335908694DAA1210FFC8B4 /* Pods */,
+				67E4B7375109E3276A0BB195EBC265AC /* Pods */,
 				E756BB5B39B5342659C40D60CEB1EFE9 /* Products */,
 				FA3EF992B72D3BC32293968AC1E1E38A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		C44ECAB4F9D32CC4FFBAA90B61EC4DD8 /* UIAlertView-Blocks */ = {
+		9BFBACFE4F221AB8A53FCD8903418F87 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E298DE1F162F032F42A97BB78B32AAE9 /* RIButtonItem.h */,
-				C5C1EA3D143B7730CCFBD3FCDA0233EA /* RIButtonItem.m */,
-				5B337F439A8B3CE22EBC0AD25D58FE17 /* UIActionSheet+Blocks.h */,
-				81DBC6D97389D0BD81994E9E39557290 /* UIActionSheet+Blocks.m */,
-				B42F0834A7EE8F23F14C4D67AA1FCC3F /* UIAlertView+Blocks.h */,
-				4CD064A7ED56D6A4172DF2429B0F08EA /* UIAlertView+Blocks.m */,
-				0086DA4A204DAAD77448E3C792A95ED5 /* Support Files */,
+				44200D217EE7216911591D34EBD66A79 /* UIAlertView-Blocks.xcconfig */,
+				ECCAD1A28E1A1D1F83757EB0557D3B1A /* UIAlertView-Blocks-dummy.m */,
+				5B161F9ABD5AF94019CFD70820C0650A /* UIAlertView-Blocks-prefix.pch */,
 			);
-			name = "UIAlertView-Blocks";
-			path = "UIAlertView-Blocks";
+			name = "Support Files";
+			path = "../Target Support Files/UIAlertView-Blocks";
 			sourceTree = "<group>";
 		};
-		D998460E0199BE0B4D79BA9A5419C92F /* SocketRocket */ = {
+		B60A9DF39B244531C6261A9929235181 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				77804743013BB9F23B25D17ED16349BF /* base64.c */,
-				A80BDED4D37B9F81DB3E7BE5CF368B5D /* base64.h */,
-				3055F4870D1A012DC6410D9B401840EA /* NSData+SRB64Additions.h */,
-				60DBC87D9BB0D9ADBCA0C9D916AA4507 /* NSData+SRB64Additions.m */,
-				BCA72F0E9F814D8939FE2CA52F7466D8 /* SRWebSocket.h */,
-				1859386C689A45B4A49B0E67E5B1F1FB /* SRWebSocket.m */,
-				3F983E42D0231B105B406B55E7DC2BF4 /* Support Files */,
+				ED6BC5205B7A52C8BDFAF12435360F1E /* ntp.hosts */,
 			);
-			name = SocketRocket;
-			path = SocketRocket;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		E756BB5B39B5342659C40D60CEB1EFE9 /* Products */ = {
@@ -305,42 +326,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EE8816BB41CB0518F154D1A0AE458D9B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0B3FD2BB8535C43B934A3EE914026751 /* tema-ios-ntp.xcconfig */,
-				F35CC5BA045E29DAF0CF7B456BD9F5B3 /* tema-ios-ntp-dummy.m */,
-				1EDE95886924C90BFF28932A63C93DF7 /* tema-ios-ntp-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/tema-ios-ntp";
-			sourceTree = "<group>";
-		};
 		FA3EF992B72D3BC32293968AC1E1E38A /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
 				03CC5496799ABA998311B872D52F653A /* Pods-SkylinkSample */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		FF681BF8292EDB29444C2178CEDF8A45 /* tema-ios-ntp */ = {
-			isa = PBXGroup;
-			children = (
-				F35340F6579035B35F1B28D3AA39AEAC /* GCDAsyncUdpSocket.h */,
-				89EC9D1C5502D933E0BB8E0E9078E239 /* GCDAsyncUdpSocket.m */,
-				883CB424C7464F94E31E532CFFC942DD /* ios-ntp.h */,
-				594C4D2CF84C6DC673FD8E4F28DE4A14 /* NetAssociation.h */,
-				31397966DA0654ADB9EDEC2D92F40789 /* NetAssociation.m */,
-				BC56A8E6D2F7FE91653834E7F6555A26 /* NetworkClock.h */,
-				1C780C651004EFE64145A649589A3D76 /* NetworkClock.m */,
-				FC0A73101FC09BFF94D1166F64DBDCA0 /* NSDate+NetworkClock.h */,
-				06111964E51E61B27F38B108669C792A /* NSDate+NetworkClock.m */,
-				5CB2B302015008F5A5458DB38C4E1FE7 /* Resources */,
-				EE8816BB41CB0518F154D1A0AE458D9B /* Support Files */,
-			);
-			name = "tema-ios-ntp";
-			path = "tema-ios-ntp";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,16 +349,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1681334F34AD45819A53F0A7315B6175 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				33861CE05DA50E1831670AF71026EED7 /* base64.h in Headers */,
-				F2EEF8291FF5B6A398CE57E569903006 /* NSData+SRB64Additions.h in Headers */,
-				2F9F7BE9025248625BD45F497D2119D2 /* SRWebSocket.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		567A989EF144AACE19820479CBF79D47 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,6 +356,15 @@
 				817BFFA2610DC09641CBC5EF931254BC /* RIButtonItem.h in Headers */,
 				50F14FB668CE7B4A2A61FC5F0A48D541 /* UIActionSheet+Blocks.h in Headers */,
 				E28B855CE0D46448B021FA1A9642E7B2 /* UIAlertView+Blocks.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6D6D6EEE12C95E2559FB1BD86715F73 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8FF2C49C5B578F7ADB8564E18B87C05 /* SocketRocket.h in Headers */,
+				8CD2DADF9919302C762FD8B15F2BBCFF /* SRWebSocket.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,9 +409,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22ADAE282557B844CEE5675160F41169 /* Build configuration list for PBXNativeTarget "SocketRocket" */;
 			buildPhases = (
-				FCC921F2D17EDD2E414C5FB74E98EA42 /* Sources */,
+				F50E0125FD80E7F77FB3CE1439E719E2 /* Sources */,
 				FFEB46A7D709AD34903E47515601F696 /* Frameworks */,
-				1681334F34AD45819A53F0A7315B6175 /* Headers */,
+				D6D6D6EEE12C95E2559FB1BD86715F73 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -512,14 +502,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FCC921F2D17EDD2E414C5FB74E98EA42 /* Sources */ = {
+		F50E0125FD80E7F77FB3CE1439E719E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBECD2A493EFC31E0D2112D635FC6BFA /* base64.c in Sources */,
-				AF64680DB53F85601019F7687C00D8DE /* NSData+SRB64Additions.m in Sources */,
-				65B2DCD8384AE2888689932DC06716B6 /* SocketRocket-dummy.m in Sources */,
-				5B35F4B00A1D8785899AD12912256AAE /* SRWebSocket.m in Sources */,
+				4E192800A48A33E47CC6B2AAB2E7E74F /* SocketRocket-dummy.m in Sources */,
+				BA172A340983F0C87265852461751DCA /* SRWebSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,7 +604,7 @@
 		};
 		39883F8E4099F5260619B3100FCB6FFE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85F5FBB3F459B7096E9ED89948F12A58 /* UIAlertView-Blocks.xcconfig */;
+			baseConfigurationReference = 44200D217EE7216911591D34EBD66A79 /* UIAlertView-Blocks.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -679,7 +667,7 @@
 		};
 		477C27C2CB1BE0093CB6CFE9616D320B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B3FD2BB8535C43B934A3EE914026751 /* tema-ios-ntp.xcconfig */;
+			baseConfigurationReference = 174196E8CA4402B2FAA61F257173E766 /* tema-ios-ntp.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -700,9 +688,32 @@
 			};
 			name = Debug;
 		};
+		52D6EEFDA30653DBF080011FB70E0A48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D26EBC5AD422448F6BF66B467606BF46 /* SocketRocket.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SocketRocket/SocketRocket-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 		626557F83C0695694F2230012BF07066 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85F5FBB3F459B7096E9ED89948F12A58 /* UIAlertView-Blocks.xcconfig */;
+			baseConfigurationReference = 44200D217EE7216911591D34EBD66A79 /* UIAlertView-Blocks.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -723,32 +734,9 @@
 			};
 			name = Release;
 		};
-		A5B74F5D5B42C161E2FB1CC42C023F24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 098785630598D6D0CF08EF0995570F73 /* SocketRocket.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SocketRocket/SocketRocket-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		ECF20D35B915FAFE6B8506F95DB5E03D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B3FD2BB8535C43B934A3EE914026751 /* tema-ios-ntp.xcconfig */;
+			baseConfigurationReference = 174196E8CA4402B2FAA61F257173E766 /* tema-ios-ntp.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -769,9 +757,9 @@
 			};
 			name = Release;
 		};
-		F226CB5E885A0C0DF3F0BBAE48960968 /* Release */ = {
+		F92A3B0E589B2D98340CADABCA135AB7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 098785630598D6D0CF08EF0995570F73 /* SocketRocket.xcconfig */;
+			baseConfigurationReference = D26EBC5AD422448F6BF66B467606BF46 /* SocketRocket.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -780,7 +768,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/SocketRocket/SocketRocket-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -830,8 +818,8 @@
 		22ADAE282557B844CEE5675160F41169 /* Build configuration list for PBXNativeTarget "SocketRocket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A5B74F5D5B42C161E2FB1CC42C023F24 /* Debug */,
-				F226CB5E885A0C0DF3F0BBAE48960968 /* Release */,
+				52D6EEFDA30653DBF080011FB70E0A48 /* Debug */,
+				F92A3B0E589B2D98340CADABCA135AB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
