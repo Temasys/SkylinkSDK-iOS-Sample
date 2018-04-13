@@ -1,6 +1,0 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/SKYLINK"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/SKYLINK" "${PODS_ROOT}/Headers/Public/SocketRocket" "${PODS_ROOT}/Headers/Public/tema-ios-ntp"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/SKYLINK" -isystem "${PODS_ROOT}/Headers/Public/SocketRocket" -isystem "${PODS_ROOT}/Headers/Public/tema-ios-ntp"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"ObjC" -l"SocketRocket" -l"c" -l"icucore" -l"sqlite3" -l"stdc++" -l"tema-ios-ntp" -framework "AVFoundation" -framework "AudioToolbox" -framework "CFNetwork" -framework "CoreAudio" -framework "CoreGraphics" -framework "CoreMedia" -framework "Foundation" -framework "GLKit" -framework "SKYLINK" -framework "Security" -framework "UIKit" -framework "VideoToolbox"
-PODS_ROOT = ${SRCROOT}/Pods
