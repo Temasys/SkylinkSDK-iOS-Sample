@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.11</string>
+	<string>2.1.2.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -31,6 +31,8 @@
 	<string>Perform webRTC video calls</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Perform webRTC video &amp; audio calls</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Save and transfer photos and videos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Save images &amp; videos received via webRTC file transfer</string>
 	<key>UIBackgroundModes</key>

@@ -66,8 +66,6 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self.skylinkConnection connectToRoomWithSecret:self.skylinkApiSecret roomName:ROOM_NAME userInfo:nil];
-        self.skylinkConnection.statsDelegate = self;
-        [self continuousStats];
     });
 }
 
@@ -92,14 +90,6 @@
     }
 }
 
--(void)continuousStats {
-    if (self.skylinkConnection) {
-        [self.skylinkConnection getWebRTCStatsForPeerId:nil mediaDirection:0];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            if (self.skylinkConnection) [self continuousStats];
-        });
-    }
-}
 -(void)connection:(SKYLINKConnection *)connection didGetWebRTCStats:(NSDictionary *)stats forPeerId:(NSString *)peerId mediaDirection:(int)mediaDirection {
     NSLog(@"%@", [NSString stringWithFormat:@"#Stats\nmd=%d pid=%@\n%@", mediaDirection, peerId, [stats description]]);
 }

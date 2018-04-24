@@ -30,6 +30,8 @@
 
 @property (strong, nonatomic) AVAudioPlayer *musicPlayer;
 @property (assign, nonatomic) NSNumber *selectedRow;
+
+@property (strong, nonatomic) UIImagePickerController *pickerController;
 @end
 
 
@@ -166,10 +168,10 @@
 #pragma mark - UIImagePickerControllerDelegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    [picker dismissViewControllerAnimated:YES completion:nil];
     NSString *peerId = nil;
     if (self.selectedRow && [self.selectedRow intValue] < self.remotePeerArray.count) peerId = self.remotePeerArray[[self.selectedRow intValue]];
     [self startFileTransfer:peerId url:info[UIImagePickerControllerReferenceURL] type:SKYLINKAssetTypePhoto];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - MPMediaPickerControllerDelegate
@@ -359,11 +361,11 @@
                        otherButtonItems:
       [RIButtonItem itemWithLabel:@"Photo / Video (pick from library)" action:^{
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-            UIImagePickerController *pickerController = [UIImagePickerController new];
-            pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-            pickerController.delegate = self;
-            pickerController.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, (NSString*) kUTTypeMovie, nil];
-            [self presentViewController:pickerController animated:YES completion:nil];
+            self.pickerController = [UIImagePickerController new];
+            self.pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            self.pickerController.delegate = self;
+            self.pickerController.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, (NSString*) kUTTypeMovie, nil];
+            [self presentViewController:self.pickerController animated:YES completion:nil];
         }
     }],
       [RIButtonItem itemWithLabel:@"Music (pick from library)" action:^{

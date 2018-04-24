@@ -67,7 +67,7 @@
 		65CD761B1D74BC4700388C33 /* IASKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD76091D74BC4700388C33 /* IASKTextView.m */; };
 		65CD761C1D74BC4700388C33 /* IASKTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD760B1D74BC4700388C33 /* IASKTextViewCell.m */; };
 		65CD761E1D74BC7500388C33 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65CD761D1D74BC7500388C33 /* Settings.bundle */; };
-		B8EEB1EE2EF4494DBF86C83C /* libPods-SkylinkSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3812CCB03E3ECEC61BCA85 /* libPods-SkylinkSample.a */; };
+		CC08E6D6F01C1B0746745A5D /* Pods_SkylinkSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A579E8124F006C1F25B2F31E /* Pods_SkylinkSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,7 +176,7 @@
 		65CD760A1D74BC4700388C33 /* IASKTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKTextViewCell.h; sourceTree = "<group>"; };
 		65CD760B1D74BC4700388C33 /* IASKTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKTextViewCell.m; sourceTree = "<group>"; };
 		65CD761D1D74BC7500388C33 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		6D3812CCB03E3ECEC61BCA85 /* libPods-SkylinkSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkylinkSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A579E8124F006C1F25B2F31E /* Pods_SkylinkSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkylinkSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B914AC28B208D308E906D3FE /* Pods-SkylinkSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.release.xcconfig"; sourceTree = "<group>"; };
 		EF310ACE5905D72315E9EDEA /* Pods-SkylinkSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylinkSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,7 +189,7 @@
 				650C9CC11C6CA6990088BF15 /* libstdc++.tbd in Frameworks */,
 				650C9CBF1C6CA6880088BF15 /* VideoToolbox.framework in Frameworks */,
 				650C9CBD1C6CA67B0088BF15 /* GLKit.framework in Frameworks */,
-				B8EEB1EE2EF4494DBF86C83C /* libPods-SkylinkSample.a in Frameworks */,
+				CC08E6D6F01C1B0746745A5D /* Pods_SkylinkSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,7 +410,7 @@
 				650C9CBE1C6CA6880088BF15 /* VideoToolbox.framework */,
 				650C9CBC1C6CA67B0088BF15 /* GLKit.framework */,
 				650C9CBA1C6CA2ED0088BF15 /* libSKYLINK.a */,
-				6D3812CCB03E3ECEC61BCA85 /* libPods-SkylinkSample.a */,
+				A579E8124F006C1F25B2F31E /* Pods_SkylinkSample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -546,9 +546,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SkylinkSample/Pods-SkylinkSample-frameworks.sh",
+				"${PODS_ROOT}/SKYLINK/SKYLINK.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/UIAlertView-Blocks/UIAlertView_Blocks.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKYLINK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIAlertView_Blocks.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -576,13 +585,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkylinkSample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		65D2F37C1CA3FC1500084EEC /* ShellScript */ = {

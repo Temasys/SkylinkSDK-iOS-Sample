@@ -1,0 +1,6 @@
+framework module SKYLINK {
+  umbrella header "SKYLINK.h"
+
+  export *
+  module * { export * }
+}
