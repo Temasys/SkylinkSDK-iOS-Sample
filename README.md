@@ -31,7 +31,7 @@ Check out the documentation and our sample app to get usage instructions and exa
 
 | Description | Link |
 | --- | --- |
-| Temasys iOS SDK documentation | https://cdn.temasys.io/skylink/skylinksdk/ios/latest/docs/index.html |
+| Temasys iOS SDK documentation | https://cdn.temasys.io/skylink/skylinksdk/ios/latest/docs/html/index.html |
 | SDK (Github) |  http://github.com/Temasys/SKYLINK-iOS |
 
 
@@ -121,7 +121,7 @@ Other library used (via cocoapods)
 
 ----------
 
-*This document was edited for Temasys iOS SDK version 1.0.9*
+*This document was edited for Temasys iOS SDK version 1.2.0*
 
 
 
