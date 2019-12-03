@@ -2,18 +2,18 @@
 //  MultiVideoCallViewController.m
 //  Skylink_Examples
 //
-//  Created by Romain Pellen on 11/01/2016.
+//  Created by Temasys on 11/01/2016.
 //  Copyright © 2016 Temasys. All rights reserved.
 //
 
 #import "MultiVideoCallViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "Constant.h"
+#import "Peer.h"
+//#define ROOM_NAME [[NSUserDefaults standardUserDefaults] objectForKey:@"ROOMNAME_MULTIVIDEOCALL"]
+#define MY_PEER_ID @"myPeerId"
 
-
-#define ROOM_NAME [[NSUserDefaults standardUserDefaults] objectForKey:@"ROOMNAME_MULTIVIDEOCALL"]
-
-
-@interface MultiVideoCallViewController ()
+@interface MultiVideoCallViewController () <UIPickerViewDataSource, UIPickerViewDelegate, SKYLINKConnectionRecordingDelegate, SKYLINKConnectionMediaDelegate>
 // IBOutlets
 @property (weak, nonatomic) IBOutlet UIView *localVideoContainerView;
 @property (weak, nonatomic) IBOutlet UIView *firstPeerVideoContainerView;
@@ -22,340 +22,293 @@
 @property (weak, nonatomic) IBOutlet UILabel *firstPeerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondPeerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *thirdPeerLabel;
-
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *lockButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *videoAspectSegmentControl;
-
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+@property (weak, nonatomic) IBOutlet UIView *pickerViewContainer;
+@property (weak, nonatomic) IBOutlet UIViewController *partipationsVC;
+@property (weak, nonatomic) IBOutlet UIButton *restartButton;
+@property (weak, nonatomic) IBOutlet UIButton *toggleCameraButton;
 // Other properties
-@property (strong, nonatomic) SKYLINKConnection *skylinkConnection;
-@property (strong, nonatomic) NSMutableArray *peerIds;
-
-@property (strong, nonatomic) NSMutableDictionary *peersInfos;
-
+//@property (strong, nonatomic) NSMutableArray *peerIds;
+//@property (strong, nonatomic) NSMutableDictionary *peersInfos;
+//@property (nonatomic, copy) NSString *cameraMediaID;
+//@property (nonatomic, copy) NSString *audioMediaID;
+//@property (nonatomic, strong) NSMutableArray<Peer *> *peerObjects;
+@property (nonatomic, strong) IBOutletCollection(UIView) NSArray *videoContainers;
 @end
-
-
 
 @implementation MultiVideoCallViewController {
     BOOL isRoomLocked;
     BOOL isRecording;
+    BOOL isLocalCameraRunning;
+    NSMutableArray<Peer *> *_peers;
 }
-
-- (instancetype)initWithCoder:(NSCoder *)coder {
-    self = [super initWithCoder:coder];
-    if (self) {
-        self.peerIds = [[NSMutableArray alloc] init];
-        isRoomLocked = NO;
-        isRecording = NO;
-        self.peersInfos = [[NSMutableDictionary alloc] initWithDictionary:@{}];
-    }
-    return self;
-}
+#pragma mark - Init
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    NSLog(@"SKYLINKConnection version = %@", [SKYLINKConnection getSkylinkVersion]);
-    
+    MyLog(@"SKYLINKConnection version = %@", [SKYLINKConnection getSkylinkVersion]);
     self.title = @"Multi Party Video Call";
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Cancel.png"] style:UIBarButtonItemStylePlain target:self action:@selector(disconnect)];
-    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-    [infoButton addTarget:self action:@selector(showInfo) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
-    
-    // Creating configuration
+    [self setupData];
+}
+
+- (void)setupData{
+    //creating SKYLINKConnectionConfig
+    _roomName = ROOM_MULTI_VIDEO;
     SKYLINKConnectionConfig *config = [SKYLINKConnectionConfig new];
-    config.video = YES;
-    config.audio = YES;
-    // Creating SKYLINKConnection
-    self.skylinkConnection = [[SKYLINKConnection alloc] initWithConfig:config appKey:self.skylinkApiKey];
-    self.skylinkConnection.lifeCycleDelegate = self;
-    self.skylinkConnection.mediaDelegate = self;
-    self.skylinkConnection.remotePeerDelegate = self;
-    //self.skylinkConnection.recordingDelegate = self;
-#ifdef DEBUG
-    [SKYLINKConnection setVerbose:TRUE];
-#endif
-    [self.skylinkConnection connectToRoomWithSecret:self.skylinkApiSecret roomName:ROOM_NAME userInfo:@{@"sampleUserDataKey":@"sampleUserDataStringValue"}];
-}
-
--(void)disconnect {
-    [self.activityIndicator startAnimating];
-    if (self.skylinkConnection) [self.skylinkConnection disconnect:^{
-        [self.activityIndicator stopAnimating];
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
-}
-
--(void)showInfo {
-    [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@ infos", NSStringFromClass([self class])] message:[NSString stringWithFormat:@"\nRoom name:\n%@\n\nLocal ID:\n%@\n\nKey: •••••%@\n\nSkylink version %@", ROOM_NAME, self.skylinkConnection.myPeerId, [self.skylinkApiKey substringFromIndex: [self.skylinkApiKey length] - 7],  [SKYLINKConnection getSkylinkVersion]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-}
-
--(void)viewWillLayoutSubviews{
-    [super viewWillLayoutSubviews];
-    [self updatePeersVideosFrames];
-}
-
-#pragma mark - SKYLINKConnectionLifeCycleDelegate
-- (void)connection:(SKYLINKConnection *)connection didLockTheRoom:(BOOL)lockStatus peerId:(NSString *)peerId {
-    isRoomLocked = lockStatus;
-    [self.lockButton setImage:[UIImage imageNamed:( (isRoomLocked) ? @"LockFilled" : @"Unlock.png")] forState:UIControlStateNormal];
-}
-
-- (void)connection:(SKYLINKConnection*)connection didConnectWithMessage:(NSString*)errorMessage success:(BOOL)isSuccess {
-    if (isSuccess) {
-        self.localVideoContainerView.alpha = 1;
-    } else {
-        [[[UIAlertView alloc] initWithTitle:@"Connection failed" message:errorMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.activityIndicator stopAnimating];
+    [config setAudioVideoReceiveConfig:AudioVideoConfig_AUDIO_AND_VIDEO];
+    [config setAudioVideoSendConfig:AudioVideoConfig_AUDIO_AND_VIDEO];
+    config.isMultiTrackCreateEnable = YES;
+    config.isMirrorLocalFrontCameraView = YES;
+    //creating SKYLINKConnection
+    _skylinkConnection = [[SKYLINKConnection alloc] initWithConfig:config callback:nil];
+    _skylinkConnection.lifeCycleDelegate = self;
+    _skylinkConnection.mediaDelegate = self;
+    _skylinkConnection.remotePeerDelegate = self;
+    _skylinkConnection.enableLogs = YES;
+    //init variables
+    _peers = [NSMutableArray new];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self startLocalMediaDevice:SKYLINKMediaDeviceCameraFront];
+    });
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self joinRoom];
     });
 }
 
-- (void)connection:(SKYLINKConnection*)connection didRenderUserVideo:(UIView*)userVideoView {
-    [self addRenderedVideo:userVideoView insideContainer:self.localVideoContainerView mirror:YES];
-}
-
-- (void)connection:(SKYLINKConnection*)connection didDisconnectWithMessage:(NSString*)errorMessage {
-    [[[UIAlertView alloc] initWithTitle:@"Disconnected" message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+#pragma mark - SKYLINKConnectionLifeCycleDelegate
+- (void)connectionDidConnectToRoomSuccessful:(SKYLINKConnection *)connection{
+    [_videoContainers.firstObject setAlpha:1.0];
     [self.activityIndicator stopAnimating];
-    [self.navigationController popViewControllerAnimated:YES];
 }
-
-#pragma mark - SKYLINKConnectionRemotePeerDelegate
-
-- (void)connection:(SKYLINKConnection*)connection didJoinPeer:(id)userInfo mediaProperties:(SKYLINKPeerMediaProperties*)pmProperties peerId:(NSString*)peerId {
-    
-    if (![self.peerIds containsObject:peerId]) [self.peerIds addObject:peerId];
-    if (self.peerIds.count >= 4) [self lockRoom:YES];
-    if (![self.peersInfos.allKeys containsObject:peerId]) [self.peersInfos addEntriesFromDictionary:@{peerId : @{@"videoView" : [NSNull null], @"videoSize" : [NSNull null], @"isAudioMuted" : [NSNull null], @"isVideoMuted" : [NSNull null]} }];
-    
-    [self.peersInfos setObject:@{@"videoView" : self.peersInfos[peerId][@"videoView"],
-                                 @"videoSize" : [NSValue valueWithCGSize:CGSizeMake(pmProperties.videoWidth, pmProperties.videoHeight)],
-                                 @"isAudioMuted" : [NSNumber numberWithBool:pmProperties.isAudioMuted],
-                                 @"isVideoMuted" : [NSNumber numberWithBool:pmProperties.isVideoMuted] }
-                        forKey:peerId];
-    
-    [self refreshPeerViews];
+- (void)connection:(SKYLINKConnection *)connection didConnectToRoomFailed:(NSString *)errorMessage{
+    showAlert(@"Connection failed!", errorMessage);
 }
-
-- (void)connection:(SKYLINKConnection*)connection didLeavePeerWithMessage:(NSString*)errorMessage peerId:(NSString*)peerId {
-    NSLog(@"Peer with id %@ left the room with message: %@", peerId, errorMessage);
-    [self.peerIds removeObject:peerId];
-    [self.peersInfos removeObjectForKey:peerId];
-    [self lockRoom:NO];
-    
-    [self refreshPeerViews];
-}
-
-- (void)connection:(SKYLINKConnection*)connection didRenderPeerVideo:(UIView*)peerVideoView peerId:(NSString*)peerId {
-    if (![self.peerIds containsObject:peerId]) [self.peerIds addObject:peerId];
-    if (![self.peersInfos.allKeys containsObject:peerId]) [self.peersInfos addEntriesFromDictionary:@{peerId : @{@"videoView" : [NSNull null], @"videoSize" : [NSNull null], @"isAudioMuted" : [NSNull null], @"isVideoMuted" : [NSNull null] } }];
-    self.peersInfos[peerId] = @{@"videoView" : peerVideoView, @"videoSize" : self.peersInfos[peerId][@"videoSize"], @"isAudioMuted" : self.peersInfos[peerId][@"isAudioMuted"], @"isVideoMuted" : self.peersInfos[peerId][@"isVideoMuted"] };
-    
-    [self refreshPeerViews];
+- (void)connection:(SKYLINKConnection *)connection didDisconnectFromRoomWithSkylinkEvent:(NSDictionary *)skylinkEvent contextDescription:(NSString *)contextDescription{
+    [self.activityIndicator stopAnimating];
 }
 
 #pragma mark - SKYLINKConnectionMediaDelegate
-- (void)connection:(SKYLINKConnection*)connection didChangeVideoSize:(CGSize)videoSize videoView:(UIView*)videoView
-{
+- (void)connection:(SKYLINKConnection *)connection didCreateLocalMedia:(SKYLINKMedia *)localMedia{
+    NSLog(@"didCreateLocalMedia");
+    //add media which is video only
+    if (!localMedia) {
+        return;
+    }
+    if (localMedia.skylinkMediaType != SKYLINKMediaTypeAudio) {
+        [self addMedia:localMedia peerId:MY_PEER_ID];
+        [self reloadVideoView];
+    }
+}
+- (void)connection:(SKYLINKConnection *)connection didChangeLocalMedia:(SKYLINKMedia *)localMedia{
+    NSLog(@"changed local media %d", localMedia.skylinkMediaState);
+    [self.activityIndicator stopAnimating];
+}
+- (void)connection:(SKYLINKConnection *)connection didReceiveRemoteMedia:(SKYLINKMedia *)remoteMedia remotePeerId:(NSString *)remotePeerId{
+    NSLog(@"didReceiveRemoteMedia: %u", remoteMedia.skylinkMediaType);
+    if (!remoteMedia || !remotePeerId) {
+        return;
+    }
+    //add media which is video only
+    if (remoteMedia.skylinkMediaType != SKYLINKMediaTypeAudio) {
+        [self addMedia:remoteMedia peerId:remotePeerId];
+        [self reloadVideoView];
+    }
+}
+- (void)connection:(SKYLINKConnection *)connection didChangeRemoteMedia:(SKYLINKMedia *)remoteMedia remotePeerId:(NSString *)remotePeerId{
+    NSLog(@"didChangeRemoteMedia: %u", remoteMedia.skylinkMediaType);
+}
+- (void)connection:(SKYLINKConnection *)connection didChangeVideoSize:(CGSize)videoSize videoView:(UIView *)videoView peerId:(NSString *)peerId{
+    NSLog(@"changed video size!");
+    NSLog(@"peerId: %@", peerId);
     if (videoSize.height > 0 && videoSize.width > 0) {
-        UIView *correspondingContainerView = [self containerViewForVideoView:videoView];
-        
-        if (correspondingContainerView && ![correspondingContainerView isEqual:self.localVideoContainerView]) {
-            NSInteger i = [self indexForContainerView:correspondingContainerView];
-            if (i != NSNotFound) {
-                
-                self.peersInfos[self.peerIds[i]] = @{@"videoView" : self.peersInfos[self.peerIds[i]][@"videoView"], @"videoSize" : [NSValue valueWithCGSize:videoSize], @"isAudioMuted" : self.peersInfos[self.peerIds[i]][@"isAudioMuted"], @"isVideoMuted" : self.peersInfos[self.peerIds[i]][@"isVideoMuted"] };
+        for (UIView* container in self.videoContainers) {
+            if ([videoView isDescendantOfView:container]) {
+                NSInteger _index = [self.videoContainers indexOfObject:container];
+                if (_index==0) {
+                    break;
+                }
+                _peers[_index].videoSize = videoSize;
+                [videoView aspectFitRectForSize:videoSize container:container];
             }
         }
-        
-        videoView.frame = (self.videoAspectSegmentControl.selectedSegmentIndex == 0 || [correspondingContainerView isEqual:self.localVideoContainerView]) ? [self aspectFillRectForSize:videoSize containedInRect:correspondingContainerView.frame] : AVMakeRectWithAspectRatioInsideRect(videoSize, correspondingContainerView.bounds);
     }
 }
-
-- (void)connection:(SKYLINKConnection *)connection didToggleAudio:(BOOL)isMuted peerId:(NSString *)peerId {
-    if ([self.peersInfos.allKeys containsObject:peerId]) self.peersInfos[peerId] = @{@"videoView" : self.peersInfos[peerId][@"videoView"], @"videoSize" : self.peersInfos[peerId][@"videoSize"], @"isAudioMuted" : [NSNumber numberWithBool:isMuted], @"isVideoMuted" : self.peersInfos[peerId][@"isVideoMuted"] };
-    [self refreshPeerViews];
-}
-
-- (void)connection:(SKYLINKConnection *)connection didToggleVideo:(BOOL)isMuted peerId:(NSString *)peerId {
-    if ([self.peersInfos.allKeys containsObject:peerId]) self.peersInfos[peerId] = @{@"videoView" : self.peersInfos[peerId][@"videoView"], @"videoSize" : self.peersInfos[peerId][@"videoSize"], @"isAudioMuted" : self.peersInfos[peerId][@"isAudioMuted"], @"isVideoMuted" : [NSNumber numberWithBool:isMuted] };
-    [self refreshPeerViews];
-}
-
-#pragma mark - Utils
-
--(void)addRenderedVideo:(UIView *)videoView insideContainer:(UIView *)containerView mirror:(BOOL)shouldMirror {
-    videoView.frame = containerView.bounds;
-    if (shouldMirror) videoView.transform = CGAffineTransformMakeScale(-1.0, 1.0); // to see ourself like in a mirror
-    for (UIView *subview in containerView.subviews) {
-        [subview removeFromSuperview];
+#pragma mark - SKYLINKConnectionRemotePeerDelegate
+- (void)connection:(SKYLINKConnection *)connection didReceiveRemotePeerInRoomWithRemotePeerId:(NSString *)remotePeerId userInfo:(id)userInfo{
+    NSLog(@"didReceiveRemotePeerInRoomWithRemotePeerId: %@ \nuserInfo: %@", remotePeerId, userInfo);
+    showAlertAutoDismiss(nil, [NSString stringWithFormat:@"%@ has joined room\n\nUserData:%@", remotePeerId, userInfo[@"userData"]], 2, self);
+    if (remotePeerId){
+        [self addMedia:nil peerId:remotePeerId];
+        [self.pickerView reloadAllComponents];
     }
+}
+- (void)connection:(SKYLINKConnection *)connection didConnectWithRemotePeer:(NSString *)remotePeerId userInfo:(id)userInfo hasDataChannel:(BOOL)hasDataChannel{
+//    if (remotePeerId) {
+//        showAlertAutoDismiss(nil, [NSString stringWithFormat:@"%@ has joined room\n\nUserData:%@", remotePeerId, userInfo[@"userData"]], 2, self);
+//        [self addMedia:nil peerId:remotePeerId];
+////        [_peers addObject:[[Peer alloc] initWithPeerID:remotePeerId]];
+//        [self reloadVideoView];
+//        [self.pickerView reloadAllComponents];
+//    }
+//    [self.activityIndicator stopAnimating];
+}
+- (void)connection:(SKYLINKConnection *)connection didDisconnectWithRemotePeer:(NSString *)remotePeerId userInfo:(id)userInfo hasDataChannel:(BOOL)hasDataChannel{
+    if (remotePeerId) {
+        [self removePeer:remotePeerId];
+        [self reloadVideoView];
+    }
+    [self.activityIndicator stopAnimating];
+}
+- (void)connection:(SKYLINKConnection *)connection didReceiveRemotePeerLeaveRoom:(NSString *)remotePeerId userInfo:(id)userInfo skylinkInfo:(NSDictionary *)skylinkInfo{
+    
+}
+//- (void)connection:(SKYLINKConnection *)connection didChangeRemoteMedia:(SKYLINKMedia *)remoteMedia remotePeerId:(NSString *)remotePeerId{
+//    if (remoteMedia.skylinkMediaType == SKYLINKMediaTypeVideoCamera) {
+//        if (remoteMedia.skylinkMediaState == SKYLINKMediaStateUnavailable) {
+//            <#statements#>
+//        }
+//    }
+//}
+
+#pragma mark - UIPickerView Delegate
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return _peers.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    if (row == 0) return @"All";
+    return [NSString stringWithFormat:@"%@:%@", _peers[row].userName, _peers[row].peerId];
+}
+#pragma mark - Private functions
+- (void)removePeer:(NSString*)peerId{
+    for (Peer *_peer in _peers) {
+        if ([_peer.peerId isEqualToString:peerId]) {
+            [_peers removeObject:_peer];
+            return;
+        }
+    }
+}
+- (void)addMedia:(SKYLINKMedia *)media peerId:(NSString *)peerId{
+    if (!peerId) {
+        return;
+    }
+    Peer *_peer = nil;
+    for (Peer *peer in _peers) {
+        if ([peer.peerId isEqualToString:peerId]) {
+            _peer = peer;
+            break;
+        }
+    }
+    if (!_peer) {
+        _peer = [[Peer alloc] initWithPeerID:peerId];
+        if ([peerId isEqualToString:MY_PEER_ID]) {
+            [_peers insertObject:_peer atIndex:0];
+        }else{
+            [_peers addObject:_peer];
+        }
+    }
+    if (media) {
+        [_peer.medias addObject:media];
+    }
+//    NSLog(@"ccc===peers count: %lu", (unsigned long)_peers.count);
+//    for (Peer *_peer in _peers) {
+//        NSLog(@"peer: %@", _peer.peerId);
+//        NSLog(@"medias count: %lu", (unsigned long)_peer.medias.count);
+//        NSLog(@"first media: %d", _peer.medias.firstObject.skylinkMediaType);
+//    }
+}
+- (void)reloadVideoView{
+    //remove all videos
+    for (UIView *view in _videoContainers) {
+        [view removeSubviews];
+    }
+    //add videos from peers array
+    NSLog(@"reload video. Peers count: %lu", (unsigned long)_peers.count);
+    for (Peer *peer in _peers) {
+        if ([peer.peerId isEqualToString:MY_PEER_ID] && peer.medias.firstObject) {
+            [self addRenderedVideo:peer.medias.firstObject.skylinkVideoView insideContainer:_videoContainers.firstObject mirror:YES];
+        }else{
+            if (peer.medias.firstObject.skylinkMediaState!=SKYLINKMediaStateUnavailable) {
+                NSInteger _index = MIN([_peers indexOfObject:peer], 3);
+                NSLog(@"addview index: %ld", (long)_index);
+                [self addRenderedVideo:peer.medias.firstObject.skylinkVideoView insideContainer:_videoContainers[_index] mirror:NO];
+            }
+        }
+    }
+}
+- (void)addRenderedVideo:(UIView *)videoView insideContainer:(UIView *)containerView mirror:(BOOL)shouldMirror {
+    [videoView aspectFitRectForSize:videoView.frame.size container:containerView];
+//    [containerView addSubview:videoView];
     [containerView insertSubview:videoView atIndex:0];
 }
-
--(CGRect)aspectFillRectForSize:(CGSize)insideSize containedInRect:(CGRect)containerRect {
-    CGFloat maxFloat = MAX(containerRect.size.height, containerRect.size.width);
-    CGFloat aspectRatio = insideSize.width / insideSize.height;
-    CGRect frame = CGRectMake(0, 0, containerRect.size.width, containerRect.size.height);
-    if (insideSize.width < insideSize.height) {
-        frame.size.width = maxFloat;
-        frame.size.height = frame.size.width / aspectRatio;
-    } else {
-        frame.size.height = maxFloat;
-        frame.size.width = frame.size.height * aspectRatio;
-    }
-    frame.origin.x = (containerRect.size.width - frame.size.width) / 2;
-    frame.origin.y = (containerRect.size.height - frame.size.height) / 2;
-    return frame;
-}
-
-
--(UIView *)containerViewForVideoView:(UIView *)videoView {
-    UIView *correspondingContainerView;
-    if ([videoView isDescendantOfView:self.localVideoContainerView]) {
-        correspondingContainerView = self.localVideoContainerView;
-    }
-    else if ([videoView isDescendantOfView:self.firstPeerVideoContainerView]) {
-        correspondingContainerView = self.firstPeerVideoContainerView;
-    }
-    else if ([videoView isDescendantOfView:self.secondPeerVideoContainerView]) {
-        correspondingContainerView = self.secondPeerVideoContainerView;
-    }
-    else if ([videoView isDescendantOfView:self.thirdPeerVideoContainerView]) {
-        correspondingContainerView = self.thirdPeerVideoContainerView;
-    }
-    return correspondingContainerView;
-}
-
--(NSInteger)indexForContainerView:(UIView *)v {
-    return [@[self.firstPeerVideoContainerView, self.secondPeerVideoContainerView, self.thirdPeerVideoContainerView] indexOfObject:v];
-}
-
--(void)refreshPeerViews {
-    NSArray *peerContainerViews =  @[self.firstPeerVideoContainerView, self.secondPeerVideoContainerView, self.thirdPeerVideoContainerView];
-    // clean the container views
-    for (UIView *viewToClean in peerContainerViews) {
-        for (UIView *aSubview in viewToClean.subviews) {
-            [aSubview removeFromSuperview];
-        }
-    }
-    NSArray *peerLabels = @[self.firstPeerLabel, self.secondPeerLabel, self.thirdPeerLabel];
-    for (NSString *aPeerId in self.peerIds) {
-        // Add the rendered view
-        NSInteger index = [self.peerIds indexOfObject:aPeerId];
-        if (index < peerContainerViews.count && ![self.peersInfos[aPeerId][@"videoView"] isKindOfClass:[NSNull class]]) [self addRenderedVideo:self.peersInfos[aPeerId][@"videoView"] insideContainer:peerContainerViews[index] mirror:NO]; // if the peer is on simulator then self.peersInfos[aPeerId][@"videoView"] would be null so this would crash.
-        // refresh the label
-        id audioMuted = self.peersInfos[aPeerId][@"isAudioMuted"];
-        id videoMuted = self.peersInfos[aPeerId][@"isVideoMuted"];
-        NSString *mutedInfos = @"";
-        if ([audioMuted isKindOfClass:[NSNumber class]] && [audioMuted boolValue]) mutedInfos = @"Audio muted";
-        if ([videoMuted isKindOfClass:[NSNumber class]] && [videoMuted boolValue]) mutedInfos = (mutedInfos.length) ? [@"Video & " stringByAppendingString:mutedInfos] : @"Video muted";
-        if (index < peerLabels.count) ((UILabel *)peerLabels[index]).text = mutedInfos;
-        if (index < peerLabels.count) ((UILabel *)peerLabels[index]).hidden = !(mutedInfos.length);
-    }
-    for (NSUInteger i = self.peerIds.count; i < peerLabels.count; i++) {
-        ((UILabel *)peerLabels[i]).hidden = YES;
-    }
-    // refresh the frames
-    [self updatePeersVideosFrames];
-}
-
--(void)updatePeersVideosFrames {
-    
-    for (int i = 0; i < self.peerIds.count && i < 3; i++) {
-        id pvView = self.peersInfos[self.peerIds[i]][@"videoView"];
-        id pvSize = self.peersInfos[self.peerIds[i]][@"videoSize"];
-        if (pvView && [pvView isKindOfClass:[UIView class]] && pvSize && [pvSize isKindOfClass:[NSValue class]])
-        {
-            CGRect aFrame = ((UIView *)pvView).frame;
-            BOOL shouldAspectFill = (self.videoAspectSegmentControl.selectedSegmentIndex == 0);
-            if (shouldAspectFill) {
-                aFrame = [self aspectFillRectForSize:[((NSValue *)pvSize) CGSizeValue] containedInRect:[[self containerViewForVideoView:pvView] frame]];
-            }
-            else {
-                aFrame = AVMakeRectWithAspectRatioInsideRect([((NSValue *)pvSize) CGSizeValue], [[self containerViewForVideoView:pvView] bounds]);
-            }
-        }
+- (void)startRecording {
+    if (!_skylinkConnection.isRecording) {
+        [_skylinkConnection startRecording:^(NSError * _Nullable error) {
+            if (error) MyLog(@"%@", error.localizedDescription);
+            showAlertAutoDismiss(nil, @"You recording is started", 3, self);
+        }];
     }
 }
 
--(void)lockRoom:(BOOL)shouldLock {
-    (shouldLock) ? [self.skylinkConnection lockTheRoom] : [self.skylinkConnection unlockTheRoom];
-    isRoomLocked = shouldLock;
-    [self.lockButton setImage:[UIImage imageNamed:( (isRoomLocked) ? @"LockFilled" : @"Unlock.png")] forState:UIControlStateNormal];
-}
-
-#pragma mark SKYLINKConnectionRecordingDelegate
-- (void)connection:(SKYLINKConnection*)connection recordingDidStartWithID:(NSString *)recordingID {
-    [[[UIAlertView alloc] initWithTitle:@"recordingDidStart"
-                                message:[NSString stringWithFormat:@"\nRecording ID:\n%@", recordingID]
-                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-}
-
-- (void)connection:(SKYLINKConnection*)connection recordingDidStopWithID:(NSString *)recordingID {
-    [[[UIAlertView alloc] initWithTitle:@"recordingDidStop"
-                                message:[NSString stringWithFormat:@"\nRecording ID:\n%@", recordingID]
-                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-}
-
-- (void)connection:(SKYLINKConnection*)connection recording:(NSString *)recordingID didError:(NSString *)errorMessage {
-    [[[UIAlertView alloc] initWithTitle:@"recording didError"
-                                message:[NSString stringWithFormat:@"\nError:\n%@", errorMessage]
-                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-}
-
-- (void)connection:(SKYLINKConnection*)connection recording:(NSString *)recordingID didCompleteWithMixingURL:(NSString *)recordingURL peersURLs:(NSDictionary *)peersRecordingURLs {
-    [[[UIAlertView alloc] initWithTitle:@"recording didComplete"
-                                message:[NSString stringWithFormat:@"\nRecording URL:\n%@\nRecoding peer URLs:\n%@", recordingURL, peersRecordingURLs.description]
-                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+- (void)stopRecording {
+    if (_skylinkConnection.isRecording) {
+        [_skylinkConnection stopRecording:^(NSError * _Nullable error) {
+            if (error) MyLog(@"%@", error.localizedDescription);
+            showAlertAutoDismiss(nil, @"You recording is stopped", 3, self);
+        }];
+    }
 }
 
 #pragma mark - IBActions
-
 - (IBAction)toogleVideoTap:(UIButton *)sender {
-    [self.skylinkConnection muteVideo:!self.skylinkConnection.isVideoMuted];
-    [sender setImage:[UIImage imageNamed:( (self.skylinkConnection.isVideoMuted) ? @"NoVideoFilled.png" : @"VideoCall.png")] forState:UIControlStateNormal];
-    //self.localVideoContainerView.hidden = (self.skylinkConnection.isVideoMuted);
+    [_skylinkConnection muteVideo:!_skylinkConnection.isVideoMuted];
+    [sender setImage:[UIImage imageNamed:( (_skylinkConnection.isVideoMuted) ? @"NoVideoFilled.png" : @"VideoCall.png")] forState:UIControlStateNormal];
 }
 - (IBAction)toogleSoundTap:(UIButton *)sender {
-    [self.skylinkConnection muteAudio:!self.skylinkConnection.isAudioMuted];
-    [sender setImage:[UIImage imageNamed:( (self.skylinkConnection.isAudioMuted) ? @"NoMicrophoneFilled.png" : @"Microphone.png")] forState:UIControlStateNormal];
+    [_skylinkConnection muteAudio:!_skylinkConnection.isAudioMuted];
+    [sender setImage:[UIImage imageNamed:( (_skylinkConnection.isAudioMuted) ? @"NoMicrophoneFilled.png" : @"Microphone.png")] forState:UIControlStateNormal];
 }
 - (IBAction)switchCameraTap:(UIButton *)sender {
-    [self.skylinkConnection switchCamera];
+    [_skylinkConnection switchCamera:nil];
 }
-- (IBAction)switchLockTap:(UIButton *)sender {
-    [self lockRoom:!isRoomLocked];
+- (IBAction)lockRoom:(UIButton *)sender {
+    isRoomLocked ? [_skylinkConnection unlockTheRoom:nil] : [_skylinkConnection lockTheRoom:nil];
+    isRoomLocked = !isRoomLocked;
+    [self.lockButton setImage:[UIImage imageNamed:isRoomLocked ? @"LockFilled" : @"Unlock.png"] forState:UIControlStateNormal];
 }
 
 - (IBAction)videoAspectSegmentControlChanged:(UISegmentedControl *)sender {
-    [self updatePeersVideosFrames];
+//    [self updatePeersVideosFrames];
 }
 
-- (IBAction)recordingTap:(UIButton *)sender {
-    
-    NSString *errorMessage;
-    if(isRecording) {
-        errorMessage = [self.skylinkConnection stopRecording];
-    } else {
-        errorMessage = [self.skylinkConnection startRecording];
-    }
-    if (errorMessage) {
-        [[[UIAlertView alloc] initWithTitle:@"recording command error"
-                                    message:[NSString stringWithFormat:@"%@", errorMessage]
-                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-    }
-    else {
-        isRecording = !isRecording;
-    }
+- (IBAction)recording:(UISwitch *)sender {
+    sender.isOn ? [self startRecording] : [self stopRecording];
 }
 
+- (IBAction)restart {
+    [self.pickerViewContainer setHidden:NO];
+}
+
+- (IBAction)toolbarDone {
+    [self.pickerViewContainer setHidden:YES];
+}
+
+- (IBAction)toolbarSend {
+    [self.pickerViewContainer setHidden:YES];
+    if ([self.pickerView selectedRowInComponent:0] == 0) {
+        [_skylinkConnection refreshConnectionWithRemotePeerId:nil doIceRestart:YES callback:nil];
+    }else{
+        NSString *_selectedPeerId = _peers[[_pickerView selectedRowInComponent:0]].peerId;
+        [_skylinkConnection refreshConnectionWithRemotePeerId:_selectedPeerId doIceRestart:YES callback:nil];
+    }
+}
 @end
 

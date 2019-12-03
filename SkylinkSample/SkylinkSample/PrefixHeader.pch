@@ -1,0 +1,15 @@
+//
+//  PrefixHeader.pch
+//  SkylinkSample
+//
+//  Created by Charlie on 26/11/19.
+//  Copyright © 2019 Romain Pellen. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Constant.h"
+#import "Categories.h"
+
+#endif /* PrefixHeader_pch */
