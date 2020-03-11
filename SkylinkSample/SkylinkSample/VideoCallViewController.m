@@ -62,7 +62,7 @@
 #pragma mark - SKYLINKConnectionLifeCycleDelegate
 - (void)connectionDidConnectToRoomSuccessful:(SKYLINKConnection *)connection{
 //    skylinkLog("Inside \(#function)");
-    self.title = _roomName;
+    self.title = roomName;
     [self.callButton setBackgroundImage:[UIImage imageNamed:@"call_off"] forState:UIControlStateNormal];
 //    __weak __typeof(self)weakSelf = self;
 //    dispatch_async(dispatch_get_main_queue(), ^{
@@ -214,7 +214,7 @@
             }
         }];
     }else{
-        [_skylinkConnection connectToRoomWithAppKey:APP_KEY secret:APP_SECRET roomName:ROOM_ONE_TO_ONE_VIDEO userData:USER_NAME callback:nil];
+        [super joinRoom];
     }
     _isJoinRoom = !_isJoinRoom;
 }

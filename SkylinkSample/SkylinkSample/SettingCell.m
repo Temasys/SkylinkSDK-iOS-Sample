@@ -9,7 +9,8 @@
 #import "SettingCell.h"
 #import "Constant.h"
 
-NSString * const CELL_IDENTIFIER = @"SettingCell";
+//static NSString *CELL_IDENTIFIER = @"SettingCell";
+//static SAConstants *shared = nil;
 
 @interface SettingCell()
 @property (weak, nonatomic) IBOutlet UILabel *keyLabel;

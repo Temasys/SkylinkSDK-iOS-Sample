@@ -56,7 +56,7 @@
     _skylinkConnection.fileTransferDelegate = self;
     _skylinkConnection.remotePeerDelegate = self;
     // Connecting to a room
-    [_skylinkConnection connectToRoomWithAppKey:APP_KEY secret:APP_SECRET roomName:ROOM_FILE_TRANSFER userData:USER_NAME callback:nil];
+    [self joinRoom];
 }
 
 

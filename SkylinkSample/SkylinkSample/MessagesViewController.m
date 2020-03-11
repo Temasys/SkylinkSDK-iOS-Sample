@@ -8,11 +8,12 @@
 
 #import "MessagesViewController.h"
 #import "Constant.h"
+#import "SAMessage.h"
 
 //#define ROOM_NAME [[NSUserDefaults standardUserDefaults] objectForKey:@"ROOMNAME_MESSAGES"]
 
 
-@interface MessagesViewController ()<SKYLINKConnectionMessagesDelegate>
+@interface MessagesViewController ()<SKYLINKConnectionMessagesDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 // IBOutlets
 @property (weak, nonatomic) IBOutlet UITextField *messageTextField;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -22,6 +23,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *peersButton;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UITextField *encryptKeyTextField;
+@property (weak, nonatomic) IBOutlet UIView *pickerViewContainer;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+@property (weak, nonatomic) IBOutlet UISwitch *persistSwitch;
 
 // Properties
 @property (strong, nonatomic) NSMutableArray *messages;
@@ -30,17 +35,19 @@
 @end
 
 
-@implementation MessagesViewController
+@implementation MessagesViewController{
+    NSArray *_encryptSecretIds;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.title = @"Messages";
-    self.messages = [[NSMutableArray alloc] initWithArray:@[]];
-    self.peers = [[NSMutableDictionary alloc] initWithDictionary:@{}];
+    self.messages = [NSMutableArray new];
+    self.peers = [NSMutableDictionary new];
     [self updatePeersButtonTitle];
-    
+    [self loadStoredMessage];
     // Creating configuration
     SKYLINKConnectionConfig *config = [SKYLINKConnectionConfig new];
     [config setAudioVideoSendConfig:AudioVideoConfig_NO_AUDIO_NO_VIDEO];
@@ -51,8 +58,11 @@
     _skylinkConnection.lifeCycleDelegate = self;
     _skylinkConnection.messagesDelegate = self;
     _skylinkConnection.remotePeerDelegate = self;
+    _skylinkConnection.encryptSecrets = SAConstants.shared.ENCRYPTION_SECRETS;
     // Connecting to a room
-    [_skylinkConnection connectToRoomWithAppKey:APP_KEY secret:APP_SECRET roomName:ROOM_MESSAGES userData:USER_NAME callback:nil];
+    [self joinRoom];
+    _encryptSecretIds = [@[@"No Key"] arrayByAddingObjectsFromArray:[SAConstants.shared.ENCRYPTION_SECRETS.allKeys sortedArrayUsingSelector:@selector(compare:)]];
+    _encryptKeyTextField.text = _encryptSecretIds.firstObject;
 }
 
 #pragma mark - SKYLINKConnectionLifeCycleDelegate
@@ -85,10 +95,21 @@
 
 
 #pragma mark - SKYLINKConnectionMessagesDelegate
-- (void)connection:(SKYLINKConnection *)connection didReceiveServerMessage:(id)message isPublic:(BOOL)isPublic remotePeerId:(NSString *)remotePeerId
-{
-    [self.messages insertObject:@{@"message" : message, @"isPublic" : @(isPublic), @"peerId" : remotePeerId, @"type" : @"signaling server"} atIndex:0];
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+- (void)connection:(SKYLINKConnection *)connection didReceiveServerMessage:(id)message isPublic:(BOOL)isPublic timeStamp:(long long)timeStamp remotePeerId:(NSString *)remotePeerId{
+    NSLog(@"SIG message");
+    if ([message isKindOfClass:[NSString class]]) {
+        SAMessage *receivedMsg = [[SAMessage alloc] initWithData:message timeStamp:timeStamp sender:[self getUserNameFrom:remotePeerId] target:(isPublic ? nil : _skylinkConnection.localPeerId) type:SAMessageTypeP2P];
+        [_messages addObject:receivedMsg];
+        [_tableView reloadData];
+    }
+}
+- (void)connection:(SKYLINKConnection *)connection didReceiveP2PMessage:(id)message isPublic:(BOOL)isPublic timeStamp:(long long)timeStamp remotePeerId:(NSString *)remotePeerId{
+    NSLog(@"P2P message");
+    if ([message isKindOfClass:[NSString class]]) {
+        SAMessage *receivedMsg = [[SAMessage alloc] initWithData:message timeStamp:timeStamp sender:[self getUserNameFrom:remotePeerId] target:(isPublic ? nil : _skylinkConnection.localPeerId) type:SAMessageTypeP2P];
+        [_messages addObject:receivedMsg];
+        [_tableView reloadData];
+    }
 }
 
 - (void)connection:(SKYLINKConnection *)connection didReceiveP2PMessage:(id)message isPublic:(BOOL)isPublic remotePeerId:(NSString *)remotePeerId
@@ -126,16 +147,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"messageCell"];
     
-    NSDictionary *message = [self.messages objectAtIndex:indexPath.row];
+    SAMessage *message = [_messages objectAtIndex: _messages.count - indexPath.row - 1];
     
-    cell.textLabel.text = message[@"message"];
-    if ([message[@"peerId"] isEqualToString:_skylinkConnection.localPeerId]) {
-        cell.detailTextLabel.text = [message[@"isPublic"] boolValue] ? @"Sent to all" : @"Sent privately";
-        cell.backgroundColor = [UIColor colorWithRed:0.71 green:1 blue:0.5 alpha:1];
-    } else {
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"From %@ via %@ • %@", (self.peers[message[@"peerId"]]) ? self.peers[message[@"peerId"]] : message[@"peerId"], message[@"type"], [message[@"isPublic"] boolValue] ? @"Public" : @"Private"];
-        cell.backgroundColor = [UIColor whiteColor];
-    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%@~~~%@", [message timeStampString], message.data];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"From %@ via %@ • %@", message.sender, message.typeToString, [message isPublicString]];
     return cell;
 }
 
@@ -143,17 +158,44 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    NSDictionary *message = [self.messages objectAtIndex:indexPath.row];
-    NSString *messageDetails = [NSString stringWithFormat:@"Message:\n%@\n\nFrom :\n%@\n\n%@", message[@"message"], [message[@"peerId"] stringByAppendingString:([message[@"peerId"] isEqualToString:_skylinkConnection.localPeerId] ? @" (me)" : @"")], [message[@"isPublic"] boolValue] ? @"Public" : @"Private"];
-    
-    [UIAlertController showAlertWithAutoDisappearTitle:@"Message details" message:messageDetails duration:3 onViewController:self];
+    SAMessage *message = [self.messages objectAtIndex:_messages.count - indexPath.row - 1];
+    NSString *messageDetails = [NSString stringWithFormat:@"Message:\n%@\n\nFrom :\n%@\n\n%@", message.data, ([message.sender isEqualToString:USER_NAME] ? @"me" : message.sender), [message isPublicString]];
+    showAlert(@"Message Detail", messageDetails);
 }
 
 #pragma mark - IBActions
 
 - (IBAction)sendTap:(UIButton *)sender {
-    [self processMessage];
+    _skylinkConnection.messagePersist = _persistSwitch.isOn;
+    NSString *message = _messageTextField.text;
+    if (_peers.count<=0) {
+        showAlert(@"No peer connected", @"\nYou can't define a private recipient since there is no peer connected.");
+        return;
+    }
+    
+    if (![message isNotEmpty]) {
+        showAlert(@"Empty Message", @"\nType the message to be sent.");
+        return;
+    }
+    
+    if (_isPublicSwitch.isOn) {
+        //send public
+        [self sendMessage:message forPeerId:nil];
+    }else{
+        //send private
+        UIAlertController *_alert = [UIAlertController alertControllerWithTitle:@"Choose a private recipient." message:@"\nYou're about to send a private message\nWho do you want to send it to ?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *_cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
+        __weak __typeof(self)weakSelf = self;
+        for (NSString *peerDicKey in _peers.allKeys) {
+            UIAlertAction *_peerAction = [UIAlertAction actionWithTitle:_peers[peerDicKey] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [weakSelf sendMessage:message forPeerId:peerDicKey];
+//                [weakSelf alert:self->_peers[peerDicKey] message:message];
+            }];
+            [_alert addAction:_peerAction];
+        }
+        [_alert addAction:_cancelAction];
+        [self presentViewController:_alert animated:YES completion:nil];
+    }
 }
 
 - (IBAction)dismissKeyboardTap:(UIButton *)sender {
@@ -163,63 +205,39 @@
 - (IBAction)peersTap:(UIButton *)sender {
     [UIAlertController showAlertWithAutoDisappearTitle:sender.titleLabel.text message:[self.peers description] duration:3 onViewController:self];
 }
-
-#pragma mark - UITextField delegate
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if ([textField isEqual:self.nicknameTextField]) [self updateNickname];
-    else if ([textField isEqual:self.messageTextField]) [self processMessage];
-    [self hideKeyboardIfNeeded];
-    return YES;
+- (IBAction)doneEncryptSecret:(UIButton *)sender{
+    [self.pickerViewContainer setHidden:YES];
 }
+
 
 #pragma mark - Utils
 -(void)alert:(NSString *)title message:(NSString*)message{
     showAlert(title, message);
     [self sendMessage:message forPeerId:[title stringByReplacingOccurrencesOfString:@"ID: " withString:@""]];
 }
-- (void)processMessage {
-    if (self.messageTextField.text.length > 0) {
-        NSString *message = self.messageTextField.text;
-        if (!self.isPublicSwitch.isOn){
-            if (_peers.count != 0) {
-                UIAlertController *_alert = [UIAlertController alertControllerWithTitle:@"Choose a private recipient." message:@"\nYou're about to send a private message\nWho do you want to send it to ?" preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *_cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
-                __weak __typeof(self)weakSelf = self;
-                for (NSString *peerDicKey in _peers.allKeys) {
-                    UIAlertAction *_peerAction = [UIAlertAction actionWithTitle:_peers[peerDicKey] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                        [weakSelf alert:self->_peers[peerDicKey] message:message];
-                    }];
-                    [_alert addAction:_peerAction];
-                }
-                [_alert addAction:_cancelAction];
-                [self presentViewController:_alert animated:YES completion:nil];
-            } else {
-                showAlertAutoDismiss(@"No peer connected.", @"\nYou can't define a private recipient since there is no peer connected.", 2, self);
-            }
-        }else{
-            [self sendMessage:message forPeerId:nil];
-        }
-    } else [UIAlertController showAlertWithAutoDisappearTitle:@"Empty message" message:@"\nType the message to be sent." duration:3 onViewController:self];
-}
 
 - (void)sendMessage:(NSString *)message forPeerId:(NSString *)peerId { // nil peerId means public message
-    BOOL showSentMessage = YES;
-    if (self.messageTypeSegmentControl.selectedSegmentIndex == 0) {
-        [_skylinkConnection sendP2PMessage:message toRemotePeerId:peerId callback:^(NSError * _Nullable error) {
-            if (error) [UIAlertController showAlertWithAutoDisappearTitle:@"Error" message:error.localizedDescription duration:3 onViewController:self];
-        }];
-    } else if (self.messageTypeSegmentControl.selectedSegmentIndex == 1) {
+    void (^processResponse)(NSError *, SAMessageType) = ^(NSError *error, SAMessageType type){
+        if (error) {
+            showAlert([NSString stringWithFormat:@"ERROR: %ld", (long)error.code], error.localizedDescription);
+        }else{
+            SAMessage *msg = [[SAMessage alloc] initWithData:message timeStamp:[[NSDate date] toTimeStamp] sender:USER_NAME target:peerId type:type];
+            [self->_messages addObject:msg];
+            self.messageTextField.text = @"";
+            [self.tableView reloadData];
+            showAlert(message, peerId ? peerId : @"All");
+        }
+    };
+    if (_messageTypeSegmentControl.selectedSegmentIndex) {
         [_skylinkConnection sendServerMessage:message toRemotePeerId:peerId callback:^(NSError * _Nullable error) {
-            if (error) [UIAlertController showAlertWithAutoDisappearTitle:@"Error" message:error.localizedDescription duration:3 onViewController:self];
-        }]; // message could also be custom structure like: ...sendCustomMessage:@{@"message" : message}...
+            processResponse(error, SAMessageTypeSignaling);
+        }];
+    }else{
+        [_skylinkConnection sendP2PMessage:message toRemotePeerId:peerId callback:^(NSError * _Nullable error) {
+            processResponse(error, SAMessageTypeP2P);
+        }];
     }
     
-    if (showSentMessage) {
-        self.messageTextField.text = @"";
-        [self.messages insertObject:@{@"message" : message, @"isPublic" :[NSNumber numberWithBool:(!peerId)], @"peerId" : _skylinkConnection.localPeerId} atIndex:0];
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-    } else [self hideKeyboardIfNeeded];
 }
 
 - (void)updateNickname {
@@ -238,8 +256,66 @@
 - (void)hideKeyboardIfNeeded {
     [self.messageTextField resignFirstResponder];
     [self.nicknameTextField resignFirstResponder];
+    [self.encryptKeyTextField resignFirstResponder];
+}
+- (void)loadStoredMessage{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self->_skylinkConnection getStoredMessages:^(NSArray * _Nullable storedMessages, NSDictionary * _Nullable errors) {
+            if (!self.view.window) {
+                return;
+            }
+            if (errors) {
+                showAlert(@"Error map", errors.description);
+            }
+            for (NSDictionary *item in storedMessages) {
+                if ([item isKindOfClass:[NSDictionary class]]) {
+                    SAMessage *message = [[SAMessage alloc] initWithData:item[@"data"] timeStamp:[item[@"timeStamp"] longLongValue] sender:[self getUserNameFrom:item[@"peerId"]] target:nil type:SAMessageTypeSignaling];
+                    [self.messages addObject:message];
+                }
+            }
+            [self.tableView reloadData];
+        }];
+    });
+}
+- (NSString *)getUserNameFrom:(NSString *)peerId{
+    NSDictionary *userInfo = [_skylinkConnection getUserInfo:peerId];
+    if (userInfo) {
+        return userInfo[@"userData"];
+    }
+    return peerId;
 }
 
+#pragma mark - UITextField delegate
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ([textField isEqual:self.nicknameTextField]) [self updateNickname];
+    [self hideKeyboardIfNeeded];
+    return YES;
+}
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if (textField == self.encryptKeyTextField) {
+        [self hideKeyboardIfNeeded];
+        [_pickerViewContainer setHidden:NO];
+        return NO;
+    }
+    return YES;
+}
+#pragma mark - PICKER VIEW
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return _encryptSecretIds.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return _encryptSecretIds[row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    NSString *selectedEncryptSecret = (row == 0) ? nil : _encryptSecretIds[row];
+    _skylinkConnection.selectedSecretId = selectedEncryptSecret;
+    _encryptKeyTextField.text = _encryptSecretIds[row];
+}
 @end
 

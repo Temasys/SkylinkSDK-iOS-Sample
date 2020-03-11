@@ -56,7 +56,6 @@
 
 - (void)setupData{
     //creating SKYLINKConnectionConfig
-    _roomName = ROOM_MULTI_VIDEO;
     SKYLINKConnectionConfig *config = [SKYLINKConnectionConfig new];
     [config setAudioVideoReceiveConfig:AudioVideoConfig_AUDIO_AND_VIDEO];
     [config setAudioVideoSendConfig:AudioVideoConfig_AUDIO_AND_VIDEO];
@@ -73,6 +72,7 @@
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self startLocalMediaDevice:SKYLINKMediaDeviceCameraFront];
+        [self startLocalMediaDevice:SKYLINKMediaDeviceMicrophone];
     });
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self joinRoom];

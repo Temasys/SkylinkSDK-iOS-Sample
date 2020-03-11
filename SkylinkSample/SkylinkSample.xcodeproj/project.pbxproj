@@ -58,6 +58,11 @@
 		CB661BE1238BBB94007043F8 /* UIView+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB661BE0238BBB94007043F8 /* UIView+Ext.m */; };
 		CB661BE4238BBF6C007043F8 /* UIAlertController+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB661BE2238BBF6C007043F8 /* UIAlertController+Ext.m */; };
 		CB661BE9238BD925007043F8 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CB661BE7238BD925007043F8 /* Utils.m */; };
+		CB9342F2241612D20008705E /* EncryptSecretCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9342F0241612D20008705E /* EncryptSecretCell.m */; };
+		CB9342F3241612D20008705E /* EncryptSecretCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9342F1241612D20008705E /* EncryptSecretCell.xib */; };
+		CB9342F624163FC20008705E /* SAMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9342F524163FC20008705E /* SAMessage.m */; };
+		CB9342F92416423C0008705E /* NSDate+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9342F82416423C0008705E /* NSDate+Ext.m */; };
+		CB9342FC241763B60008705E /* NSString+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9342FB241763B60008705E /* NSString+Ext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,7 +84,7 @@
 		6516758F1D07E2900049778C /* DataTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTransferViewController.h; sourceTree = "<group>"; };
 		651675901D07E2900049778C /* DataTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTransferViewController.m; sourceTree = "<group>"; };
 		653BE0B41D116257008DF816 /* DataTransferSamples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DataTransferSamples; sourceTree = "<group>"; };
-		654DF89B1C5F3EE400299EF3 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		654DF89B1C5F3EE400299EF3 /* SkylinkSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkylinkSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		654DF89F1C5F3EE400299EF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		654DF8A11C5F3EE400299EF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		654DF8A21C5F3EE400299EF3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -137,6 +142,7 @@
 		C27D42302321054300C2A21F /* StatsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatsView.h; sourceTree = "<group>"; };
 		C27D42312321054300C2A21F /* StatsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatsView.m; sourceTree = "<group>"; };
 		C27D42332321056600C2A21F /* StatsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsView.xib; sourceTree = "<group>"; };
+		C2B1E16323541C0A0047C4AB /* SkylinkSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SkylinkSample-Bridging-Header.h"; sourceTree = "<group>"; };
 		CB1DD46D238D1403007CB785 /* BaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		CB1DD46E238D1403007CB785 /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		CB661BDF238BBB94007043F8 /* UIView+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIView+Ext.h"; path = "Categories/UIView+Ext.h"; sourceTree = "<group>"; };
@@ -147,6 +153,15 @@
 		CB661BE7238BD925007043F8 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = utils/Utils.m; sourceTree = "<group>"; };
 		CB661BE8238BD925007043F8 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = utils/Utils.h; sourceTree = "<group>"; };
 		CB661BEB238CDFE1007043F8 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CB9342EF241612D20008705E /* EncryptSecretCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncryptSecretCell.h; sourceTree = "<group>"; };
+		CB9342F0241612D20008705E /* EncryptSecretCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncryptSecretCell.m; sourceTree = "<group>"; };
+		CB9342F1241612D20008705E /* EncryptSecretCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EncryptSecretCell.xib; sourceTree = "<group>"; };
+		CB9342F424163FC20008705E /* SAMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAMessage.h; sourceTree = "<group>"; };
+		CB9342F524163FC20008705E /* SAMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAMessage.m; sourceTree = "<group>"; };
+		CB9342F72416423C0008705E /* NSDate+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSDate+Ext.h"; path = "Categories/NSDate+Ext.h"; sourceTree = "<group>"; };
+		CB9342F82416423C0008705E /* NSDate+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Ext.m"; path = "Categories/NSDate+Ext.m"; sourceTree = "<group>"; };
+		CB9342FA241763B60008705E /* NSString+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSString+Ext.h"; path = "Categories/NSString+Ext.h"; sourceTree = "<group>"; };
+		CB9342FB241763B60008705E /* NSString+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSString+Ext.m"; path = "Categories/NSString+Ext.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +189,7 @@
 		654DF89C1C5F3EE400299EF3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				654DF89B1C5F3EE400299EF3 /* SampleApp.app */,
+				654DF89B1C5F3EE400299EF3 /* SkylinkSample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,6 +205,7 @@
 				654DF8A11C5F3EE400299EF3 /* AppDelegate.h */,
 				654DF8A21C5F3EE400299EF3 /* AppDelegate.m */,
 				CB661BEB238CDFE1007043F8 /* PrefixHeader.pch */,
+				C2B1E16323541C0A0047C4AB /* SkylinkSample-Bridging-Header.h */,
 				654DF8A71C5F3EE400299EF3 /* Main.storyboard */,
 				654DF8AA1C5F3EE400299EF3 /* Assets.xcassets */,
 				654DF8AC1C5F3EE400299EF3 /* LaunchScreen.storyboard */,
@@ -216,6 +232,9 @@
 				C27D42282320F73500C2A21F /* SettingCell.h */,
 				C27D42292320F73500C2A21F /* SettingCell.m */,
 				C27D422A2320F73500C2A21F /* SettingCell.xib */,
+				CB9342EF241612D20008705E /* EncryptSecretCell.h */,
+				CB9342F0241612D20008705E /* EncryptSecretCell.m */,
+				CB9342F1241612D20008705E /* EncryptSecretCell.xib */,
 				C27D42302321054300C2A21F /* StatsView.h */,
 				C27D42312321054300C2A21F /* StatsView.m */,
 				C27D42332321056600C2A21F /* StatsView.xib */,
@@ -302,6 +321,8 @@
 			children = (
 				C23789B0232B3AAB003DEA8B /* Peer.h */,
 				C23789B1232B3AAB003DEA8B /* Peer.m */,
+				CB9342F424163FC20008705E /* SAMessage.h */,
+				CB9342F524163FC20008705E /* SAMessage.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -309,10 +330,14 @@
 		CB661BDE238BBB59007043F8 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				CB661BDF238BBB94007043F8 /* UIView+Ext.h */,
 				CB661BE0238BBB94007043F8 /* UIView+Ext.m */,
+				CB661BDF238BBB94007043F8 /* UIView+Ext.h */,
 				CB661BE3238BBF6C007043F8 /* UIAlertController+Ext.h */,
 				CB661BE2238BBF6C007043F8 /* UIAlertController+Ext.m */,
+				CB9342F72416423C0008705E /* NSDate+Ext.h */,
+				CB9342F82416423C0008705E /* NSDate+Ext.m */,
+				CB9342FA241763B60008705E /* NSString+Ext.h */,
+				CB9342FB241763B60008705E /* NSString+Ext.m */,
 				CB661BE5238BBF7D007043F8 /* Categories.h */,
 			);
 			name = Categories;
@@ -348,7 +373,7 @@
 			);
 			name = SkylinkSample;
 			productName = SkylinkSample;
-			productReference = 654DF89B1C5F3EE400299EF3 /* SampleApp.app */;
+			productReference = 654DF89B1C5F3EE400299EF3 /* SkylinkSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -421,6 +446,7 @@
 				654DF8AE1C5F3EE400299EF3 /* LaunchScreen.storyboard in Resources */,
 				654DF9361C62176B00299EF3 /* NoVideoFilled@2x.png in Resources */,
 				654DF93F1C62176B00299EF3 /* logoSkylink.png in Resources */,
+				CB9342F3241612D20008705E /* EncryptSecretCell.xib in Resources */,
 				654DF93A1C62176B00299EF3 /* SwitchCamera@2x.png in Resources */,
 				654DF92E1C62176A00299EF3 /* HideKeyboard@2x.png in Resources */,
 				654DF9391C62176B00299EF3 /* SwitchCamera.png in Resources */,
@@ -471,7 +497,9 @@
 				CB1DD46F238D1403007CB785 /* BaseVC.m in Sources */,
 				651675911D07E2900049778C /* DataTransferViewController.m in Sources */,
 				CB661BE1238BBB94007043F8 /* UIView+Ext.m in Sources */,
+				CB9342FC241763B60008705E /* NSString+Ext.m in Sources */,
 				654DF8CF1C5F542E00299EF3 /* UIAspectFitButton.m in Sources */,
+				CB9342F624163FC20008705E /* SAMessage.m in Sources */,
 				654DF8A31C5F3EE400299EF3 /* AppDelegate.m in Sources */,
 				654DF8CB1C5F516A00299EF3 /* HomeViewController.m in Sources */,
 				654DF8C41C5F4BC400299EF3 /* MultiVideoCallViewController.m in Sources */,
@@ -480,8 +508,10 @@
 				C27D421F231FB8AE00C2A21F /* SettingsViewController.m in Sources */,
 				CB661BE4238BBF6C007043F8 /* UIAlertController+Ext.m in Sources */,
 				C27D422B2320F73500C2A21F /* SettingCell.m in Sources */,
+				CB9342F92416423C0008705E /* NSDate+Ext.m in Sources */,
 				654DF8C51C5F4BC400299EF3 /* VideoCallViewController.m in Sources */,
 				C23789B2232B3AAB003DEA8B /* Peer.m in Sources */,
+				CB9342F2241612D20008705E /* EncryptSecretCell.m in Sources */,
 				C27D42322321054300C2A21F /* StatsView.m in Sources */,
 				654DF8A01C5F3EE400299EF3 /* main.m in Sources */,
 			);
@@ -647,9 +677,9 @@
 				INFOPLIST_FILE = SkylinkSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Temasys.SampleApp;
-				PRODUCT_NAME = SampleApp;
+				MARKETING_VERSION = 2.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Temasys.SampleApp.objc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SkylinkSample/SkylinkSample-Bridging-Header.h";
@@ -680,9 +710,9 @@
 				INFOPLIST_FILE = SkylinkSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Temasys.SampleApp;
-				PRODUCT_NAME = SampleApp;
+				MARKETING_VERSION = 2.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Temasys.SampleApp.objc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SkylinkSample/SkylinkSample-Bridging-Header.h";

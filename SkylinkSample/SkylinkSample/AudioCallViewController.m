@@ -30,7 +30,6 @@
     
     self.title = @"Audio Call";
     self.remotePeerArray = [NSMutableArray array];
-    _roomName = ROOM_AUDIO;
     // Creating configuration
     SKYLINKConnectionConfig *config = [SKYLINKConnectionConfig new];
     [config setAudioVideoSendConfig:AudioVideoConfig_AUDIO_ONLY];
@@ -47,11 +46,7 @@
 //    NSDictionary *credInfos = @{@"startTime" : [NSDate date], @"duration" : [NSNumber numberWithFloat:24.000f]};
 //    NSString *credential = [SKYLINKConnection calculateCredentials:ROOM_AUDIO duration:credInfos[@"duration"] startTime:credInfos[@"startTime"] secret:APP_SECRET];
 //    [_skylinkConnection connectToRoomWithStringURL:credential userData:USER_NAME callback:nil];
-    [_skylinkConnection connectToRoomWithAppKey:APP_KEY secret:APP_SECRET roomName:ROOM_AUDIO userData:@"" callback:^(NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"error: %@", error.localizedDescription);
-        }
-    }];
+    [self joinRoom];
 }
 
 #pragma mark - SKYLINKConnectionLifeCycleDelegate

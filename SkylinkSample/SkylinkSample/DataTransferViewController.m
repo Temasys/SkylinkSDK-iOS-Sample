@@ -43,7 +43,7 @@
     _skylinkConnection.messagesDelegate = self;
     _skylinkConnection.lifeCycleDelegate = self;
     _skylinkConnection.remotePeerDelegate = self;
-    [_skylinkConnection connectToRoomWithAppKey:APP_KEY secret:APP_SECRET roomName:ROOM_DATA_TRANSFER userData:USER_NAME callback:nil];
+    [self joinRoom];
 
     [self refreshUI];
 }

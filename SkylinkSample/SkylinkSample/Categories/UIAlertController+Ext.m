@@ -21,7 +21,20 @@ void showAlert(NSString *title, NSString* message){
     [_alert addAction:_okBtn];
     [topVC() presentViewController:_alert animated:YES completion:nil];
 }
-
+void showAlertTouchDismiss(NSString *title, NSString* message){
+    UIAlertController * _alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    [topVC() presentViewController:_alert animated:YES completion:^{
+        [_alert.view.superview setUserInteractionEnabled:YES];
+        [_alert.view.superview addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:_alert action:@selector(touchToDismiss)]];
+        UIView *bg = [[UIView alloc] initWithFrame:_alert.view.bounds];
+        bg.backgroundColor = [UIColor clearColor];
+        [_alert.view addSubview:bg];
+        [_alert.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:_alert action:@selector(touchToDismiss)]];
+    }];
+}
+- (void)touchToDismiss{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 void showAlertAutoDismiss(NSString *title, NSString *message, float duration, UIViewController *vc){
     UIAlertController * _alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     [vc presentViewController:_alert animated:YES completion:nil];

@@ -10,7 +10,8 @@
 
 //NS_ASSUME_NONNULL_BEGIN
 
-extern NSString * const CELL_IDENTIFIER;
+//extern NSString * const CELL_IDENTIFIER;
+static NSString *CELL_IDENTIFIER = @"SettingCell";
 
 @interface SettingCell : UITableViewCell
 - (void)setupCellWithKey:(NSString *)key value:(NSString *)value;

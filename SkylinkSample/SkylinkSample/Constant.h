@@ -11,7 +11,8 @@
 
 extern NSString *APP_KEY;
 extern NSString *APP_SECRET;
-
+extern NSString *ROOM_NAME;
+//extern NSDictionary *APP_KEYS;
 
 extern NSString *ROOM_ONE_TO_ONE_VIDEO;
 extern NSString *ROOM_MULTI_VIDEO;
@@ -22,8 +23,10 @@ extern NSString *ROOM_DATA_TRANSFER;
 
 extern NSString *appFilesFolder;
 
-#define USER_NAME [NSString stringWithFormat:@"%@-%@", UIDevice.currentDevice.name, UIDevice.currentDevice.model]
-#define ROOM_NAME @"video1"
+//NSDictionary* APP_KEYS(void);
+//NSDictionary* ENCRYPTION_SECRETS(void);
+#define USER_NAME UIDevice.currentDevice.name
+
 
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 #define SCREEN_WIDTH  [[UIScreen mainScreen] bounds].size.width
@@ -60,9 +63,8 @@ extern NSString *appFilesFolder;
 #define MyLog(...)
 #endif
 
-@interface Tools : NSObject
-
-+ (BOOL)isBluetoothConnected;
-+ (void)switchOutput;
-+ (NSString *)userName;
+@interface SAConstants : NSObject
++(instancetype)shared;
+@property(strong, nonatomic) NSDictionary *APP_KEYS;
+@property(strong, nonatomic) NSMutableDictionary *ENCRYPTION_SECRETS;
 @end

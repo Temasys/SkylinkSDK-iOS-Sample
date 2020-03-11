@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseVC : UIViewController<SKYLINKConnectionLifeCycleDelegate, SKYLINKConnectionRemotePeerDelegate>{
     SKYLINKConnection *_skylinkConnection;
-    NSString *_roomName;
+    NSString *roomName;
 }
 - (void)startLocalMediaDevice:(SKYLINKMediaDevice)mediaDevice;
 - (void)joinRoom;

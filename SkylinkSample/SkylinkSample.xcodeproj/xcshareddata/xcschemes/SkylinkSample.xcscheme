@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "654DF89A1C5F3EE400299EF3"
-               BuildableName = "SampleApp.app"
+               BuildableName = "SkylinkSample.app"
                BlueprintName = "SkylinkSample"
                ReferencedContainer = "container:SkylinkSample.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "654DF89A1C5F3EE400299EF3"
-            BuildableName = "SampleApp.app"
+            BuildableName = "SkylinkSample.app"
             BlueprintName = "SkylinkSample"
             ReferencedContainer = "container:SkylinkSample.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "654DF89A1C5F3EE400299EF3"
-            BuildableName = "SampleApp.app"
+            BuildableName = "SkylinkSample.app"
             BlueprintName = "SkylinkSample"
             ReferencedContainer = "container:SkylinkSample.xcodeproj">
          </BuildableReference>

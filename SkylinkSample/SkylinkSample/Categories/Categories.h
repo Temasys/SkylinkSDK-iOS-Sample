@@ -11,5 +11,7 @@
 
 #import "UIView+Ext.h"
 #import "UIAlertController+Ext.h"
+#import "NSDate+Ext.h"
+#import "NSString+Ext.h"
 
 #endif /* Categories_h */

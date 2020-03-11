@@ -12,6 +12,7 @@
 
 @interface UIAlertController(Ext)
 void showAlert(NSString *title, NSString* message);
+void showAlertTouchDismiss(NSString *title, NSString* message);
 void showAlertAutoDismiss(NSString *title, NSString *message, float duration, UIViewController *vc);
 + (void)showAlertWithAutoDisappearTitle:(NSString *)title message:(NSString *)message duration:(CGFloat)duration onViewController:(UIViewController *)viewController;
 @end
