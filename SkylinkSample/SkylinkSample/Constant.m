@@ -39,5 +39,31 @@ NSString *appFilesFolder = @"";
     return shared;
 }
 
++ (void)switchOutput
+{
+    AVAudioSessionPortDescription *builtInPortDescription = [AVAudioSessionPortDescription new];
+    AVAudioSessionPortDescription *bluetoothPortDescription = [AVAudioSessionPortDescription new];
+    BOOL isBluetoothPortDescriptionAssigned = NO;
+    NSArray *availableInputs = [AVAudioSession sharedInstance].availableInputs;
+    for (AVAudioSessionPortDescription *description in availableInputs) {
+        if (description.portType == AVAudioSessionPortBuiltInMic) builtInPortDescription = description;
+        if (description.portType == AVAudioSessionPortBluetoothLE || description.portType == AVAudioSessionPortBluetoothHFP || description.portType == AVAudioSessionPortBluetoothA2DP) {
+            builtInPortDescription = description;
+            isBluetoothPortDescriptionAssigned = YES;
+        }
+    }
+    NSArray *dataSources = builtInPortDescription.dataSources;
+    for (AVAudioSessionDataSourceDescription *description in dataSources) {
+        if (description.orientation == AVAudioSessionOrientationFront || description.orientation == AVAudioSessionOrientationBottom || description.orientation == AVAudioSessionOrientationBack) {
+            NSError *error;
+            [bluetoothPortDescription setPreferredDataSource:description error:&error];
+            if (error) MyLog(@"bluetoothPortDescription setPreferredDataSource error ---> %@", error.localizedDescription);
+            break;
+        }
+    }
+    NSError *error;
+    isBluetoothPortDescriptionAssigned ? [[AVAudioSession sharedInstance] setPreferredInput:bluetoothPortDescription error:&error] : [[AVAudioSession sharedInstance] setPreferredInput:(builtInPortDescription) error:&error];
+    MyLog(@"bluetoothPortDescription setPreferredInput error ---> %@", error.localizedDescription);
+}
 @end
 

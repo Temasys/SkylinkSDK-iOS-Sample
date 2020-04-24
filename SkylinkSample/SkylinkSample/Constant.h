@@ -67,4 +67,5 @@ extern NSString *appFilesFolder;
 +(instancetype)shared;
 @property(strong, nonatomic) NSDictionary *APP_KEYS;
 @property(strong, nonatomic) NSMutableDictionary *ENCRYPTION_SECRETS;
++ (void)switchOutput;
 @end
